@@ -1,0 +1,210 @@
+/*
+Theme Name: Nintendo Fusion
+Theme URI: http://nintendofusion.com.br/
+Description: Theme for the Nintendo Fusion website.
+Author: Renan Greca
+Author URI: http://nintendofusion.com.br/
+Version: 1.0
+Tags: responsive, white, bootstrap, mosaic
+
+License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+License URI: http://creativecommons.org/licenses/by-sa/3.0/
+
+This theme is built with bootstrap, but features many custom elements. The highlight is the separation of content by categories.
+*/
+
+/*@import url('bootstrap/css/bootstrap.css');*/
+/*@import url('bootstrap/css/bootstrap-responsive.css');*/
+@import url('css/fonts.css');
+@import url('css/variables.css');
+
+@import url('css/header.css');
+@import url('css/mosaic.css');
+@import url('css/list.css');
+@import url('css/sidebar.css');
+/*@import url('css/single.css');*/
+@import url('css/footer.css');
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  /*background-color: #07072e;*/
+  background-color: var(--dark-background);
+  color: var(--white);
+  font-family: var(--font-text), sans-serif;
+  /*background-color: #fff6f6;*/
+  /*color: #1b1b1b;*/
+}
+
+h1 {
+  padding: 20px 0;
+  margin: 0;
+  font-size: 38px;
+  line-height: 40px;
+  color: var(--white);
+  text-transform: uppercase;
+  border-top: 2px var(--neon-red) solid;
+  font-family: var(--font-title), sans-serif;
+  /*background-color: #ff6154;*/
+}
+
+h2 {
+  padding: 10px 0;
+  margin: 0;
+  font-size: 38px;
+  line-height: 40px;
+  color: var(--white);
+  text-transform: uppercase;
+  text-align: right;
+  border-top: 2px var(--neon-blue) solid;
+  font-family: var(--font-title), sans-serif;
+  /*background-color: #00bede;*/
+}
+
+h3 {
+  /*padding: 0 0 10px 0;*/
+  padding: 10px 8px;
+  margin: 0;
+  font-size: 25px;
+  line-height: 30px;
+  color: var(--neon-blue);
+  text-transform: uppercase;
+  /*border-top: 2px var(--neon-blue) solid;*/
+  font-family: var(--font-title), sans-serif;
+}
+
+h4 {
+  /*padding: 0 0 10px 0;*/
+  padding: 10px 0;
+  margin: 0;
+  font-size: 25px;
+  line-height: 30px;
+  color: var(--neon-blue);
+  text-transform: uppercase;
+  /*border-top: 2px var(--neon-blue) solid;*/
+  font-family: var(--font-title), sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.space {
+  display: none;
+  height: 900px;
+  width: 50px;
+  /*width: 100vw;*/
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+  }
+
+  h4 {
+    font-size: 14px;
+    line-height: 16px;
+    padding: 0 0 5px 0;
+  }
+
+  h3 {
+    font-size: 20px;
+    line-height: 20px;
+    padding: 10px 8px;
+  }
+
+  h1 {
+    font-size: 30px;
+    line-height: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .container {
+    width: var(--container-width-1000);
+  }
+
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: var(--container-width-1200);
+  }
+}
+
+
+@media (min-width: 1600px) {
+  .container {
+    width: var(--container-width-1600);
+  }
+
+  .space {
+    height: 20px;
+  }
+}
+
+a:link {
+  color: var(--white);
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--white);
+  text-decoration: none;
+}
+
+a:active {
+  color: var(--white);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--neon-blue);
+  text-decoration: none;
+}
+
+.all {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.all > a:link {
+  /*color: var(--neon-red);*/
+  text-transform: uppercase;
+  /*font-weight: bold;*/
+  padding-bottom: 5px;
+  border-bottom: 1px var(--neon-red) solid;
+  font-size: 20px;
+}
+
+.all > a:active {
+  border-bottom: 1px var(--neon-red) solid;
+}
+
+.all > a:visited {
+  border-bottom: 1px var(--neon-red) solid;
+}
+
+.all > a:hover {
+  color: #ffffff;
+  border-bottom: 1px var(--neon-blue) solid;
+}
+
+.spacing {
+  width: 100px;
+  display: inline-block;
+}
+
+/*body {
+font-family: 'Montserrat', sans-serif;
+padding-top: 60px;
+padding-bottom: 40px;
+}
+
+.navbar-inverse .navbar-inner {
+background-color: #ff6154;
+}*/

@@ -58,7 +58,8 @@ if ($title == "Podcast") {
         $categories = get_the_category($post->ID);
         $category = $categories[0]->cat_name;
         foreach($categories as $cat) {
-          if ($cat->parent == 2) {
+          $parent = get_the_category_by_ID($cat->parent);
+          if ($parent == "Matéria") {
             $category = $cat->cat_name;
           }
         }

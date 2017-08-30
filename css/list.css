@@ -5,8 +5,8 @@
 .list {
   display: block;
   /*width: 940px;*/
-  margin: 0 auto;
-  height: 2500px;
+  margin: 0 auto 50px auto;
+  /*height: 2500px;*/
   /*margin-top: 670px;*/
 }
 
@@ -59,10 +59,12 @@
 
 .span8 {
   width: 64%;
-  float: left;
+  display: inline-block;
+  /*float: left;*/
 }
 
 .span4 {
+  min-height: 1500px;
   width: 34%;
   float: right;
 }
@@ -144,7 +146,7 @@
 
   .span8 {
     width: 69%;
-    float: left;
+    /*float: left;*/
   }
 
   .span4 {

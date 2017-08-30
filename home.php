@@ -99,7 +99,8 @@ $others_array = get_posts( $args );
       $categories = get_the_category($post->ID);
       $category = $categories[0]->cat_name;
       foreach($categories as $cat) {
-        if ($cat->parent == 2) {
+        $parent = get_the_category_by_ID($cat->parent);
+        if ($parent == "Matéria") {
           $category = $cat->cat_name;
         }
       }
@@ -121,7 +122,7 @@ $others_array = get_posts( $args );
       } else if ($pos = strpos($post->post_title, '(')) {
         $title = substr($post->post_title, 0, $pos-1);
         $title_class = "highlight-title-1";
-        $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-2);
+        $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
         $subtitle_class = "highlight-subtitle-1";
       }
 
@@ -162,13 +163,30 @@ $others_array = get_posts( $args );
         $permalink = get_post_permalink($post->ID);
         $time = get_the_time('j \d\e F \d\e Y', $post->ID);
         $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
-        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
+        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
+
+        $title = $post->post_title;
+        $subtitle = "";
+        $title_class = "mosaic-news-title-1";
+        if ($pos = strpos($post->post_title, ':')) {
+          $title = substr($post->post_title, 0, $pos);
+          $title_class = "mosaic-news-subtitle-1";
+          $subtitle = substr($post->post_title, $pos+2);
+          $subtitle_class = "mosaic-news-title-1";
+        } else if ($pos = strpos($post->post_title, '(')) {
+          $title = substr($post->post_title, 0, $pos-1);
+          $title_class = "mosaic-news-title-1";
+          $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
+          $subtitle_class = "mosaic-news-subtitle-1";
+        }
         ?>
 
         <div class="mosaic-news">
           <div class="mosaic-news-contents">
             <a href="<?php echo $permalink ?>">
               <div class="mosaic-news-image" style="background-image: url('<?php echo $image; ?>')">
+                <div class="news-gradient-black">
+                </div>
                 <div class="news-tag-container">
                   <div class="news-tag">
                     <?php echo $category; ?>
@@ -176,7 +194,12 @@ $others_array = get_posts( $args );
                 </div>
               </div>
               <div class="mosaic-news-title">
-                <?php echo $post->post_title; ?>
+                <div class="<?php echo $title_class; ?>">
+                  <?php echo $title; ?>
+                </div>
+                <div class="<?php echo $subtitle_class; ?>">
+                  <?php echo $subtitle; ?>
+                </div>
               </div>
             </a>
             <div class="authors">
@@ -195,13 +218,30 @@ $others_array = get_posts( $args );
         $permalink = get_post_permalink($post->ID);
         $time = get_the_time('j \d\e F \d\e Y', $post->ID);
         $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
-        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail')[0];
+        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium')[0];
+
+        $title = $post->post_title;
+        $subtitle = "";
+        $title_class = "mosaic-news-title-1";
+        if ($pos = strpos($post->post_title, ':')) {
+          $title = substr($post->post_title, 0, $pos);
+          $title_class = "mosaic-news-subtitle-1";
+          $subtitle = substr($post->post_title, $pos+2);
+          $subtitle_class = "mosaic-news-title-1";
+        } else if ($pos = strpos($post->post_title, '(')) {
+          $title = substr($post->post_title, 0, $pos-1);
+          $title_class = "mosaic-news-title-1";
+          $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
+          $subtitle_class = "mosaic-news-subtitle-1";
+        }
         ?>
 
         <div class="mosaic-news">
           <div class="mosaic-news-contents">
             <a href="<?php echo $permalink ?>">
               <div class="mosaic-news-image" style="background-image: url('<?php echo $image; ?>')">
+                <div class="news-gradient-black">
+                </div>
                 <div class="news-tag-container">
                   <div class="news-tag">
                     <?php echo $category; ?>
@@ -209,7 +249,12 @@ $others_array = get_posts( $args );
                 </div>
               </div>
               <div class="mosaic-news-title">
-                <?php echo $post->post_title; ?>
+                <div class="<?php echo $title_class; ?>">
+                  <?php echo $title; ?>
+                </div>
+                <div class="<?php echo $subtitle_class; ?>">
+                  <?php echo $subtitle; ?>
+                </div>
               </div>
             </a>
             <div class="authors">
@@ -225,7 +270,8 @@ $others_array = get_posts( $args );
       $categories = get_the_category($post->ID);
       $category = $categories[0]->cat_name;
       foreach($categories as $cat) {
-        if ($cat->parent == 2) {
+        $parent = get_the_category_by_ID($cat->parent);
+        if ($parent == "Matéria") {
           $category = $cat->cat_name;
         }
       }
@@ -285,7 +331,8 @@ $others_array = get_posts( $args );
       $categories = get_the_category($post->ID);
       $category = $categories[0]->cat_name;
       foreach($categories as $cat) {
-        if ($cat->parent == 2) {
+        $parent = get_the_category_by_ID($cat->parent);
+        if ($parent == "Matéria") {
           $category = $cat->cat_name;
         }
       }
@@ -343,13 +390,30 @@ $others_array = get_posts( $args );
         $permalink = get_post_permalink($post->ID);
         $time = get_the_time('j \d\e F \d\e Y', $post->ID);
         $coauthors = coauthors_posts_links(', ', ' E ', '', null, false);
-        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
+        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
+
+        $title = $post->post_title;
+        $subtitle = "";
+        $title_class = "mosaic-news-title-1";
+        if ($pos = strpos($post->post_title, ':')) {
+          $title = substr($post->post_title, 0, $pos);
+          $title_class = "mosaic-news-subtitle-1";
+          $subtitle = substr($post->post_title, $pos+2);
+          $subtitle_class = "mosaic-news-title-1";
+        } else if ($pos = strpos($post->post_title, '(')) {
+          $title = substr($post->post_title, 0, $pos-1);
+          $title_class = "mosaic-news-title-1";
+          $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
+          $subtitle_class = "mosaic-news-subtitle-1";
+        }
         ?>
 
         <div class="mosaic-news">
           <div class="mosaic-news-contents">
             <a href="<?php echo $permalink ?>">
               <div class="mosaic-news-image" style="background-image: url('<?php echo $image; ?>')">
+                <div class="news-gradient-black">
+                </div>
                 <div class="news-tag-container">
                   <div class="news-tag">
                     <?php echo $category; ?>
@@ -357,7 +421,12 @@ $others_array = get_posts( $args );
                 </div>
               </div>
               <div class="mosaic-news-title">
-                <?php echo $post->post_title; ?>
+                <div class="<?php echo $title_class; ?>">
+                  <?php echo $title; ?>
+                </div>
+                <div class="<?php echo $subtitle_class; ?>">
+                  <?php echo $subtitle; ?>
+                </div>
               </div>
             </a>
             <div class="authors">
@@ -379,7 +448,8 @@ $others_array = get_posts( $args );
         $categories = get_the_category($post->ID);
         $category = $categories[0]->cat_name;
         foreach($categories as $cat) {
-          if ($cat->parent == 2) {
+          $parent = get_the_category_by_ID($cat->parent);
+          if ($parent == "Matéria") {
             $category = $cat->cat_name;
           }
         }
@@ -387,12 +457,29 @@ $others_array = get_posts( $args );
         $time = get_the_time('j \d\e F \d\e Y', $post->ID);
         $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
+
+        $title = $post->post_title;
+        $subtitle = "";
+        $title_class = "mosaic-news-title-1";
+        if ($pos = strpos($post->post_title, ':')) {
+          $title = substr($post->post_title, 0, $pos);
+          $title_class = "mosaic-news-subtitle-1";
+          $subtitle = substr($post->post_title, $pos+2);
+          $subtitle_class = "mosaic-news-title-1";
+        } else if ($pos = strpos($post->post_title, '(')) {
+          $title = substr($post->post_title, 0, $pos-1);
+          $title_class = "mosaic-news-title-1";
+          $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
+          $subtitle_class = "mosaic-news-subtitle-1";
+        }
         ?>
 
         <div class="mosaic-news">
           <div class="mosaic-news-contents">
             <a href="<?php echo $permalink ?>">
               <div class="mosaic-news-image" style="background-image: url('<?php echo $image; ?>')">
+                <div class="news-gradient-black">
+                </div>
                 <div class="news-tag-container">
                   <div class="news-tag">
                     <?php echo $category; ?>
@@ -400,8 +487,16 @@ $others_array = get_posts( $args );
                 </div>
               </div>
               <div class="mosaic-news-title">
-                <?php echo $post->post_title; ?>
+                <div class="<?php echo $title_class; ?>">
+                  <?php echo $title; ?>
+                </div>
+                <div class="<?php echo $subtitle_class; ?>">
+                  <?php echo $subtitle; ?>
+                </div>
               </div>
+              <!-- <div class="mosaic-news-title">
+                <?php echo $post->post_title; ?>
+              </div> -->
             </a>
             <div class="authors">
               POR <?php echo $coauthors; ?>
@@ -417,7 +512,8 @@ $others_array = get_posts( $args );
         $categories = get_the_category($post->ID);
         $category = $categories[0]->cat_name;
         foreach($categories as $cat) {
-          if ($cat->parent == 2) {
+          $parent = get_the_category_by_ID($cat->parent);
+          if ($parent == "Matéria") {
             $category = $cat->cat_name;
           }
         }
@@ -425,12 +521,29 @@ $others_array = get_posts( $args );
         $time = get_the_time('j \d\e F \d\e Y', $post->ID);
         $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
+
+        $title = $post->post_title;
+        $subtitle = "";
+        $title_class = "mosaic-news-title-1";
+        if ($pos = strpos($post->post_title, ':')) {
+          $title = substr($post->post_title, 0, $pos);
+          $title_class = "mosaic-news-subtitle-1";
+          $subtitle = substr($post->post_title, $pos+2);
+          $subtitle_class = "mosaic-news-title-1";
+        } else if ($pos = strpos($post->post_title, '(')) {
+          $title = substr($post->post_title, 0, $pos-1);
+          $title_class = "mosaic-news-title-1";
+          $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
+          $subtitle_class = "mosaic-news-subtitle-1";
+        }
         ?>
 
         <div class="mosaic-news">
           <div class="mosaic-news-contents">
             <a href="<?php echo $permalink ?>">
               <div class="mosaic-news-image" style="background-image: url('<?php echo $image; ?>')">
+                <div class="news-gradient-black">
+                </div>
                 <div class="news-tag-container">
                   <div class="news-tag">
                     <?php echo $category; ?>
@@ -438,7 +551,12 @@ $others_array = get_posts( $args );
                 </div>
               </div>
               <div class="mosaic-news-title">
-                <?php echo $post->post_title; ?>
+                <div class="<?php echo $title_class; ?>">
+                  <?php echo $title; ?>
+                </div>
+                <div class="<?php echo $subtitle_class; ?>">
+                  <?php echo $subtitle; ?>
+                </div>
               </div>
             </a>
             <div class="authors">
@@ -455,7 +573,8 @@ $others_array = get_posts( $args );
         $categories = get_the_category($post->ID);
         $category = $categories[0]->cat_name;
         foreach($categories as $cat) {
-          if ($cat->parent == 2) {
+          $parent = get_the_category_by_ID($cat->parent);
+          if ($parent == "Matéria") {
             $category = $cat->cat_name;
           }
         }
@@ -463,12 +582,29 @@ $others_array = get_posts( $args );
         $time = get_the_time('j \d\e F \d\e Y', $post->ID);
         $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
+
+        $title = $post->post_title;
+        $subtitle = "";
+        $title_class = "mosaic-news-title-1";
+        if ($pos = strpos($post->post_title, ':')) {
+          $title = substr($post->post_title, 0, $pos);
+          $title_class = "mosaic-news-subtitle-1";
+          $subtitle = substr($post->post_title, $pos+2);
+          $subtitle_class = "mosaic-news-title-1";
+        } else if ($pos = strpos($post->post_title, '(')) {
+          $title = substr($post->post_title, 0, $pos-1);
+          $title_class = "mosaic-news-title-1";
+          $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
+          $subtitle_class = "mosaic-news-subtitle-1";
+        }
         ?>
 
         <div class="mosaic-news">
           <div class="mosaic-news-contents">
             <a href="<?php echo $permalink ?>">
               <div class="mosaic-news-image" style="background-image: url('<?php echo $image; ?>')">
+                <div class="news-gradient-black">
+                </div>
                 <div class="news-tag-container">
                   <div class="news-tag">
                     <?php echo $category; ?>
@@ -476,7 +612,12 @@ $others_array = get_posts( $args );
                 </div>
               </div>
               <div class="mosaic-news-title">
-                <?php echo $post->post_title; ?>
+                <div class="<?php echo $title_class; ?>">
+                  <?php echo $title; ?>
+                </div>
+                <div class="<?php echo $subtitle_class; ?>">
+                  <?php echo $subtitle; ?>
+                </div>
               </div>
             </a>
             <div class="authors">
@@ -517,7 +658,7 @@ $others_array = get_posts( $args );
         $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
         $image = get_post_meta($post->ID, 'icone', true);
         if ($image == '') {
-          $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
+          $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
         }
         ?>
         <div class="list-news">
@@ -585,7 +726,7 @@ $others_array = get_posts( $args );
     $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
     $image = get_post_meta($post->ID, 'icone', true);
     if ($image == '') {
-      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
+      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
     }
     ?>
     <div class="list-news">

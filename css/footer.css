@@ -1,6 +1,8 @@
 footer {
   margin-top: 50px;
   padding-bottom: 100px;
+  margin: 0 auto;
+  font-family: var(--font-title), sans-serif;
 }
 
 .footer-line {
@@ -67,5 +69,18 @@ footer {
 @media (max-width: 1023px) {
   .ad-footer {
     display: none;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  footer {
+    width: var(--container-width-1000);
+  }
+}
+
+@media (min-width: 1200px) {
+  footer {
+    width: var(--container-width-1200);
   }
 }

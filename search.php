@@ -51,9 +51,9 @@
     </a>
     <div class="list-news-contents">
       <a href="<?php echo $permalink; ?>">
-        <h3>
+        <h4>
           <?php echo $category; ?>
-        </h3>
+        </h4>
         <div class="list-news-title">
           <?php echo $post->post_title; ?>
         </div>

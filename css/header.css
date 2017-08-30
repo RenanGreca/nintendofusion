@@ -120,7 +120,7 @@ a:hover.navbar-link {
   width: 180px;
   background: url('../img/icons/search-red.png') no-repeat scroll 6px 4px;
   background-size: 18px auto;
-  font-family: var(--font-title), sans-serif;
+  font-family: var(--font-text), sans-serif;
   /*text-transform: uppercase;*/
 }
 

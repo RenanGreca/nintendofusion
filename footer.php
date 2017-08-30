@@ -1,5 +1,6 @@
 
-
+    </div> <!-- /container -->
+    
       <footer>
 
         <div class="footer-line">
@@ -20,7 +21,7 @@
 
       </footer>
 
-    </div> <!-- /container -->
+
 
     <?php wp_footer(); ?>
 

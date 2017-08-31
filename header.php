@@ -6,6 +6,11 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Le styles -->
     <link href="<?php echo get_bloginfo('template_url'); ?>/style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon-16x16.png" sizes="16x16" />
+
+    <!-- <link rel="shortcut icon" href="<?php echo get_bloginfo('template_url') ?>/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo get_bloginfo('template_url') ?>/img/favicon.ico" type="image/x-icon"> -->
 
     <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet"> -->
 
@@ -76,13 +81,12 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         </div><!--/.nav-collapse -->
 
         <div class="ad-header">
-          <!-- header AdSense ad -->
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-          <!-- Header ad -->
+          <!-- Fusion Header Ad -->
           <ins class="adsbygoogle"
                style="display:inline-block;width:728px;height:90px"
                data-ad-client="ca-pub-8943805401802569"
-               data-ad-slot="9703492990"></ins>
+               data-ad-slot="8045154710"></ins>
           <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
           </script>

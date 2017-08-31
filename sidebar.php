@@ -20,7 +20,7 @@
     // 'category_name'    => 'audio_video',
     'orderby'          => 'date',
     'order'            => 'DESC',
-    'post_type'        => 'podcast',
+    'post_type'        => ['podcast', 'video'],
     'post_status'      => 'publish',
     'suppress_filters' => true
   );
@@ -46,15 +46,8 @@
     $cat = $post->post_type;
     if ($cat == "podcast") {
       $category = "Podcast";
-    } else {
-      $categories = get_the_category($post->ID);
-      $category = $categories[0]->cat_name;
-      foreach($categories as $cat) {
-        $parent = get_the_category_by_ID($cat->parent);
-        if ($parent == "Matéria") {
-          $category = $cat->cat_name;
-        }
-      }
+    } else if ($cat == "video") {
+      $category = "Vídeo";
     }
 
     $permalink = get_post_permalink($post->ID);
@@ -66,6 +59,8 @@
     <div class="mosaic-news-contents">
       <a href="<?php echo $permalink ?>">
         <div class="mosaic-news-image" style="background-image: url('<?php echo $image; ?>')">
+          <div class="news-gradient-black">
+          </div>
           <div class="news-tag-container">
             <div class="news-tag">
               <?php echo $category; ?>
@@ -86,13 +81,43 @@
     for($i=1; ($i<6 && $i<count($audio_video)); $i++) {
       $post = $audio_video[$i];
       $categories = get_the_category($post->ID);
-      $category = $categories[0]->cat_name;
+      $cat = $post->post_type;
+      if ($cat == "podcast") {
+        $category = "Podcast";
+      } else if ($cat == "video") {
+        $category = "Vídeo";
+      }
       $permalink = get_post_permalink($post->ID);
       $excerpt = get_the_excerpt($post->ID);
+      $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
       $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ),
       'single-post-thumbnail' )[0];
       ?>
-      <a href="<?php the_permalink(); ?>">
+      <div class="sidebar-post">
+        <a href="<?php echo $permalink; ?>">
+          <div class="sidebar-post-image" style="background-image: url('<?php echo $image; ?>')">
+          </div>
+        </a>
+          <div class="sidebar-post-contents">
+            <a href="<?php echo $permalink; ?>">
+              <div class="sidebar-post-tag">
+                <?php echo $category; ?>
+              </div>
+              <div class="sidebar-post-title">
+                <?php echo $post->post_title; ?>
+              </div>
+            </a>
+
+            <!-- <div class="authors">
+              COM <?php echo $coauthors; ?>
+            </div> -->
+            <div class="sidebar-post-excerpt">
+              <p><?php echo $excerpt ?></p>
+            </div>
+            <?php the_time('j \d\e F \d\e Y'); ?>
+          </div>
+      </div>
+      <!-- <a href="<?php the_permalink(); ?>">
         <div class="sidebar-post">
           <div class="sidebar-post-image" style="background-image: url('<?php echo $image; ?>')">
             <div class="sidebar-post-tag">
@@ -105,7 +130,7 @@
             <p><em><?php the_time('j \d\e F \d\e Y'); ?></em></p>
           </div>
         </div>
-      </a>
+      </a> -->
 
       <?php
     }

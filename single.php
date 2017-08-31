@@ -1,6 +1,9 @@
 <?php get_header();?>
 <link href="<?php echo get_bloginfo('template_url'); ?>/css/single.css" rel="stylesheet">
 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#">
+
 <!-- Facebook comments -->
 <!-- <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -17,6 +20,7 @@ wpb_set_post_views(get_the_ID());
 $views = wpb_get_post_views(get_the_ID());
 
 $post = get_post();
+$main_post_id = get_the_ID();
 $categories = get_the_category();
 $category = $categories[0];
 
@@ -31,6 +35,12 @@ $posttags = get_the_tags();
 // } else {
 //     the_author_posts_link();
 // }
+
+?>
+
+<meta property="og:image" content="<?php echo $image_full ?>" />
+
+<?php
 
 $title = $post->post_title;
 $subtitle = "";
@@ -142,11 +152,17 @@ $args = array(
     $icone = $meta_fields['icone'][0];
     ?>
 
-    <div class="review-summary">
-      <?php // print_r($meta_fields);
-      echo $meta_fields['resumo'][0];
+    <?php
+    if ($category->category_nicename == 'analise') {
       ?>
-    </div>
+      <div class="review-summary">
+        <?php // print_r($meta_fields);
+        echo $meta_fields['resumo'][0];
+        ?>
+      </div>
+      <?php
+    }
+    ?>
   </div>
 
   <?php
@@ -378,12 +394,9 @@ $args = array(
 
   <div class="comments-wrapper">
     <h3>Comentários</h3>
-    <?php comments_template(); ?>
-    <!-- <div class="fb-comments"
-    data-href="<?php echo get_permalink(); ?>"
-    data-width="800"
-    data-numposts="5"
-    data-colorscheme="dark"> -->
+    <?php
+    $post = get_post($main_post_id);
+    comments_template(); ?>
     </div>
   </div>
 
@@ -429,11 +442,6 @@ $args = array(
 
     <div class="comments-wrapper">
       <h3>Comentários</h3>
-      <!-- <div class="fb-comments"
-      data-href="<?php echo get_permalink(); ?>"
-      data-numposts="5"
-      colorscheme="dark"
-      data-mobile="true"></div> -->
       <?php comments_template(); ?>
     </div>
   </div>

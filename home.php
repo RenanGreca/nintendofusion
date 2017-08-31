@@ -438,6 +438,7 @@ $others_array = get_posts( $args );
       </div>
     </div>
 
+    <!--
     <h1>MAIS LIDAS</h1>
     <div class="mosaic-row-4">
 
@@ -494,9 +495,6 @@ $others_array = get_posts( $args );
                   <?php echo $subtitle; ?>
                 </div>
               </div>
-              <!-- <div class="mosaic-news-title">
-                <?php echo $post->post_title; ?>
-              </div> -->
             </a>
             <div class="authors">
               POR <?php echo $coauthors; ?>
@@ -629,6 +627,7 @@ $others_array = get_posts( $args );
       </div>
 
     </div>
+    -->
 
   </div>
 

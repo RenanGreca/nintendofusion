@@ -124,6 +124,32 @@ if ($title == "Podcast") {
   </div>
 
   <?php
+} else {
+
+  $coauthors = coauthors_posts_links(', ', ' e ', null, null, false);
+  ?>
+
+  <link href="<?php echo get_bloginfo('template_url'); ?>/css/single.css" rel="stylesheet">
+
+  <title><?php echo $title; ?> - Nintendo Fusion</title>
+  <div class="content review-content">
+    <h1><?php echo $title; ?></h1>
+
+    <!-- <div class="review-date">
+      <?php the_time('j \d\e F \d\e Y'); ?>
+    </div>
+
+    <div class="review-author">
+      POR
+      <?php
+      echo $coauthors;
+      ?>
+    </div> -->
+
+    <?php the_content();  ?>
+  </div>
+
+  <?php
 }
 ?>
 

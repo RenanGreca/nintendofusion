@@ -1,7 +1,25 @@
-<?php get_header(); ?>
-<title><?php the_archive_title(); ?> - Nintendo Fusion</title>
+<?php get_header();
+
+if ( is_category() ) {
+
+    $title = 'Categoria: '.single_cat_title('', false);
+
+} elseif ( is_tag() ) {
+
+    $title = 'Tag: '.single_tag_title('', false);
+
+} elseif ( is_author() ) {
+
+  $title = 'Autor: '.get_the_author();
+
+} else {
+  $title = 'Categoria: '.post_type_archive_title('', false);
+}
+
+?>
+<title><?php echo $title; ?> - Nintendo Fusion</title>
 <div class="archive-list">
-  <h1><?php the_archive_title(); ?></h1>
+  <h1><?php echo $title; ?></h1>
 
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
     $categories = get_the_category();

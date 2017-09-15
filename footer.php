@@ -1,7 +1,17 @@
 
     </div> <!-- /container -->
-    
+
       <footer>
+
+        <?php
+        if ($GLOBALS['theme'] == 'light') {
+          $theme_url = 'http://'.$_SERVER['HTTP_HOST'].strtok($_SERVER["REQUEST_URI"],'?').'?theme=dark';
+          $theme = 'escuro';
+        } else {
+          $theme_url = 'http://'.$_SERVER['HTTP_HOST'].strtok($_SERVER["REQUEST_URI"],'?').'?theme=light';
+          $theme = 'claro';
+        }
+        ?>
 
         <div class="footer-line">
         </div>
@@ -9,9 +19,10 @@
         <div class="links">
           <a href="#Sobre">Sobre</a>
           <a href="#Equipe">Equipe</a>
-          <a href="#Políticas">Políticas</a>
+          <a href="/politicas">Políticas</a>
           <a href="#Contato">Contato</a>
           <a href="#Mídia">Mídia</a>
+          <a href="<?php echo $theme_url; ?>">Ativar tema <?php echo $theme; ?></a>
         </div>
 
         <div class="copyright">

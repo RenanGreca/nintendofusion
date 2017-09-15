@@ -5,7 +5,7 @@ Description: Theme for the Nintendo Fusion website.
 Author: Renan Greca
 Author URI: http://nintendofusion.com.br/
 Version: 1.0
-Tags: responsive, white, bootstrap, mosaic
+Tags: responsive, dark, mosaic
 
 License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
 License URI: http://creativecommons.org/licenses/by-sa/3.0/
@@ -16,7 +16,7 @@ This theme is built with bootstrap, but features many custom elements. The highl
 /*@import url('bootstrap/css/bootstrap.css');*/
 /*@import url('bootstrap/css/bootstrap-responsive.css');*/
 @import url('css/fonts.css');
-@import url('css/variables.css');
+/*@import url('css/variables.css');*/
 
 @import url('css/header.css');
 @import url('css/mosaic.css');
@@ -51,10 +51,10 @@ h1 {
 }
 
 h2 {
-  padding: 10px 0;
-  margin: 0;
-  font-size: 38px;
-  line-height: 40px;
+  padding: 15px 0;
+  margin: 0 0 15px 0;
+  font-size: 34px;
+  line-height: 36px;
   color: var(--white);
   text-transform: uppercase;
   text-align: right;
@@ -65,7 +65,7 @@ h2 {
 
 h3 {
   /*padding: 0 0 10px 0;*/
-  padding: 10px 8px;
+  padding: 10px 0;
   margin: 0;
   font-size: 25px;
   line-height: 30px;
@@ -112,7 +112,7 @@ h4 {
   h3 {
     font-size: 20px;
     line-height: 20px;
-    padding: 10px 8px;
+    padding: 10px 0;
   }
 
   h1 {

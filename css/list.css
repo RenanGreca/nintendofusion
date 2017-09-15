@@ -1,5 +1,6 @@
 .archive-list {
   margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 .list {
@@ -13,7 +14,7 @@
 .compact-list {
   display: none;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 50px auto;
 }
 
 .list-news {

@@ -38,7 +38,7 @@
   $show_albums = get_posts( $args ); -->
 
   <div class="podcast-video">
-    <h2>Vídeos &<br/> Podcast</h2>
+    <h2>Vídeo & Podcast</h2>
     <?php
     // print_r($others_array);
     $post = $audio_video[0];
@@ -94,7 +94,7 @@
       'single-post-thumbnail' )[0];
       ?>
       <div class="sidebar-post">
-        <a href="<?php echo $permalink; ?>">
+        <a href="<?php echo $permalink; ?>" class="sidebar-post-link">
           <div class="sidebar-post-image" style="background-image: url('<?php echo $image; ?>')">
           </div>
         </a>
@@ -175,7 +175,7 @@
       ?>
 
       <div class="sidebar-post">
-        <a href="<?php the_permalink(); ?>">
+        <a href="<?php the_permalink(); ?>" class="sidebar-post-link">
           <div class="sidebar-post-image" style="background-image: url('<?php echo $image; ?>')">
           </div>
         </a>

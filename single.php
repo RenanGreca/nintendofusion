@@ -1,8 +1,12 @@
 <?php get_header();?>
 <link href="<?php echo get_bloginfo('template_url'); ?>/css/single.css" rel="stylesheet">
 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:fb="http://ogp.me/ns/fb#">
+<script src="<?php echo get_bloginfo('template_url') ?>/js/audiojs/audio.min.js"></script>
+<script>
+  audiojs.events.ready(function() {
+    var as = audiojs.createAll();
+  });
+</script>
 
 <!-- Facebook comments -->
 <!-- <div id="fb-root"></div>
@@ -38,7 +42,12 @@ $posttags = get_the_tags();
 
 ?>
 
-<meta property="og:image" content="<?php echo $image_full ?>" />
+<!-- <meta property="og:title" content="<?php echo $post->post_title; ?>"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="<?php echo get_the_permalink(); ?>"/>
+<meta property="og:image" content="<?php echo $image_full; ?>"/>
+<meta property="og:site_name" content="Nintendo Fusion"/>
+<meta property="og:description" content="<?php echo get_the_excerpt(); ?>"/> -->
 
 <?php
 
@@ -50,7 +59,12 @@ if ($pos = strpos($post->post_title, ':')) {
   $title_class = "review-subtitle";
   $subtitle = substr($post->post_title, $pos+2);
   $subtitle_class = "review-maintitle";
-} else if ($pos = strpos($post->post_title, '(')) {
+} else if ($pos = strpos($post->post_title, '~')) {
+  $title = substr($post->post_title, 0, $pos);
+  $title_class = "review-subtitle";
+  $subtitle = substr($post->post_title, $pos+2);
+  $subtitle_class = "review-maintitle";
+}  else if ($pos = strpos($post->post_title, '(')) {
   $title = substr($post->post_title, 0, $pos-1);
   $title_class = "review-maintitle";
   $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
@@ -400,8 +414,9 @@ $args = array(
     </div>
   </div>
 
-<?php } else if ($category->category_nicename == 'noticia') {
+<?php } else if (($category->category_nicename == 'noticia') || ($post->post_type == "podcast") || ($post->post_type == "video")) {
   ?>
+
 
   <div class="post-wrapper">
     <div class="span8">
@@ -416,11 +431,27 @@ $args = array(
       $excerpt = get_the_excerpt($post->ID);
       $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ),
       'single-post-thumbnail' )[0];
+      $meta_fields = get_post_custom();
       ?>
 
       <!-- <a href="<?php echo $permalink; ?>"> -->
-      <div class="news-image" style="background-image: url('<?php echo $image; ?>')">
 
+      <div class="cover-wrapper">
+      <?php
+      if ($meta_fields['video'][0]) {
+        ?>
+
+          <iframe src="https://www.youtube.com/embed/<?php echo $meta_fields['video'][0]; ?>" frameborder="0" allowfullscreen>
+          </iframe>
+
+        <?php
+      } else {
+        ?>
+        <div class="news-image" style="background-image: url('<?php echo $image; ?>')">
+        </div>
+        <?php
+      }
+      ?>
       </div>
       <!-- <div class="news-title">
 
@@ -454,14 +485,21 @@ $args = array(
 
 </div>
 
-<?php } else if ($post->post_type == "podcast") {
+<?php } else {
+  //  if (($post->post_type == "podcast") || ($post->post_type == "video")) {
   ?>
 
   <!-- <link href="<?php echo get_bloginfo('template_url'); ?>/css/player.css" rel="stylesheet"> -->
   <div class="list">
     <div class="span8">
-
-      <h1>Podcast</h1>
+      <?php
+        if ($post->post_type == "podcast") {
+          $header = "Podcast";
+        } else if ($post->post_type == "video") {
+          $header = "Vídeo";
+        }
+      ?>
+      <h1><?php echo $header; ?></h1>
       <!-- Visualizado <?php echo $views; ?> vezes. -->
 
       <?php
@@ -476,6 +514,7 @@ $args = array(
       ?>
 
       <!-- <a href="<?php echo $permalink; ?>"> -->
+
       <div class="news-image" style="background-image: url('<?php echo $image; ?>')">
 
       </div>

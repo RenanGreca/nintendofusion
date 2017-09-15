@@ -14,7 +14,7 @@
     height: 100px;
     width: 339px;
     /*height: 200px;*/
-    display: flex;
+    display: block;
     /*border-bottom: 1px var(--neon-red) solid;*/
     margin: 15px 0;
 }
@@ -33,19 +33,26 @@
         z-index: -1;
     }
 
+    .sidebar-post-link {
+      height: 100%;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
     .sidebar-post-contents {
       font-size: 14px;
       line-height: 16px;
       display: inline-block;
-      width: 199px;
+      vertical-align: middle;
+      width: 165px;
       /*color: #00bede;*/
       /*width: 399px;*/
       margin: 0 10px;
     }
 
     .sidebar-post-title {
-        font-size: 20px;
-        line-height: 20px;
+        font-size: 16px;
+        line-height: 18px;
 
         /*width: 95%;*/
         /*margin-bottom: 10px;*/

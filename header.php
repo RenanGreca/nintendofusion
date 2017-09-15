@@ -1,3 +1,4 @@
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,
@@ -5,6 +6,13 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- <meta name="HandheldFriendly" content="true"> -->
 
     <!-- Le styles -->
+    <?php
+    // echo $GLOBALS['theme'];
+    if ($GLOBALS['theme'] != 'dark' && $GLOBALS['theme'] != 'light') {
+      $GLOBALS['theme'] = 'dark';
+    }
+    ?>
+    <link href="<?php echo get_bloginfo('template_url'); ?>/css/theme_<?php echo $GLOBALS['theme']; ?>.css" rel="stylesheet">
     <link href="<?php echo get_bloginfo('template_url'); ?>/style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon-16x16.png" sizes="16x16" />
@@ -30,8 +38,19 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
       ga('send', 'pageview');
     </script>
 
+    <!-- Google AdSense -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-8943805401802569",
+        enable_page_level_ads: true
+      });
+    </script>
+
     <?php wp_enqueue_script("jquery"); ?>
     <?php wp_head(); ?>
+
+
   </head>
   <body>
 
@@ -43,7 +62,7 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
         <div class="brand">
           <a href="<?php echo site_url(); ?>">
-            <img class="logo" src="<?php echo get_bloginfo('template_url') ?>/img/logo-neon.png" />
+            <img class="logo" src="<?php echo get_bloginfo('template_url') ?>/img/logo-neon-<?php echo $GLOBALS['theme']; ?>.png" />
             <img class="logo-text" src="<?php echo get_bloginfo('template_url') ?>/img/logo-neon.png" />
           </a>
           <!-- <p class="logo-text">Nintendo FUSION</p> -->
@@ -71,7 +90,7 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
               <!-- <li class="active"><a href="#">Home</a></li> -->
               <li><a class="navbar-link" href="<?php echo site_url(); ?>/category/noticia">NOTÍCIAS</a></li>
               <li><a class="navbar-link" href="<?php echo site_url(); ?>/category/materia">MATÉRIAS</a></li>
-              <li><a class="navbar-link" href="<?php echo site_url(); ?>/category/video">VÍDEOS</a></li>
+              <li><a class="navbar-link" href="<?php echo site_url(); ?>/video">VÍDEOS</a></li>
               <li><a class="navbar-link" href="<?php echo site_url(); ?>/podcast">PODCAST</a></li>
               <li><a class="navbar-link" href="<?php echo site_url(); ?>/category/ebook">eBOOKS</a></li>
               <!-- <?php wp_list_pages(array('title_li' => '', 'exclude' => 4)); ?> -->

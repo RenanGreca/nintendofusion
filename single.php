@@ -71,26 +71,56 @@ if ($pos = strpos($post->post_title, ':')) {
   $subtitle_class = "review-subtitle";
 }
 
+$post_title = str_replace('~', '', $post->post_title);
+
 $meta_fields = get_post_custom();
 
 $disclaimer = $meta_fields['disclaimer'][0];
 
 
-// print_r($post);
-$args = array(
-  'posts_per_page'   => 3,
-  'exclude'          => $post->ID,
-  'orderby'          => 'meta_value_num',
-  'meta_key'         => 'wpb_post_views_count',
-  'order'            => 'DESC',
-  'post_type'        => 'post',
-  'post_status'      => 'publish',
-  'suppress_filters' => true,
-  'date_query' => array(
-    'after' => date('Y-m-d', strtotime('-14 days'))
-    )
+  // print_r($post);
+  $args = array(
+    'posts_per_page'   => 3,
+    'exclude'          => $post->ID,
+    'orderby'          => 'meta_value_num',
+    'meta_key'         => 'wpb_post_views_count',
+    'order'            => 'DESC',
+    'post_type'        => 'post',
+    'post_status'      => 'publish',
+    'suppress_filters' => true,
+    'date_query' => array(
+      'after' => date('Y-m-d', strtotime('-14 days'))
+      )
   );
   $most_seen = get_posts( $args );
+  $ids = array();
+  array_push($ids, $most_seen[0]->ID);
+
+
+  if (count($most_seen) < 3) {
+    $ids = array();
+    for ($i=0; $i<count($most_seen); $i++) {
+      array_push($ids, $most_seen[$i]->ID);
+    }
+    array_push($ids, $post->ID);
+
+    $args = array(
+      'posts_per_page'   => 3-count($most_seen),
+      'exclude'          => $ids,
+      'category_name'    => 'materia',
+      'exclude'          => $ids,
+      'orderby'          => 'date',
+      'order'            => 'DESC',
+      'post_type'        => 'post',
+      'post_status'      => 'publish',
+      'suppress_filters' => true
+    );
+    $most_seen_extras = get_posts( $args );
+
+    for ($i=0; $i<count($most_seen_extras); $i++) {
+      array_push($most_seen, $most_seen_extras[$i]->ID);
+    }
+  }
 
   ?>
 
@@ -106,7 +136,7 @@ $args = array(
   }
   </style>
 
-  <title><?php echo $category->cat_name; ?>: <?php echo $post->post_title; ?> - Nintendo Fusion</title>
+  <title><?php echo $category->cat_name; ?>: <?php echo $post_title; ?> - Nintendo Fusion</title>
 
   <?php
   $parent = get_the_category_by_ID($category->parent);
@@ -245,14 +275,25 @@ $args = array(
           $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
         }
 
-        $title = $post->post_title;
+        $title = get_the_title($post->ID);
+        $post_title = get_the_title($post->ID);
         $subtitle = "";
         $title_class = "mosaic-news-title-1";
-        if ($pos = strpos($post->post_title, ':')) {
-          $title = substr($post->post_title, 0, $pos);
+        if ($pos = strpos($post_title, ':')) {
+          $title = substr($post_title, 0, $pos+1);
           $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post->post_title, $pos+2);
+          $subtitle = substr($post_title, $pos+2);
           $subtitle_class = "mosaic-news-title-1";
+        } else if ($pos = strpos($post_title, '~')) {
+          $title = substr($post_title, 0, $pos);
+          $title_class = "mosaic-news-subtitle-1";
+          $subtitle = substr($post_title, $pos+2);
+          $subtitle_class = "mosaic-news-title-1";
+        } else if ($pos = strpos($post_title, '(')) {
+          $title = substr($post_title, 0, $pos-1);
+          $title_class = "mosaic-news-title-1";
+          $subtitle = substr($post_title, $pos+1, strlen($post_title)-strlen($title)-3);
+          $subtitle_class = "mosaic-news-subtitle-1";
         }
         ?>
 
@@ -304,14 +345,25 @@ $args = array(
           $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
         }
 
-        $title = $post->post_title;
+        $title = get_the_title($post->ID);
+        $post_title = get_the_title($post->ID);
         $subtitle = "";
         $title_class = "mosaic-news-title-1";
-        if ($pos = strpos($post->post_title, ':')) {
-          $title = substr($post->post_title, 0, $pos);
+        if ($pos = strpos($post_title, ':')) {
+          $title = substr($post_title, 0, $pos+1);
           $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post->post_title, $pos+2);
+          $subtitle = substr($post_title, $pos+2);
           $subtitle_class = "mosaic-news-title-1";
+        } else if ($pos = strpos($post_title, '~')) {
+          $title = substr($post_title, 0, $pos);
+          $title_class = "mosaic-news-subtitle-1";
+          $subtitle = substr($post_title, $pos+2);
+          $subtitle_class = "mosaic-news-title-1";
+        } else if ($pos = strpos($post_title, '(')) {
+          $title = substr($post_title, 0, $pos-1);
+          $title_class = "mosaic-news-title-1";
+          $subtitle = substr($post_title, $pos+1, strlen($post_title)-strlen($title)-3);
+          $subtitle_class = "mosaic-news-subtitle-1";
         }
         ?>
 
@@ -363,14 +415,25 @@ $args = array(
           $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
         }
 
-        $title = $post->post_title;
+        $title = get_the_title($post->ID);
+        $post_title = get_the_title($post->ID);
         $subtitle = "";
         $title_class = "mosaic-news-title-1";
-        if ($pos = strpos($post->post_title, ':')) {
-          $title = substr($post->post_title, 0, $pos);
+        if ($pos = strpos($post_title, ':')) {
+          $title = substr($post_title, 0, $pos+1);
           $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post->post_title, $pos+2);
+          $subtitle = substr($post_title, $pos+2);
           $subtitle_class = "mosaic-news-title-1";
+        } else if ($pos = strpos($post_title, '~')) {
+          $title = substr($post_title, 0, $pos);
+          $title_class = "mosaic-news-subtitle-1";
+          $subtitle = substr($post_title, $pos+2);
+          $subtitle_class = "mosaic-news-title-1";
+        } else if ($pos = strpos($post_title, '(')) {
+          $title = substr($post_title, 0, $pos-1);
+          $title_class = "mosaic-news-title-1";
+          $subtitle = substr($post_title, $pos+1, strlen($post_title)-strlen($title)-3);
+          $subtitle_class = "mosaic-news-subtitle-1";
         }
         ?>
 

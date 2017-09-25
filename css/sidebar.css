@@ -1,5 +1,5 @@
 .sidebar-line {
-  height: 2px;
+  height: 1px;
   width: 100%;
   /*margin: 10px 0;*/
   /*margin-bottom: 10px;*/
@@ -79,6 +79,7 @@
     }
 
 .ad-sidebar {
+  display: none;
   height: 250px;
   width: 300px;
   background-color: var(--white);

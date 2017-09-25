@@ -99,13 +99,10 @@ a:hover.navbar-link {
 }
 
 .logo-text {
-  color: var(--white);
-  width: auto;
-  height: 45px;
-  /*margin-top: 7px;*/
-  font-size: 30px;
-  line-height: 40px;
-  font-weight: bold;
+  display: none;
+}
+
+.hamburger-menu {
   display: none;
 }
 
@@ -147,6 +144,7 @@ a:hover.navbar-link {
 }
 
 .social-icon {
+  display: inline-block;
   height: 24px;
   width: 24px;
   background-size: 100% auto;
@@ -181,6 +179,7 @@ a:hover.navbar-link {
 
 .ad-header {
   /*margin: 10px auto;*/
+  display: none;
   margin-top: 32px;
   float: right;
   /*text-align: center;*/
@@ -225,20 +224,56 @@ a:hover.navbar-link {
 }*/
 
 @media (max-width: 1023px) {
+  .brand {
+    height: 50px;
+    display: block;
+  }
+
+  .brand-link {
+    height: 50px;
+    display: block;
+  }
+
   .logo {
-    display: none;
+      width: auto;
+      height: 40px;
+      display: inline-block;
   }
 
   .logo-text {
+    color: var(--neon-blue);
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
     display: inline-block;
+    vertical-align: top;
   }
+
+  .social-icon {
+    margin: 0 10px;
+  }
+
+  /*.hamburger-menu {
+    display: block;
+    float: right;
+    height: 50px;
+    width: 50px;
+    margin-top: 10px;
+  }
+
+  .hamburger-menu div {
+    background-color: var(--neon-blue);
+    height: 5px;
+    margin-bottom: 8px;
+    width: 40px;
+  }*/
 
   .navbar .nav {
     display: none;
   }
 
   .navbar-inverse .navbar-inner {
-    height: 60px;
+    height: 50px;
   }
 
   .input-search {
@@ -250,7 +285,7 @@ a:hover.navbar-link {
   }
 
   .ad-mobile {
-    display: block;
+    display: none;
   }
 }
 

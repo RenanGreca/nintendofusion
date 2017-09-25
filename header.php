@@ -7,15 +7,35 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Le styles -->
     <?php
-    // echo $GLOBALS['theme'];
     if ($GLOBALS['theme'] != 'dark' && $GLOBALS['theme'] != 'light') {
       $GLOBALS['theme'] = 'dark';
     }
     ?>
     <link href="<?php echo get_bloginfo('template_url'); ?>/css/theme_<?php echo $GLOBALS['theme']; ?>.css" rel="stylesheet">
     <link href="<?php echo get_bloginfo('template_url'); ?>/style.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon-16x16.png" sizes="16x16" />
+    <!-- <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon-32x32.png" sizes="32x32" /> -->
+    <!-- <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon-16x16.png" sizes="16x16" /> -->
+
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo get_bloginfo('template_url') ?>/img/favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_bloginfo('template_url') ?>/img/favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_bloginfo('template_url') ?>/img/favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_bloginfo('template_url') ?>/img/favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="<?php echo get_bloginfo('template_url') ?>/img/favicon/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo get_bloginfo('template_url') ?>/img/favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="<?php echo get_bloginfo('template_url') ?>/img/favicon/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo get_bloginfo('template_url') ?>/img/favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Nintendo Fusion"/>
+    <meta name="msapplication-TileColor" content="#070f20" />
+    <meta name="msapplication-TileImage" content="<?php echo get_bloginfo('template_url') ?>/img/favicon/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="<?php echo get_bloginfo('template_url') ?>/img/favicon/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="<?php echo get_bloginfo('template_url') ?>/img/favicon/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="<?php echo get_bloginfo('template_url') ?>/img/favicon/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="<?php echo get_bloginfo('template_url') ?>/img/favicon/mstile-310x310.png" />
 
     <!-- <link rel="shortcut icon" href="<?php echo get_bloginfo('template_url') ?>/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="<?php echo get_bloginfo('template_url') ?>/img/favicon.ico" type="image/x-icon"> -->
@@ -61,9 +81,9 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
       <div class="header-container">
 
         <div class="brand">
-          <a href="<?php echo site_url(); ?>">
+          <a class="brand-link" href="<?php echo site_url(); ?>">
             <img class="logo" src="<?php echo get_bloginfo('template_url') ?>/img/logo-neon-<?php echo $GLOBALS['theme']; ?>.png" />
-            <img class="logo-text" src="<?php echo get_bloginfo('template_url') ?>/img/logo-neon.png" />
+            <span class="logo-text">NINTENDO FUSION</span>
           </a>
           <!-- <p class="logo-text">Nintendo FUSION</p> -->
           <form id="search" method="get" action="<?php echo home_url(); ?>" role="search">
@@ -71,8 +91,30 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
             <button type="submit" role="button" style="display:none;"/>
           </form>
         </div>
-        <!-- <ul class="social nav">
 
+        <!-- Hamburger menu  -->
+        <div id="menuToggle">
+          <input type="checkbox" />
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <ul id="hmenu">
+            <a href="#"><li>NOTÍCIAS</li></a>
+            <a href="#"><li>MATÉRIAS</li></a>
+            <a href="#"><li>VÍDEOS</li></a>
+            <a href="#"><li>PODCASTS</li></a>
+            <a href="#"><li>eBOOKS</li></a>
+            <li>
+              <a href="https://facebook.com/nintendofusion" class="social-icon social-fb" target="_blank"></a>
+              <a href="https://twitter.com/NinFusionBR" class="social-icon social-tw" target="_blank"></a>
+              <a href="https://www.youtube.com/channel/UCU74wc5ncqwjjoXhdw53DSA" class="social-icon social-yt" target="_blank"></a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- <ul class="social nav">
         </ul> -->
 
         <div class="nav-collapse collapse">

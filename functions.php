@@ -4,14 +4,15 @@ add_action( 'init', 'set_theme_cookie' );
 // Dark and light theme cookie
 function set_theme_cookie() {
   $theme_id = 'dark';
+  // If there already is a cookie, set current theme to it.
   if (isset($_COOKIE['theme']) &&
-      (($_COOKIE['theme'] == 0) || ($_COOKIE['theme'] == 1))) {
+      (($_COOKIE['theme'] == 'dark') || ($_COOKIE['theme'] == 'light'))) {
 
       $theme_id = $_COOKIE['theme'];
   }
-
+  // If there is a theme on the GET parameters, create or update the cookie.
   if (isset($_GET['theme']) &&
-      (($_GET['theme'] == 0) || ($_GET['theme'] == 1))) {
+      (($_GET['theme'] == 'dark') || ($_GET['theme'] == 'light'))) {
 
       $theme_id = $_GET['theme'];
       setcookie('theme', $theme_id, time() + (86400 * 30), "/");
@@ -35,7 +36,7 @@ function insert_fb_in_head() {
         ';
         echo '<meta property="fb:admins" content="100000307065898"/>
         ';
-        echo '<meta property="og:title" content="' . get_the_title() . '"/>
+        echo '<meta property="og:title" content="' . str_replace('~', '', get_the_title()) . '"/>
         ';
         echo '<meta property="og:type" content="article"/>';
         echo '<meta property="og:url" content="' . get_permalink() . '"/>

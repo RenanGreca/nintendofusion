@@ -84,15 +84,18 @@ if ($title == "Podcast") {
             <div class="list-news-title">
               <?php echo $post->post_title; ?>
             </div>
+
           </a>
 
           <div class="authors">
             POR <?php echo $coauthors; ?>
           </div>
+          <div class="list-news-date">
+            em <?php the_time('j \d\e F \d\e Y'); ?>
+          </div>
           <div class="list-news-excerpt">
             <p><?php echo $excerpt ?></p>
           </div>
-          <?php the_time('j \d\e F \d\e Y'); ?>
         </div>
       </div>
 

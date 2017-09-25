@@ -38,7 +38,12 @@
 }
 
 .list-news-contents {
-  display: inline-block;
+  height: 100%;
+  text-align: left;
+  display: flex;
+  /*flex-direction: column;*/
+  justify-content: flex-start;
+  align-items: center;
   /*color: #00bede;*/
   /*width: 399px;*/
   margin: 0 20px;
@@ -56,6 +61,11 @@
   text-transform: uppercase;
   font-weight: bold;
   font-family: var(--font-title);
+}
+
+.list-news-date {
+  font-size: 14px;
+  line-height: 15px;
 }
 
 .span8 {
@@ -99,7 +109,7 @@
   }
 
   .list-news-contents{
-    font-size: 14px;
+    font-size: 12px;
     line-height: 16px;
   }
 

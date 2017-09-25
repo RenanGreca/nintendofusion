@@ -1,6 +1,6 @@
 <div class="sidebar">
-  <div class="sidebar-line">
-  </div>
+  <!-- <div class="sidebar-line">
+  </div> -->
 
   <div class="ad-sidebar">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -138,22 +138,24 @@
   </div>
 
   <?php
-  $args = array(
-  'posts_per_page'   => 3,
-  'orderby'          => 'meta_value_num',
-  'meta_key'         => 'wpb_post_views_count',
-  'order'            => 'DESC',
-  'post_type'        => 'post',
-  'post_status'      => 'publish',
-  'suppress_filters' => true,
-  'date_query' => array(
-    'after' => date('Y-m-d', strtotime('-14 days'))
-    )
-  );
-  $most_seen = get_posts( $args );
-  // print_r($most_seen);
+  if (!is_home()) {
 
-  if ($_SERVER['REQUEST_URI'] != '/') {
+    $args = array(
+    'posts_per_page'   => 3,
+    'orderby'          => 'meta_value_num',
+    'meta_key'         => 'wpb_post_views_count',
+    'order'            => 'DESC',
+    'post_type'        => 'post',
+    'post_status'      => 'publish',
+    'suppress_filters' => true,
+    'date_query' => array(
+      'after' => date('Y-m-d', strtotime('-14 days'))
+      )
+    );
+    $most_seen = get_posts( $args );
+    // print_r($most_seen);
+
+
   ?>
   <div>
     <h2>Mais vistos</h2>

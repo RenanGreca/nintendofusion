@@ -26,7 +26,7 @@
         </div>
 
         <div class="copyright">
-            © <?php echo date('Y'); ?> Nintendo Fusion<br/>
+            <div class="year">© <?php echo date('Y'); ?> Nintendo Fusion</div>
             O Nintendo Fusion não é associado com Nintendo Co. Ltd. nem nenhuma de suas subsidiárias.
         </div>
 

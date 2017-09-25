@@ -19,6 +19,7 @@ This theme is built with bootstrap, but features many custom elements. The highl
 /*@import url('css/variables.css');*/
 
 @import url('css/header.css');
+@import url('css/hamburger.css');
 @import url('css/mosaic.css');
 @import url('css/list.css');
 @import url('css/sidebar.css');

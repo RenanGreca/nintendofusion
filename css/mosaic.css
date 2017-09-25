@@ -297,9 +297,191 @@ a.author.url.fn:hover {
   /*z-index: 4;*/
 }
 
+
+
 @media (max-width: 1023px) {
   .mosaic {
     display: none;
+  }
+
+  .highlight-contents {
+    text-align: right;
+    position: relative;
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 20px;
+    /*color: #00bede;*/
+    /*background: linear-gradient(to bottom, rgba(0,0,0,0.7) 20%,rgba(0,0,0,0) 70%);*/
+  }
+
+  .highlight-title {
+    /*padding: 10px;*/
+    margin-top: 5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: var(--font-title), sans-serif;
+  }
+
+  .highlight-tag {
+    border: none;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    background: linear-gradient(to bottom, transparent 0%, black 70%);
+    font-size: 25px;
+    line-height: 35px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .highlight-mobile-contents {
+    /*margin-top: 70px;*/
+    display: inline-block;
+  }
+
+  .mobile-mosaic-row-2 {
+    height: 40vw;
+    max-height: 200px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .mobile-mosaic-row-3 {
+    height: 40vw;
+    max-height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .highlight-contents-1 {
+    width: 100%;
+    /*height: 550px;*/
+  }
+
+  .highlight-contents-2 {
+    width: 60%;
+    text-align: left;
+    height: 40vw;
+    max-height: 200px;
+    padding-left: 20px;
+    float: right;
+    font-size: 18px;
+    line-height: 23px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .highlight-contents-3 {
+    width: 60%;
+    text-align: right;
+    height: 40vw;
+    max-height: 200px;
+    padding-right: 20px;
+    float: left;
+    font-size: 18px;
+    line-height: 23px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .mosaic-highlight-1 {
+    height: 350px;
+    /*width: 100vw;*/
+    /*margin-left: -8px;*/
+    position: relative;
+  }
+
+  .mosaic-highlight-2 {
+    height: 40vw;
+    max-height: 200px;
+    width: 40vw;
+    max-width: 200px;
+    float:left;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .mosaic-highlight-3 {
+    height: 40vw;
+    max-height: 200px;
+    width: 40vw;
+    max-width: 200px;
+    /*width: 35%;*/
+    float:right;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .highlight-title-1 {
+    font-size: 35px;
+    line-height: 35px;
+  }
+
+  .highlight-subtitle-1 {
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  .highlight-title-2 {
+    font-size: 30px;
+    line-height: 30px;
+    /*margin-bottom: 3px;*/
+  }
+
+  .highlight-subtitle-2 {
+    font-size: 25px;
+    line-height: 25px;
+    /*margin-bottom: 3px;*/
+  }
+}
+
+@media (max-width: 370px) {
+
+  .highlight-contents-1,
+  .highlight-contents-2,
+  .highlight-contents-3 {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .highlight-title-1 {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .highlight-subtitle-1 {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .highlight-title-2 {
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  .highlight-subtitle-2 {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .highlight-tag {
+    width: 98%;
+    padding-right: 2%;
+  }
+
+  .mosaic-highlight-1 {
+    height: 200px;
+    width: 100vw;
+    margin-left: -8px;
+    position: relative;
   }
 }
 

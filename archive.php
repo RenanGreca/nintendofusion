@@ -37,24 +37,27 @@ if ( is_category() ) {
         <div class="list-news-image" style="background-image: url('<?php echo $image; ?>')">
         </div>
       </a>
-        <div class="list-news-contents">
-          <a href="<?php echo $permalink; ?>">
-            <h4>
-              <?php echo $category; ?>
-            </h4>
-            <div class="list-news-title">
-              <?php echo $post->post_title; ?>
-            </div>
-          </a>
+      <div class="list-news-contents">
+        <a href="<?php echo $permalink; ?>">
+          <h4>
+            <?php echo $category; ?>
+          </h4>
+          <div class="list-news-title">
+            <?php echo $post->post_title; ?>
+          </div>
 
-          <div class="authors">
-            POR <?php echo $coauthors; ?>
-          </div>
-          <div class="list-news-excerpt">
-            <p><?php echo $excerpt ?></p>
-          </div>
-          <?php the_time('j \d\e F \d\e Y'); ?>
+        </a>
+
+        <div class="authors">
+          POR <?php echo $coauthors; ?>
         </div>
+        <div class="list-news-date">
+          em <?php the_time('j \d\e F \d\e Y'); ?>
+        </div>
+        <div class="list-news-excerpt">
+          <p><?php echo $excerpt ?></p>
+        </div>
+      </div>
     </div>
 
     <?php endwhile; else: ?>

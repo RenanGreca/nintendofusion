@@ -90,12 +90,12 @@ $others_array = get_posts( $args );
 // print_r($others_array);
 ?>
 
-  <?php if (has_post_thumbnail( $post->ID ) ): ?>
+  <!-- <?php if (has_post_thumbnail( $post->ID ) ): ?>
     <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
     <div id="custom-bg" style="background-image: url('<?php echo $image[0]; ?>')">
 
     </div>
-  <?php endif; ?>
+  <?php endif; ?> -->
 
   <div class="mosaic">
     <div class="mosaic-row-1">
@@ -681,7 +681,6 @@ $others_array = get_posts( $args );
 
   </div>
 
-
   <div class="space"></div>
   <div class="list">
     <div class="span8">
@@ -716,22 +715,27 @@ $others_array = get_posts( $args );
             </div>
           </a>
             <div class="list-news-contents">
-              <a href="<?php echo $permalink; ?>">
-                <h4>
-                  <?php echo $category; ?>
-                </h4>
-                <div class="list-news-title">
-                  <?php echo $post->post_title; ?>
-                </div>
-              </a>
+              <div class="list-news-mobile-contents">
+                <a href="<?php echo $permalink; ?>">
+                  <h4>
+                    <?php echo $category; ?>
+                  </h4>
+                  <div class="list-news-title">
+                    <?php echo $post->post_title; ?>
+                  </div>
 
-              <div class="authors">
-                POR <?php echo $coauthors; ?>
+                </a>
+
+                <div class="authors">
+                  POR <?php echo $coauthors; ?>
+                </div>
+                <div class="list-news-date">
+                  em <?php the_time('j \d\e F \d\e Y'); ?>
+                </div>
+                <div class="list-news-excerpt">
+                  <p><?php echo $excerpt ?></p>
+                </div>
               </div>
-              <div class="list-news-excerpt">
-                <p><?php echo $excerpt ?></p>
-              </div>
-              <?php the_time('j \d\e F \d\e Y'); ?>
             </div>
         </div>
 
@@ -755,6 +759,211 @@ $others_array = get_posts( $args );
   </div>
 
   <div class="compact-list">
+    <?php
+    $post = $highlights_array[0];
+    $categories = get_the_category($post->ID);
+    $category = $categories[0]->cat_name;
+    foreach($categories as $cat) {
+      $parent = get_the_category_by_ID($cat->parent);
+      if ($parent == "Matéria") {
+        $category = $cat->cat_name;
+      }
+    }
+    $permalink = get_post_permalink($post->ID);
+
+    $coauthors = coauthors_posts_links(', ', ' E ', '', null, false);
+    $excerpt = get_the_excerpt($post->ID);
+    // $coauthors = get_coauthors($post->ID);
+    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0];
+
+    $title = $post->post_title;
+    $subtitle = "";
+    $title_class = "highlight-title-1";
+    if ($pos = strpos($post->post_title, ':')) {
+      $title = substr($post->post_title, 0, $pos+1);
+      $title_class = "highlight-subtitle-1";
+      $subtitle = substr($post->post_title, $pos+2);
+      $subtitle_class = "highlight-title-1";
+    } else if ($pos = strpos($post->post_title, '~')) {
+      $title = substr($post->post_title, 0, $pos);
+      $title_class = "highlight-subtitle-1";
+      $subtitle = substr($post->post_title, $pos+2);
+      $subtitle_class = "highlight-title-1";
+    } else if ($pos = strpos($post->post_title, '(')) {
+      $title = substr($post->post_title, 0, $pos-1);
+      $title_class = "highlight-title-1";
+      $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
+      $subtitle_class = "highlight-subtitle-1";
+    }
+
+    ?>
+
+    <div class="highlight-contents highlight-contents-1">
+      <a href="<?php echo $permalink ?>">
+        <div class="mosaic-highlight mosaic-highlight-1" style="background-image: url('<?php echo $image; ?>')">
+          <div class="highlight-tag" style="text-align: right;">
+            <?php echo $category; ?>
+          </div>
+        </div>
+        <div class="highlight-title">
+          <div class="<?php echo $title_class; ?>">
+            <?php echo $title; ?>
+          </div>
+          <div class="<?php echo $subtitle_class; ?>">
+            <?php echo $subtitle; ?>
+          </div>
+        </div>
+
+      </a>
+      <div class="authors">
+        POR <?php echo $coauthors; ?>
+      </div>
+      <!-- <?php echo $excerpt; ?> -->
+    </div>
+
+    <?php
+    $post = $highlights_array[1];
+    $categories = get_the_category($post->ID);
+    $category = $categories[0]->cat_name;
+    foreach($categories as $cat) {
+      $parent = get_the_category_by_ID($cat->parent);
+      if ($parent == "Matéria") {
+        $category = $cat->cat_name;
+      }
+    }
+    $permalink = get_post_permalink($post->ID);
+
+    $coauthors = coauthors_posts_links(', ', ' E ', '', null, false);
+    $excerpt = get_the_excerpt($post->ID);
+    // $coauthors = get_coauthors($post->ID);
+    $image = get_post_meta($post->ID, 'icone', true);
+    if ($image == '') {
+      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
+    }
+
+    $title = $post->post_title;
+    $subtitle = "";
+    $title_class = "highlight-title-2";
+    if ($pos = strpos($post->post_title, ':')) {
+      $title = substr($post->post_title, 0, $pos+1);
+      $title_class = "highlight-subtitle-2";
+      $subtitle = substr($post->post_title, $pos+2);
+      $subtitle_class = "highlight-title-2";
+    } else if ($pos = strpos($post->post_title, '~')) {
+      $title = substr($post->post_title, 0, $pos);
+      $title_class = "highlight-subtitle-2";
+      $subtitle = substr($post->post_title, $pos+2);
+      $subtitle_class = "highlight-title-2";
+    } else if ($pos = strpos($post->post_title, '(')) {
+      $title = substr($post->post_title, 0, $pos-1);
+      $title_class = "highlight-title-2";
+      $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
+      $subtitle_class = "highlight-subtitle-2";
+    }
+
+    ?>
+
+    <div class="mobile-mosaic-row-2">
+      <a class="mobile-mosaic-row-link" href="<?php echo $permalink ?>">
+        <div class="mosaic-highlight mosaic-highlight-2" style="background-image: url('<?php echo $image; ?>')">
+          <div class="highlight-tag">
+            <?php echo $category; ?>
+          </div>
+        </div>
+      </a>
+      <div class="highlight-contents highlight-contents-2">
+        <div class="highlight-mobile-contents">
+          <a href="<?php echo $permalink ?>">
+            <div class="highlight-title">
+              <div class="<?php echo $title_class; ?>">
+                <?php echo $title; ?>
+              </div>
+              <div class="<?php echo $subtitle_class; ?>">
+                <?php echo $subtitle; ?>
+              </div>
+            </div>
+          </a>
+          <div class="authors">
+            POR <?php echo $coauthors; ?>
+          </div>
+        </div>
+        <!-- <?php echo $excerpt; ?> -->
+      </div>
+    </div>
+
+    <?php
+    $post = $highlights_array[2];
+    $categories = get_the_category($post->ID);
+    $category = $categories[0]->cat_name;
+    foreach($categories as $cat) {
+      $parent = get_the_category_by_ID($cat->parent);
+      if ($parent == "Matéria") {
+        $category = $cat->cat_name;
+      }
+    }
+    $permalink = get_post_permalink($post->ID);
+
+    $coauthors = coauthors_posts_links(', ', ' E ', '', null, false);
+    $excerpt = get_the_excerpt($post->ID);
+    // $coauthors = get_coauthors($post->ID);
+    $image = get_post_meta($post->ID, 'icone', true);
+    if ($image == '') {
+      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
+    }
+
+    $title = $post->post_title;
+    $subtitle = "";
+    $title_class = "highlight-title-2";
+    if ($pos = strpos($post->post_title, ':')) {
+      $title = substr($post->post_title, 0, $pos+1);
+      $title_class = "highlight-subtitle-2";
+      $subtitle = substr($post->post_title, $pos+2);
+      $subtitle_class = "highlight-title-2";
+    } else if ($pos = strpos($post->post_title, '~')) {
+      $title = substr($post->post_title, 0, $pos);
+      $title_class = "highlight-subtitle-2";
+      $subtitle = substr($post->post_title, $pos+2);
+      $subtitle_class = "highlight-title-2";
+    } else if ($pos = strpos($post->post_title, '(')) {
+      $title = substr($post->post_title, 0, $pos-1);
+      $title_class = "highlight-title-2";
+      $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
+      $subtitle_class = "highlight-subtitle-2";
+    }
+
+    ?>
+
+    <div class="mobile-mosaic-row-3">
+      <div class="highlight-contents highlight-contents-3">
+        <div class="highlight-mobile-contents">
+          <a href="<?php echo $permalink ?>">
+            <div class="highlight-title">
+              <div class="<?php echo $title_class; ?>">
+                <?php echo $title; ?>
+              </div>
+              <div class="<?php echo $subtitle_class; ?>">
+                <?php echo $subtitle; ?>
+              </div>
+            </div>
+          </a>
+          <div class="authors">
+            POR <?php echo $coauthors; ?>
+          </div>
+        </div>
+        <!-- <?php echo $excerpt; ?> -->
+      </div>
+
+      <a href="<?php echo $permalink ?>">
+        <div class="mosaic-highlight mosaic-highlight-3" style="background-image: url('<?php echo $image; ?>')">
+          <div class="highlight-tag">
+            <?php echo $category; ?>
+          </div>
+        </div>
+      </a>
+    </div>
+
+
+
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
     // $post = the_post();
     // echo 'hello'.$post->post_type;
@@ -784,22 +993,24 @@ $others_array = get_posts( $args );
         </div>
       </a>
         <div class="list-news-contents">
-          <a href="<?php echo $permalink; ?>">
-            <h4>
-              <?php echo $category; ?>
-            </h4>
-            <div class="list-news-title">
-              <?php echo $post->post_title; ?>
-            </div>
-          </a>
+          <div class="list-news-mobile-contents">
+            <a href="<?php echo $permalink; ?>">
+              <h4>
+                <?php echo $category; ?>
+              </h4>
+              <div class="list-news-title">
+                <?php echo $post->post_title; ?>
+              </div>
+            </a>
 
-          <div class="authors">
-            POR <?php echo $coauthors; ?>
+            <div class="authors">
+              POR <?php echo $coauthors; ?>
+            </div>
+            <div class="list-news-excerpt">
+              <p><?php echo $excerpt ?></p>
+            </div>
+            <!-- <?php the_time('j \d\e F \d\e Y'); ?> -->
           </div>
-          <div class="list-news-excerpt">
-            <p><?php echo $excerpt ?></p>
-          </div>
-          <?php the_time('j \d\e F \d\e Y'); ?>
         </div>
     </div>
 

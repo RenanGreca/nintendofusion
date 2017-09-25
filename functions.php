@@ -30,7 +30,7 @@ add_filter('language_attributes', 'add_opengraph_doctype');
 //Lets add Open Graph Meta Info
 function insert_fb_in_head() {
     global $post;
-    if ( !is_singular()) //if it is not a post or a page
+    if ( !is_singular()) { //if it is not a post or a page
         return;
         echo '<meta property="fb:admins" content="1001692808"/>
         ';
@@ -60,6 +60,10 @@ function insert_fb_in_head() {
         ';
         echo '<meta property="og:image:height" content="' . $image_size[1] . '"/>
         ';
+      } else {
+        echo '<meta property="og:image" content="' . get_bloginfo('template_url')."/img/wallpaper-small.png" . '"/>
+        ';
+      }
 }
 add_action( 'wp_head', 'insert_fb_in_head', 5 );
 

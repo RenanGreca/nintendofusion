@@ -60,12 +60,12 @@
 }
 
 .list-news-title-1 {
-  font-size: 25px;
+  font-size: 30px;
   line-height: 30px;
 }
 
 .list-news-subtitle-1 {
-  font-size: 20px;
+  font-size: 25px;
   line-height: 25px;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .span4 {
-  min-height: 1500px;
+  /*min-height: 1500px;*/
   width: 34%;
   float: right;
 }
@@ -146,6 +146,16 @@
 
   .list {
     display: none;
+  }
+
+  .list-news-title-1 {
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  .list-news-subtitle-1 {
+    font-size: 20px;
+    line-height: 20px;
   }
 
   /*.list-news-title {*/

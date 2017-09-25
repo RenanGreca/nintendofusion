@@ -49,7 +49,7 @@ function insert_fb_in_head() {
         ';
         if (!has_post_thumbnail( $post->ID )) {
             //the post does not have featured image, use a default image
-            $image = get_bloginfo('template_url')."/img/logo-neon.png";
+            $image = get_bloginfo('template_url')."/img/wallpaper-small.png";
         } else {
             $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
         }

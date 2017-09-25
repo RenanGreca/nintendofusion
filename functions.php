@@ -30,41 +30,41 @@ add_filter('language_attributes', 'add_opengraph_doctype');
 //Lets add Open Graph Meta Info
 function insert_fb_in_head() {
     global $post;
-    if ( !is_singular()) { //if it is not a post or a page
-        return;
-        echo '<meta property="fb:admins" content="1001692808"/>
-        ';
-        echo '<meta property="fb:admins" content="100000307065898"/>
-        ';
-        echo '<meta property="og:title" content="' . str_replace('~', '', get_the_title()) . '"/>
-        ';
-        echo '<meta property="og:type" content="article"/>';
-        echo '<meta property="og:url" content="' . get_permalink() . '"/>
-        ';
-        echo '<meta property="og:description" content="' . get_the_excerpt() . '"/>
-        ';
-        echo '<meta property="og:site_name" content="Nintendo Fusion"/>
-        ';
-        echo '<meta property="fb:app_id" content="976575375818675"/>
-        ';
-        if (!has_post_thumbnail( $post->ID )) {
-            //the post does not have featured image, use a default image
-            $image = get_bloginfo('template_url')."/img/wallpaper-small.png";
-        } else {
-            $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
-        }
-        $image_size = getimagesize($image);
-        echo '<meta property="og:image" content="' . $image . '"/>
-        ';
-        echo '<meta property="og:image:width" content="' . $image_size[0] . '"/>
-        ';
-        echo '<meta property="og:image:height" content="' . $image_size[1] . '"/>
-        ';
-      } else {
-        return;
-        echo '<meta property="og:image" content="' . get_bloginfo('template_url')."/img/wallpaper-small.png" . '"/>
-        ';
-      }
+    // if ( !is_singular()) { //if it is not a post or a page
+    //     return;
+    echo '<meta property="fb:admins" content="1001692808"/>
+    ';
+    echo '<meta property="fb:admins" content="100000307065898"/>
+    ';
+    echo '<meta property="og:title" content="' . str_replace('~', '', get_the_title()) . '"/>
+    ';
+    echo '<meta property="og:type" content="article"/>';
+    echo '<meta property="og:url" content="' . get_permalink() . '"/>
+    ';
+    echo '<meta property="og:description" content="' . get_the_excerpt() . '"/>
+    ';
+    echo '<meta property="og:site_name" content="Nintendo Fusion"/>
+    ';
+    echo '<meta property="fb:app_id" content="976575375818675"/>
+    ';
+    if (!has_post_thumbnail( $post->ID )) {
+        //the post does not have featured image, use a default image
+        $image = get_bloginfo('template_url')."/img/wallpaper-small.png";
+    } else {
+        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
+    }
+    $image_size = getimagesize($image);
+    echo '<meta property="og:image" content="' . $image . '"/>
+    ';
+    echo '<meta property="og:image:width" content="' . $image_size[0] . '"/>
+    ';
+    echo '<meta property="og:image:height" content="' . $image_size[1] . '"/>
+    ';
+    // } else {
+    //   return;
+    //   echo '<meta property="og:image" content="' . get_bloginfo('template_url')."/img/wallpaper-small.png" . '"/>
+    //   ';
+    // }
 }
 add_action( 'wp_head', 'insert_fb_in_head', 5 );
 

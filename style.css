@@ -141,7 +141,7 @@ h4 {
 }
 
 
-@media (min-width: 1600px) {
+@media (min-width: 1610px) {
   .container {
     width: var(--container-width-1600);
   }

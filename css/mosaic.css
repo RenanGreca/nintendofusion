@@ -492,7 +492,7 @@ a.author.url.fn:hover {
   }
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1610px) {
 
   .mosaic {
     width: var(--container-width-1600);

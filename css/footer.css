@@ -1,7 +1,8 @@
 footer {
-  margin-top: 50px;
-  padding-bottom: 50px;
-  margin: 0 auto;
+  /*margin-top: 50px;*/
+  /*margin-bottom: 50px;*/
+  margin: 50px auto;
+  height: 100px;
   font-family: var(--font-title), sans-serif;
 }
 
@@ -42,6 +43,11 @@ footer {
 .links > a:hover {
   color: var(--white);
   border-bottom: 1px var(--neon-blue) solid;
+}
+
+.year {
+  font-size: 18px;
+  line-height: 20px;
 }
 
 .copyright {
@@ -86,8 +92,8 @@ footer {
 
   .links a {
     display: block;
-    font-size: 25px;
-    line-height: 30px;
+    font-size: 20px;
+    line-height: 25px;
   }
 
   .links > a:link {
@@ -110,13 +116,13 @@ footer {
     text-align: center;
     float: none;
     width: 100%;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 14px;
+    line-height: 20px;
   }
 
   .year {
-    font-size: 25px;
-    line-height: 40px;
+    font-size: 22px;
+    line-height: 35px;
   }
 }
 

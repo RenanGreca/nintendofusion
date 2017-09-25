@@ -101,11 +101,11 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
           <span></span>
 
           <ul id="hmenu">
-            <a href="#"><li>NOTÍCIAS</li></a>
-            <a href="#"><li>MATÉRIAS</li></a>
-            <a href="#"><li>VÍDEOS</li></a>
-            <a href="#"><li>PODCASTS</li></a>
-            <a href="#"><li>eBOOKS</li></a>
+            <a href="<?php echo site_url(); ?>/category/noticia"><li>NOTÍCIAS</li></a>
+            <a href="<?php echo site_url(); ?>/category/materia"><li>MATÉRIAS</li></a>
+            <a href="<?php echo site_url(); ?>/category/noticia"><li>VÍDEOS</li></a>
+            <a href="<?php echo site_url(); ?>/podcast"><li>PODCASTS</li></a>
+            <!-- <a href="<?php echo site_url(); ?>/category/ebook"><li>eBOOKS</li></a> -->
             <li>
               <a href="https://facebook.com/nintendofusion" class="social-icon social-fb" target="_blank"></a>
               <a href="https://twitter.com/NinFusionBR" class="social-icon social-tw" target="_blank"></a>
@@ -134,7 +134,7 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
               <li><a class="navbar-link" href="<?php echo site_url(); ?>/category/materia">MATÉRIAS</a></li>
               <li><a class="navbar-link" href="<?php echo site_url(); ?>/video">VÍDEOS</a></li>
               <li><a class="navbar-link" href="<?php echo site_url(); ?>/podcast">PODCAST</a></li>
-              <li><a class="navbar-link" href="<?php echo site_url(); ?>/category/ebook">eBOOKS</a></li>
+              <!-- <li><a class="navbar-link" href="<?php echo site_url(); ?>/category/ebook">eBOOKS</a></li> -->
               <!-- <?php wp_list_pages(array('title_li' => '', 'exclude' => 4)); ?> -->
 
           </ul>

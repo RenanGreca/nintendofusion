@@ -758,8 +758,14 @@ $others_array = get_posts( $args );
     </div>
   </div>
 
+  <!-- Mobile layout -->
   <div class="compact-list">
     <?php
+
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+    if ($paged == 1) {
+
     $post = $highlights_array[0];
     $categories = get_the_category($post->ID);
     $category = $categories[0]->cat_name;
@@ -962,67 +968,116 @@ $others_array = get_posts( $args );
       </a>
     </div>
 
+    <?php } ?>
+
+    <!-- <h1>Matérias</h1>
+    <h2>Notícias</h2>
+    <h2>Vídeo & Podcast</h2> -->
+
 
 
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
     // $post = the_post();
-    // echo 'hello'.$post->post_type;
-    $categories = get_the_category();
-    if (count($categories) != 0) {
-      $category = $categories[0]->cat_name;
-    }
-    if ($post->post_type == 'podcast') {
-      $category = "Podcast";
-    }
-    // echo the_post()->post_type;
-    // if ($category == ''){
-    // $category = get_the_type();
-    // echo $category;
-    // }
-    $permalink = get_post_permalink($post->ID);
-    $excerpt = get_the_excerpt($post->ID);
-    $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
-    $image = get_post_meta($post->ID, 'icone', true);
-    if ($image == '') {
-      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
-    }
-    ?>
-    <div class="list-news">
-      <a href="<?php echo $permalink; ?>">
-        <div class="list-news-image" style="background-image: url('<?php echo $image; ?>')">
-        </div>
-      </a>
-        <div class="list-news-contents">
-          <div class="list-news-mobile-contents">
-            <a href="<?php echo $permalink; ?>">
-              <h4>
-                <?php echo $category; ?>
-              </h4>
-              <div class="list-news-title">
-                <?php echo $post->post_title; ?>
-              </div>
-            </a>
 
-            <div class="authors">
-              POR <?php echo $coauthors; ?>
-            </div>
-            <div class="list-news-excerpt">
-              <p><?php echo $excerpt ?></p>
-            </div>
-            <!-- <?php the_time('j \d\e F \d\e Y'); ?> -->
+    if (!in_array ($post, $highlights_array)) {
+
+      $categories = get_the_category();
+      if (count($categories) != 0) {
+        $category = $categories[0]->cat_name;
+      }
+      if ($post->post_type == 'podcast') {
+        $category = "Podcast";
+      }
+
+      $permalink = get_post_permalink($post->ID);
+      $excerpt = get_the_excerpt($post->ID);
+      $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+      $image = get_post_meta($post->ID, 'icone', true);
+      if ($image == '') {
+        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
+        $image_mobile = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
+      } else {
+        $image_mobile = pathinfo($image, PATHINFO_DIRNAME) . '/' . pathinfo($image, PATHINFO_FILENAME).'-150x150.jpg';
+      }
+
+      $title = $post->post_title;
+      $subtitle = "";
+      $title_class = "list-news-title-1";
+      if ($pos = strpos($post->post_title, ':')) {
+        $title = substr($post->post_title, 0, $pos+1);
+        $title_class = "list-news-subtitle-1";
+        $subtitle = substr($post->post_title, $pos+2);
+        $subtitle_class = "list-news-title-1";
+      } else if ($pos = strpos($post->post_title, '~')) {
+        $title = substr($post->post_title, 0, $pos);
+        $title_class = "list-news-subtitle-1";
+        $subtitle = substr($post->post_title, $pos+2);
+        $subtitle_class = "list-news-title-1";
+      } else if ($pos = strpos($post->post_title, '(')) {
+        $title = substr($post->post_title, 0, $pos-1);
+        $title_class = "list-news-title-1";
+        $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
+        $subtitle_class = "list-news-subtitle-1";
+      }
+
+      ?>
+
+      <style>
+      #list-news-image-<?php echo $post->ID; ?> {
+        background-image: url('<?php echo $image; ?>');
+      }
+
+      @media (max-width: 600px) {
+        #list-news-image-<?php echo $post->ID; ?> {
+          background-image: url('<?php echo $image_mobile; ?>');
+        }
+      }
+      </style>
+
+      <div class="list-news">
+        <a href="<?php echo $permalink; ?>">
+          <div class="list-news-image" id="list-news-image-<?php echo $post->ID; ?>">
           </div>
-        </div>
-    </div>
+        </a>
+          <div class="list-news-contents">
+            <div class="list-news-mobile-contents">
+              <a href="<?php echo $permalink; ?>">
+                <h4>
+                  <?php echo $category; ?>
+                </h4>
+                <div class="list-news-title">
+                  <div class="<?php echo $title_class; ?>">
+                    <?php echo $title; ?>
+                  </div>
+                  <div class="<?php echo $subtitle_class; ?>">
+                    <?php echo $subtitle; ?>
+                  </div>
+                </div>
+              </a>
+
+              <div class="authors">
+                POR <?php echo $coauthors; ?>
+              </div>
+              <div class="list-news-excerpt">
+                <!-- <?php echo $excerpt ?> -->
+              </div>
+              <!-- <?php the_time('j \d\e F \d\e Y'); ?> -->
+            </div>
+          </div>
+      </div>
 
 
 
-    <!-- <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-    <p><?php the_excerpt(); ?></p>
-    <p><em><?php the_time('l, F jS, Y'); ?></em></p>
-    <hr> -->
+      <!-- <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+      <p><?php the_excerpt(); ?></p>
+      <p><em><?php the_time('l, F jS, Y'); ?></em></p>
+      <hr> -->
 
-  <?php endwhile;?>
-  <?php endif; ?>
+  <?php
+    }
+    endwhile;
+    endif;
+  ?>
   <div class="all">
     <?php posts_nav_link('<span class="spacing"> </span>','Anterior','Próxima'); ?>
   </div>

@@ -17,11 +17,11 @@
         </div>
         <!-- <img class="logo" src="<?php echo get_bloginfo('template_url') ?>/img/logo.png" /> -->
         <div class="links">
-          <a href="#Sobre">Sobre</a>
-          <a href="#Equipe">Equipe</a>
-          <a href="/politicas">Políticas</a>
-          <a href="#Contato">Contato</a>
-          <a href="#Mídia">Mídia</a>
+          <a href="<?php echo site_url(); ?>/sobre">Sobre</a>
+          <a href="<?php echo site_url(); ?>/equipe">Equipe</a>
+          <a href="<?php echo site_url(); ?>/politicas">Políticas</a>
+          <a href="<?php echo site_url(); ?>/contato">Contato</a>
+          <!-- <a href="#Mídia">Mídia</a> -->
           <a href="<?php echo $theme_url; ?>">Ativar tema <?php echo $theme; ?></a>
         </div>
 

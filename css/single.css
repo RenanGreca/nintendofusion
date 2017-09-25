@@ -189,8 +189,8 @@
 
 .content {
     font-weight: 300;
-    font-size: 22px;
-    line-height: 40px;
+    font-size: 20px;
+    line-height: 35px;
     color: var(--light-text);
 }
 
@@ -204,8 +204,8 @@
   float: left;
   font-family: var(--font-title);
   font-weight: bold;
-  font-size: 120px;
-  line-height: 120px;
+  font-size: 105px;
+  line-height: 105px;
   /*padding-top: 4px;*/
   padding-right: 8px;
   /*padding-left: 3px;*/
@@ -393,6 +393,11 @@ hr {
 .more-content {
   max-width: 800px;
   margin: 20px auto 0 auto;
+}
+
+.social-share-buttons {
+  text-align: right;
+  margin-bottom: 20px;
 }
 
 .review-space {

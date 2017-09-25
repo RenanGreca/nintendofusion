@@ -8,6 +8,34 @@
   });
 </script>
 
+<!-- Facebook API -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.10&appId=976575375818675";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Twitter API -->
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
 <!-- Facebook comments -->
 <!-- <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -26,6 +54,7 @@ $views = wpb_get_post_views(get_the_ID());
 $post = get_post();
 $main_post_id = get_the_ID();
 $categories = get_the_category();
+$permalink = get_the_permalink();
 $category = $categories[0];
 
 $image_full = wp_get_attachment_image_src( get_post_thumbnail_id(),
@@ -252,6 +281,22 @@ $disclaimer = $meta_fields['disclaimer'][0];
   ?>
 
   <div class="more-content">
+
+    <div class="social-share-buttons">
+      <!-- Facebook share button -->
+      <div class="fb-share-button"
+        data-href="<?php echo $permalink ?>"
+        data-layout="button"
+        data-size="large">
+      </div>
+
+      <!-- Twitter tweet button -->
+      <a class="twitter-share-button"
+        href="https://twitter.com/intent/tweet?via=ninfusionbr"
+        data-size="large">
+      Tweet</a>
+    </div>
+
     <h1>Leia também</h1>
     <div class="mosaic-row-4">
 

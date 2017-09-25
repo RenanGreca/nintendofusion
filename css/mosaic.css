@@ -328,8 +328,9 @@ a.author.url.fn:hover {
     text-align: center;
     padding: 0;
     background: linear-gradient(to bottom, transparent 0%, black 70%);
-    font-size: 25px;
-    line-height: 35px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: bold;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -368,8 +369,8 @@ a.author.url.fn:hover {
     max-height: 200px;
     padding-left: 20px;
     float: right;
-    font-size: 18px;
-    line-height: 23px;
+    font-size: 15px;
+    line-height: 20px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -382,8 +383,8 @@ a.author.url.fn:hover {
     max-height: 200px;
     padding-right: 20px;
     float: left;
-    font-size: 18px;
-    line-height: 23px;
+    font-size: 15px;
+    line-height: 20px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -480,7 +481,7 @@ a.author.url.fn:hover {
   .mosaic-highlight-1 {
     height: 200px;
     width: 100vw;
-    margin-left: -8px;
+    /*margin-left: -8px;*/
     position: relative;
   }
 }

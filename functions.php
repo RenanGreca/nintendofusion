@@ -61,6 +61,7 @@ function insert_fb_in_head() {
         echo '<meta property="og:image:height" content="' . $image_size[1] . '"/>
         ';
       } else {
+        return;
         echo '<meta property="og:image" content="' . get_bloginfo('template_url')."/img/wallpaper-small.png" . '"/>
         ';
       }

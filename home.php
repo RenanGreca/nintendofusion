@@ -3,22 +3,24 @@
 <?php
 $ids = array();
 
-$args = array(
-  'posts_per_page'   => 1,
-  'category_name'    => 'destaque',
-  'orderby'          => 'date',
-  'order'            => 'DESC',
-  'post_type'        => 'post',
-  'post_status'      => 'publish',
-  'suppress_filters' => true
-);
-$fixed_array = get_posts( $args );
-array_push($ids, $fixed_array[0]->ID);
+// $args = array(
+//   'posts_per_page'   => 1,
+//   'category_name'    => 'destaque',
+//   'orderby'          => 'date',
+//   'order'            => 'DESC',
+//   'post_type'        => 'post',
+//   'post_status'      => 'publish',
+//   'suppress_filters' => true
+// );
+// $fixed_array = get_posts( $args );
+// array_push($ids, $fixed_array[0]->ID);
+//
+// $no_posts = 2;
+// if (!count($ids)) {
+//   $no_posts = 3;
+// }
 
-$no_posts = 2;
-if (!count($ids)) {
-  $no_posts = 3;
-}
+$no_posts = 3;
 
 $args = array(
   'posts_per_page'   => $no_posts,

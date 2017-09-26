@@ -667,6 +667,7 @@ img.size-medium {
 img.size-large {
   margin-left: -50px;
   width: 900px;
+  height: auto;
   max-width: none;
 }
 

@@ -34,7 +34,7 @@ $args = array(
 );
 $highlights_array = get_posts( $args );
 
-for ($i=0; $i<2; $i++) {
+for ($i=0; $i<$no_posts; $i++) {
   array_push($ids, $highlights_array[$i]->ID);
 }
 // $highlights_array = array_merge($fixed_array, $highlights_array);

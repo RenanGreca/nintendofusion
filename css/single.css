@@ -671,7 +671,8 @@ img.size-large {
 }
 
 img.size-full {
-  margin-left: -150px;
-  width: 1100px;
-  max-width: none;
+  /*margin-left: -150px;*/
+  /*width: 1100px;*/
+  max-width: 440px;
+  height: auto;
 }

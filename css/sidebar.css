@@ -51,8 +51,8 @@
     }
 
     .sidebar-post-title {
-        font-size: 16px;
-        line-height: 18px;
+        font-size: 18px;
+        line-height: 20px;
 
         /*width: 95%;*/
         /*margin-bottom: 10px;*/
@@ -66,8 +66,8 @@
     .sidebar-post-tag {
         /*padding: 0 10px;*/
         color: var(--neon-blue);
-        font-size: 20px;
-        line-height: 20px;
+        font-size: 16px;
+        line-height: 16px;
         padding: 0 0 5px 0;
         text-transform: uppercase;
         font-weight: bold;

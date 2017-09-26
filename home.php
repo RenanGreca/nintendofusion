@@ -176,24 +176,6 @@ $others_array = get_posts( $args );
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
 
         $title = $post->post_title;
-        $subtitle = "";
-        $title_class = "mosaic-news-title-1";
-        if ($pos = strpos($post->post_title, ':')) {
-          $title = substr($post->post_title, 0, $pos);
-          $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post->post_title, $pos+2);
-          $subtitle_class = "mosaic-news-title-1";
-        } else if ($pos = strpos($post->post_title, '~')) {
-          $title = substr($post->post_title, 0, $pos);
-          $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post->post_title, $pos+2);
-          $subtitle_class = "mosaic-news-title-1";
-        } else if ($pos = strpos($post->post_title, '(')) {
-          $title = substr($post->post_title, 0, $pos-1);
-          $title_class = "mosaic-news-title-1";
-          $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
-          $subtitle_class = "mosaic-news-subtitle-1";
-        }
         ?>
 
         <div class="mosaic-news">
@@ -208,13 +190,8 @@ $others_array = get_posts( $args );
                   </div>
                 </div>
               </div>
-              <div class="mosaic-news-title">
-                <div class="<?php echo $title_class; ?>">
-                  <?php echo $title; ?>
-                </div>
-                <div class="<?php echo $subtitle_class; ?>">
-                  <?php echo $subtitle; ?>
-                </div>
+              <div class="mosaic-news-title mosaic-news-title-1">
+                <?php echo $title; ?>
               </div>
             </a>
             <div class="authors">
@@ -236,24 +213,6 @@ $others_array = get_posts( $args );
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium')[0];
 
         $title = $post->post_title;
-        $subtitle = "";
-        $title_class = "mosaic-news-title-1";
-        if ($pos = strpos($post->post_title, ':')) {
-          $title = substr($post->post_title, 0, $pos);
-          $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post->post_title, $pos+2);
-          $subtitle_class = "mosaic-news-title-1";
-        } else if ($pos = strpos($post->post_title, '~')) {
-          $title = substr($post->post_title, 0, $pos);
-          $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post->post_title, $pos+2);
-          $subtitle_class = "mosaic-news-title-1";
-        } else if ($pos = strpos($post->post_title, '(')) {
-          $title = substr($post->post_title, 0, $pos-1);
-          $title_class = "mosaic-news-title-1";
-          $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
-          $subtitle_class = "mosaic-news-subtitle-1";
-        }
         ?>
 
         <div class="mosaic-news">
@@ -268,13 +227,8 @@ $others_array = get_posts( $args );
                   </div>
                 </div>
               </div>
-              <div class="mosaic-news-title">
-                <div class="<?php echo $title_class; ?>">
-                  <?php echo $title; ?>
-                </div>
-                <div class="<?php echo $subtitle_class; ?>">
-                  <?php echo $subtitle; ?>
-                </div>
+              <div class="mosaic-news-title mosaic-news-title-1">
+                <?php echo $title; ?>
               </div>
             </a>
             <div class="authors">
@@ -423,24 +377,6 @@ $others_array = get_posts( $args );
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
 
         $title = $post->post_title;
-        $subtitle = "";
-        $title_class = "mosaic-news-title-1";
-        if ($pos = strpos($post->post_title, ':')) {
-          $title = substr($post->post_title, 0, $pos);
-          $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post->post_title, $pos+2);
-          $subtitle_class = "mosaic-news-title-1";
-        } else if ($pos = strpos($post->post_title, '~')) {
-          $title = substr($post->post_title, 0, $pos);
-          $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post->post_title, $pos+2);
-          $subtitle_class = "mosaic-news-title-1";
-        } else if ($pos = strpos($post->post_title, '(')) {
-          $title = substr($post->post_title, 0, $pos-1);
-          $title_class = "mosaic-news-title-1";
-          $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
-          $subtitle_class = "mosaic-news-subtitle-1";
-        }
         ?>
 
         <div class="mosaic-news">
@@ -455,13 +391,8 @@ $others_array = get_posts( $args );
                   </div>
                 </div>
               </div>
-              <div class="mosaic-news-title">
-                <div class="<?php echo $title_class; ?>">
-                  <?php echo $title; ?>
-                </div>
-                <div class="<?php echo $subtitle_class; ?>">
-                  <?php echo $subtitle; ?>
-                </div>
+              <div class="mosaic-news-title mosaic-news-title-1">
+                <?php echo $title; ?>
               </div>
             </a>
             <div class="authors">
@@ -832,7 +763,7 @@ $others_array = get_posts( $args );
     <div class="highlight-contents highlight-contents-1">
       <a href="<?php echo $permalink ?>">
         <div class="mosaic-highlight mosaic-highlight-1" style="background-image: url('<?php echo $image; ?>')">
-          <div class="highlight-tag" style="text-align: right;">
+          <div class="highlight-tag hightlight-tag-1" style="text-align: right;">
             <?php echo $category; ?>
           </div>
         </div>
@@ -846,7 +777,7 @@ $others_array = get_posts( $args );
         </div>
 
       </a>
-      <div class="authors">
+      <div class="authors authors-1">
         POR <?php echo $coauthors; ?>
       </div>
       <!-- <?php echo $excerpt; ?> -->

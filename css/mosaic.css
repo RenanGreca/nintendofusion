@@ -473,16 +473,27 @@ a.author.url.fn:hover {
 
 @media (max-width: 600px) {
 
-  .highlight-tag {
-    width: 98%;
-    padding-right: 2%;
-  }
+
 
   .mosaic-highlight-1 {
     height: 200px;
-    width: 100vw;
+    width: 100%;
     /*margin-left: -8px;*/
     position: relative;
+  }
+
+}
+
+@media (max-width: 800px) {
+  .hightlight-tag-1 {
+    width: 98%;
+    padding-right: 2%;
+  }
+  .highlight-title-1,
+  .highlight-subtitle-1,
+  .authors-1 {
+    width: 98%;
+    padding-right: 2%;
   }
 }
 

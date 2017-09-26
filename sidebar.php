@@ -220,9 +220,9 @@
               POR <?php echo $coauthors; ?>
             </div>
             <div class="sidebar-post-excerpt">
-              <p><?php echo $excerpt ?></p>
+              <!-- <p><?php echo $excerpt ?></p> -->
             </div>
-            <?php the_time('j \d\e F \d\e Y'); ?>
+            <!-- <?php the_time('j \d\e F \d\e Y'); ?> -->
           </div>
       </div>
       <!-- <a href="<?php the_permalink(); ?>">

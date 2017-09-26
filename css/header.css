@@ -82,6 +82,7 @@ a:hover.navbar-link {
 .navbar .brand {
   display: block;
   float: left;
+  margin-left: 20px;
   /*padding: 10px 20px 10px;*/
   /*margin-left: -20px;*/
   font-size: 20px;
@@ -274,6 +275,8 @@ a:hover.navbar-link {
 
   .navbar-inverse .navbar-inner {
     height: 50px;
+    max-width: 800px;
+    margin: 20px auto;
   }
 
   .input-search {

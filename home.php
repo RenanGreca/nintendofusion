@@ -37,7 +37,7 @@ $highlights_array = get_posts( $args );
 for ($i=0; $i<2; $i++) {
   array_push($ids, $highlights_array[$i]->ID);
 }
-$highlights_array = array_merge($fixed_array, $highlights_array);
+// $highlights_array = array_merge($fixed_array, $highlights_array);
 
 $args = array(
   'posts_per_page'   => 3,

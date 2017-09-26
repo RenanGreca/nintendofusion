@@ -56,7 +56,7 @@ for ($i=0; $i<6; $i++) {
   array_push($ids, $news_array[$i]->ID);
 }
 
-// print_r($ids);
+print_r($ids);
 
 $args = array(
 'posts_per_page'   => 3,

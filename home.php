@@ -56,26 +56,26 @@ for ($i=0; $i<6; $i++) {
   array_push($ids, $news_array[$i]->ID);
 }
 
-print_r($ids);
+// print_r($ids);
 
-$args = array(
-'posts_per_page'   => 3,
-'exclude'          => $ids,
-'orderby'          => 'meta_value_num',
-'meta_key'         => 'wpb_post_views_count',
-'order'            => 'DESC',
-'post_type'        => 'post',
-'post_status'      => 'publish',
-'suppress_filters' => true,
-'date_query' => array(
-  'after' => date('Y-m-d', strtotime('-14 days'))
-  )
-);
-$most_seen = get_posts( $args );
-
-for ($i=0; $i<3; $i++) {
-  array_push($ids, $most_seen[$i]->ID);
-}
+// $args = array(
+// 'posts_per_page'   => 3,
+// 'exclude'          => $ids,
+// 'orderby'          => 'meta_value_num',
+// 'meta_key'         => 'wpb_post_views_count',
+// 'order'            => 'DESC',
+// 'post_type'        => 'post',
+// 'post_status'      => 'publish',
+// 'suppress_filters' => true,
+// 'date_query' => array(
+//   'after' => date('Y-m-d', strtotime('-14 days'))
+//   )
+// );
+// $most_seen = get_posts( $args );
+//
+// for ($i=0; $i<3; $i++) {
+//   array_push($ids, $most_seen[$i]->ID);
+// }
 
 $args = array(
   'posts_per_page'   => 9,

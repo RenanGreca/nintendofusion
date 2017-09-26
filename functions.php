@@ -45,6 +45,8 @@ function insert_fb_in_head() {
       ';
       echo '<meta property="og:title" content="Nintendo Fusion"/>
       ';
+      echo '<meta property="og:url" content="http://nintendofusion.com.br"/>
+      ';
       return;
     }
 

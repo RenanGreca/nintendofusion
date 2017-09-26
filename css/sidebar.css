@@ -63,6 +63,16 @@
         /*line-height: 18pt;*/
     }
 
+    .sidebar-post-title-1 {
+      font-size: 20px;
+      line-height: 20px;
+    }
+
+    .sidebar-post-subtitle-1 {
+      font-size: 17px;
+      line-height: 17px;
+    }
+
     .sidebar-post-tag {
         /*padding: 0 10px;*/
         color: var(--neon-blue);

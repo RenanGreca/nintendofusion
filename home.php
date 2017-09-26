@@ -3,24 +3,28 @@
 <?php
 $ids = array();
 
-// $args = array(
-//   'posts_per_page'   => 1,
-//   'category_name'    => 'destaque',
-//   'orderby'          => 'date',
-//   'order'            => 'DESC',
-//   'post_type'        => 'post',
-//   'post_status'      => 'publish',
-//   'suppress_filters' => true
-// );
-// $fixed_array = get_posts( $args );
-// array_push($ids, $fixed_array[0]->ID);
-//
-// $no_posts = 2;
-// if (!count($ids)) {
-//   $no_posts = 3;
-// }
+$args = array(
+  'posts_per_page'   => 1,
+  'orderby'          => 'date',
+  'order'            => 'DESC',
+  // 'post_type'        => 'post',
+  'post_status'      => 'publish',
+  'suppress_filters' => true,
+  'tax_query' => array(
+		array(
+			'taxonomy' => 'post_tag',
+			'field' => 'slug',
+			'terms' => 'destaque'
+		)
+	)
+);
+$fixed_array = get_posts( $args );
 
 $no_posts = 3;
+if (count($fixed_array)) {
+  array_push($ids, $fixed_array[0]->ID);
+  $no_posts = 2;
+}
 
 $args = array(
   'posts_per_page'   => $no_posts,
@@ -37,7 +41,7 @@ $highlights_array = get_posts( $args );
 for ($i=0; $i<$no_posts; $i++) {
   array_push($ids, $highlights_array[$i]->ID);
 }
-// $highlights_array = array_merge($fixed_array, $highlights_array);
+$highlights_array = array_merge($fixed_array, $highlights_array);
 
 $args = array(
   'posts_per_page'   => 3,
@@ -102,7 +106,7 @@ $others_array = get_posts( $args );
   <div class="mosaic">
     <div class="mosaic-row-1">
       <?php
-      $post = $highlights_array[0];
+      $post = $highlights_array[1];
       $categories = get_the_category($post->ID);
       $category = $categories[0]->cat_name;
       foreach($categories as $cat) {
@@ -242,7 +246,7 @@ $others_array = get_posts( $args );
       </div>
 
       <?php
-      $post = $highlights_array[1];
+      $post = $highlights_array[0];
       $categories = get_the_category($post->ID);
       $category = $categories[0]->cat_name;
       foreach($categories as $cat) {

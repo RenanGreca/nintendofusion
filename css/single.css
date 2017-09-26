@@ -677,6 +677,24 @@ img.size-full {
 }
 
 @media (max-width: 600px) {
+  img.size-medium {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+  img.size-large {
+    margin-left: 0px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  img.size-full {
+    max-width: 60%;
+    height: auto;
+  }
+  
   img.alignleft {
     max-width: 50%;
     height: auto;
@@ -689,23 +707,5 @@ img.size-full {
     margin: 10px 0px 10px 30px;
   }
 
-  img.size-medium {
-    width: auto;
-    height: auto;
-  }
 
-  img.size-large {
-    margin-left: 0px;
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-  }
-
-  img.size-full {
-    /*margin-left: -150px;*/
-    /*width: 1100px;*/
-    max-width: 80%;
-    height: auto;
-    margin: 0 auto;
-  }
 }

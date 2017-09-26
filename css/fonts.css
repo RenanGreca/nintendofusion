@@ -36,7 +36,7 @@
 /* Glacial Indifference font for text */
 
 /* Light */
-@font-face {
+/*@font-face {
 	font-family: 'Ubuntu';
 	src: url('../fonts/Ubuntu-L.ttf');
 	src:
@@ -52,9 +52,10 @@
 		url('../fonts/Ubuntu-LI.ttf')
 		format('truetype');
 	font-style: italic;
-}
+}*/
 
 /* Bold */
+/*
 @font-face {
 	font-family: 'Ubuntu';
 	src: url('../fonts/Ubuntu-B.ttf');
@@ -73,4 +74,4 @@
 		format('truetype');
 	font-weight: bold;
 	font-style: italic;
-}
+}*/

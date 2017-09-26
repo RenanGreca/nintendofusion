@@ -1,4 +1,22 @@
-<?php get_header();?>
+<?php
+$time = microtime();
+$time = explode(' ', $time);
+$time = $time[1] + $time[0];
+$start = $time;
+
+
+get_header();
+
+
+$time = microtime();
+$time = explode(' ', $time);
+$time = $time[1] + $time[0];
+$finish = $time;
+$total_time = round(($finish - $start), 4);
+echo '1';
+echo 'Page generated in '.$total_time.' seconds.';
+
+?>
 <link href="<?php echo get_bloginfo('template_url'); ?>/css/single.css" rel="stylesheet">
 
 <script src="<?php echo get_bloginfo('template_url') ?>/js/audiojs/audio.min.js"></script>
@@ -46,13 +64,25 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script> -->
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
+<?php
+$time = microtime();
+$time = explode(' ', $time);
+$time = $time[1] + $time[0];
+$finish = $time;
+$total_time = round(($finish - $start), 4);
+echo '2';
+echo 'Page generated in '.$total_time.' seconds.';
+
+if ( have_posts() ) : while ( have_posts() ) : the_post();
 // Track pageviews
 wpb_set_post_views(get_the_ID());
 $views = wpb_get_post_views(get_the_ID());
 
 $post = get_post();
-$main_post_id = get_the_ID();
+// print_r($post);
+
+
+$main_post_id = $post->ID;
 $categories = get_the_category();
 $permalink = get_the_permalink();
 $category = $categories[0];
@@ -64,10 +94,18 @@ $image_mobile = wp_get_attachment_image_src( get_post_thumbnail_id(),
 
 // if ( function_exists( 'coauthors_posts_links' ) ) {
 $coauthors = coauthors_posts_links(', ', ' e ', null, null, false);
-$posttags = get_the_tags();
+// $posttags = get_the_tags();
 // } else {
 //     the_author_posts_link();
 // }
+
+$time = microtime();
+$time = explode(' ', $time);
+$time = $time[1] + $time[0];
+$finish = $time;
+$total_time = round(($finish - $start), 4);
+echo '<br>3';
+echo 'Page generated in '.$total_time.' seconds.';
 
 ?>
 
@@ -106,6 +144,13 @@ $meta_fields = get_post_custom();
 
 $disclaimer = $meta_fields['disclaimer'][0];
 
+$time = microtime();
+$time = explode(' ', $time);
+$time = $time[1] + $time[0];
+$finish = $time;
+$total_time = round(($finish - $start), 4);
+echo '<br>4';
+echo 'Page generated in '.$total_time.' seconds.';
 
   // print_r($post);
   $args = array(
@@ -125,6 +170,13 @@ $disclaimer = $meta_fields['disclaimer'][0];
   $ids = array();
   array_push($ids, $most_seen[0]->ID);
 
+  $time = microtime();
+  $time = explode(' ', $time);
+  $time = $time[1] + $time[0];
+  $finish = $time;
+  $total_time = round(($finish - $start), 4);
+  echo '<br>5';
+  echo 'Page generated in '.$total_time.' seconds.';
 
   if (count($most_seen) < 3) {
     $ids = array();

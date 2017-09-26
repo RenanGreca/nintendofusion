@@ -13,6 +13,7 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     ?>
     <link href="<?php echo get_bloginfo('template_url'); ?>/css/theme_<?php echo $GLOBALS['theme']; ?>.css" rel="stylesheet">
     <link href="<?php echo get_bloginfo('template_url'); ?>/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,700,700i" rel="stylesheet">
     <!-- <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon-32x32.png" sizes="32x32" /> -->
     <!-- <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon-16x16.png" sizes="16x16" /> -->
 
@@ -59,15 +60,15 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     </script>
 
     <!-- Google AdSense -->
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({
         google_ad_client: "ca-pub-8943805401802569",
         enable_page_level_ads: true
       });
-    </script>
+    </script> -->
 
-    <?php wp_enqueue_script("jquery"); ?>
+    <!-- <?php wp_enqueue_script("jquery"); ?> -->
     <?php wp_head(); ?>
 
 
@@ -141,9 +142,9 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
           <!--  -->
         </div><!--/.nav-collapse -->
 
-        <div class="ad-header">
+        <!-- Fusion Header Ad -->
+        <!-- <div class="ad-header">
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-          <!-- Fusion Header Ad -->
           <ins class="adsbygoogle"
                style="display:inline-block;width:728px;height:90px"
                data-ad-client="ca-pub-8943805401802569"
@@ -151,14 +152,14 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
           <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
           </script>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
 
-  <div class="ad-mobile">
+  <!-- Mobile header ad -->
+  <!-- <div class="ad-mobile">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- Mobile header ad -->
     <ins class="adsbygoogle"
     style="display:inline-block;width:320px;height:100px"
     data-ad-client="ca-pub-8943805401802569"
@@ -166,7 +167,7 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
-  </div>
+  </div> -->
 
 
 

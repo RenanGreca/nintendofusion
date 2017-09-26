@@ -95,6 +95,7 @@ footer {
     display: block;
     font-size: 20px;
     line-height: 25px;
+    margin-right: 0;
   }
 
   .links > a:link {

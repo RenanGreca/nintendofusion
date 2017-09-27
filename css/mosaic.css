@@ -354,7 +354,7 @@ a.author.url.fn:hover {
   .mobile-mosaic-row-2 {
     height: 40vw;
     max-height: 200px;
-    margin-bottom: 20px;
+    margin: 20px;
     display: flex;
     flex-direction: row;
   }
@@ -362,6 +362,7 @@ a.author.url.fn:hover {
   .mobile-mosaic-row-3 {
     height: 40vw;
     max-height: 200px;
+    margin: 20px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;

@@ -119,6 +119,10 @@
     display: none;
   }
 
+  .list-news {
+    margin: 15px 40px;
+  }
+
   .list-news-title-1 {
     font-size: 25px;
     line-height: 25px;

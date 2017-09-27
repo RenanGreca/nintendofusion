@@ -520,7 +520,8 @@ hr {
     }
 
     .review-content {
-      margin: 0 20px;
+      max-width: 600px;
+      /*margin: 0 20px;*/
     }
 
     .review-tag {
@@ -657,6 +658,11 @@ img.alignright {
   float: right;
 }
 
+img.aligncenter {
+  display: block;
+  margin: 10px auto;
+}
+
 img.size-medium {
   width: auto;
   height: 300px;
@@ -670,10 +676,35 @@ img.size-large {
 }
 
 img.size-full {
-  /*margin-left: -150px;*/
-  /*width: 1100px;*/
   max-width: 440px;
   height: auto;
+}
+
+@media (max-width: 900px) {
+  img.alignleft {
+    margin: 10px 30px 10px -50px;
+  }
+
+  img.alignright {
+    margin: 10px -50px 10px 30px;
+  }
+
+  img.size-medium {
+    width: auto;
+    height: 200px;
+  }
+
+  img.size-large {
+    margin-left: -50px;
+    width: 700px;
+    height: auto;
+    max-width: none;
+  }
+
+  img.size-full {
+    max-width: 300px;
+  }
+
 }
 
 @media (max-width: 600px) {
@@ -694,7 +725,7 @@ img.size-full {
     max-width: 60%;
     height: auto;
   }
-  
+
   img.alignleft {
     max-width: 50%;
     height: auto;

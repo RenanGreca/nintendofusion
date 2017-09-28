@@ -9,20 +9,9 @@ if ( is_category() ) {
     $title = 'Tag: '.single_tag_title('', false);
 
 } elseif ( is_author() ) {
-
-  echo 'is author<br>';
-  echo get_the_author().'<br>';
-  // echo author_archive_title('', false).'<br>';
-  echo get_the_archive_title();
-  echo get_query_var( 'event-categories' );
-
+  
   $uri = explode('/', $_SERVER['REQUEST_URI']);
-  print_r($uri);
-  echo count($uri);
-  echo $uri[count($uri)-2].'<br>';
-  print_r(get_user_by('slug', 'pepo')).'<br>';
-
-  $title = 'Autor: '.get_the_author();
+  $title = 'Autor: '.get_user_by('slug', $uri[count($uri)-2])['display_name'];
 
 } else {
   $title = 'Categoria: '.post_type_archive_title('', false);

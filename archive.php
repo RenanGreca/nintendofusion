@@ -15,6 +15,9 @@ if ( is_category() ) {
   // echo author_archive_title('', false).'<br>';
   echo get_the_archive_title();
   echo get_query_var( 'event-categories' );
+
+  $uri = explode('/', $_SERVER['REQUEST_URI']);
+  echo $uri[len($uri)-1];
   echo get_user_by('slug', 'pepo');
 
   $title = 'Autor: '.get_the_author();

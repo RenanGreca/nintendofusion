@@ -19,8 +19,8 @@ if ( is_category() ) {
   $uri = explode('/', $_SERVER['REQUEST_URI']);
   print_r($uri);
   echo count($uri);
-  echo $uri[count($uri)-2];
-  echo get_user_by('slug', 'pepo');
+  echo $uri[count($uri)-2].'<br>';
+  print_r(get_user_by('slug', 'pepo')).'<br>';
 
   $title = 'Autor: '.get_the_author();
 

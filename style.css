@@ -22,21 +22,21 @@ This theme is built with bootstrap, but features many custom elements. The highl
 /*default version*/
 @font-face {
 	font-family: 'Glacial Indifference';
-	src: url('./fonts/GlacialIndifference-Regular.otf');
+	src: url('http://nintendofusion.com.br/wp-content/themes/nintendofusion/fonts/GlacialIndifference-Regular.otf');
 	src:
 		local('Glacial Indifference'),
 		local('Glacial-Indifference'),
-		url('./fonts/GlacialIndifference-Regular.otf')
+		url('http://nintendofusion.com.br/wp-content/themes/nintendofusion/fonts/GlacialIndifference-Regular.otf')
 		format('opentype');
 }
 /*bold version*/
 @font-face {
 	font-family: 'Glacial Indifference';
-	src: url('./fonts/GlacialIndifference-Bold.otf');
+	src: url('http://nintendofusion.com.br/wp-content/themes/nintendofusion/fonts/GlacialIndifference-Bold.otf');
   src:
 		local('Glacial Indifference'),
 		local('Glacial-Indifference'),
-		url('./fonts/GlacialIndifference-Bold.otf')
+		url('http://nintendofusion.com.br/wp-content/themes/nintendofusion/fonts/GlacialIndifference-Bold.otf')
 		format('opentype');
 	font-weight:bold;
 }

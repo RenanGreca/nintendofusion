@@ -12,7 +12,7 @@ if ( is_category() ) {
 
   echo 'is author<br>';
   echo get_the_author().'<br>';
-  echo author_archive_title('', false).'<br>';
+  // echo author_archive_title('', false).'<br>';
   echo get_the_archive_title();
   echo get_query_var( 'event-categories' );
   echo get_user_by('slug', 'pepo');

@@ -9,9 +9,9 @@ if ( is_category() ) {
     $title = 'Tag: '.single_tag_title('', false);
 
 } elseif ( is_author() ) {
-  
+
   $uri = explode('/', $_SERVER['REQUEST_URI']);
-  $title = 'Autor: '.get_user_by('slug', $uri[count($uri)-2])['display_name'];
+  $title = 'Autor: '.get_user_by('slug', $uri[count($uri)-2])->display_name;
 
 } else {
   $title = 'Categoria: '.post_type_archive_title('', false);

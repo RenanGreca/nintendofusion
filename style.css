@@ -151,7 +151,7 @@ a:hover.navbar-link {
   border: 2px var(--neon-red) solid;
   border-radius: 4px;
   width: 180px;
-  background: url('./img/icons/search-red.png') no-repeat scroll 6px 4px;
+  background: url('./img/icons/search-red.png') no-repeat scroll 6px 6px;
   background-size: 18px auto;
   font-family: var(--font-text), sans-serif;
 }
@@ -269,8 +269,21 @@ a:hover.navbar-link {
     margin: 20px auto;
   }
 
+	form {
+		margin: 0;
+	}
+
+	.input-search-desktop {
+		display: none;
+	}
+
   .input-search {
-    display: none;
+		margin: 0;
+		border: 0;
+		text-align: center;
+		/*width: 160px;*/
+		/*padding: 6px;*/
+    /*display: none;*/
   }
 
   .ad-header {
@@ -343,7 +356,7 @@ a:hover
   }
 }
 
-#menuToggle input
+#menuToggle > input
 {
   display: block;
   width: 40px;
@@ -417,6 +430,8 @@ a:hover
 
   background: var(--dark-background);
   list-style-type: none;
+
+	border-bottom: 2px var(--neon-blue) solid;
 
   transform-origin: 0% 0%;
   transform: scaleY(0);

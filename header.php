@@ -112,7 +112,7 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
           </a>
           <!-- <p class="logo-text">Nintendo FUSION</p> -->
           <form id="search" method="get" action="<?php echo home_url(); ?>" role="search">
-            <input type="text" class="input-search" placeholder="Pesquisar" name="s" value="<?php echo $_GET['s']; ?>"/>
+            <input type="text" class="input-search input-search-desktop" placeholder="Pesquisar" name="s" value="<?php echo $_GET['s']; ?>"/>
             <button type="submit" role="button" style="display:none;"/>
           </form>
         </div>
@@ -131,6 +131,12 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
             <a href="<?php echo site_url(); ?>/category/noticia"><li>VÍDEOS</li></a>
             <a href="<?php echo site_url(); ?>/podcast"><li>PODCASTS</li></a>
             <!-- <a href="<?php echo site_url(); ?>/category/ebook"><li>eBOOKS</li></a> -->
+            <li>
+              <form id="search" method="get" action="<?php echo home_url(); ?>" role="search">
+                <input type="text" class="input-search" placeholder="Pesquisar" name="s" value="<?php echo $_GET['s']; ?>"/>
+                <button type="submit" role="button" style="display:none;"/>
+              </form>
+            </li>
             <li>
               <a href="https://facebook.com/nintendofusion" class="social-icon social-fb" target="_blank"></a>
               <a href="https://twitter.com/NinFusionBR" class="social-icon social-tw" target="_blank"></a>

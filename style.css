@@ -22,21 +22,21 @@ This theme is built with bootstrap, but features many custom elements. The highl
 /*default version*/
 @font-face {
 	font-family: 'Glacial Indifference';
-	src: url('../fonts/GlacialIndifference-Regular.otf');
+	src: url('./fonts/GlacialIndifference-Regular.otf');
 	src:
 		local('Glacial Indifference'),
 		local('Glacial-Indifference'),
-		url('../fonts/GlacialIndifference-Regular.otf')
+		url('./fonts/GlacialIndifference-Regular.otf')
 		format('opentype');
 }
 /*bold version*/
 @font-face {
 	font-family: 'Glacial Indifference';
-	src: url('../fonts/GlacialIndifference-Bold.otf');
+	src: url('./fonts/GlacialIndifference-Bold.otf');
   src:
 		local('Glacial Indifference'),
 		local('Glacial-Indifference'),
-		url('../fonts/GlacialIndifference-Bold.otf')
+		url('./fonts/GlacialIndifference-Bold.otf')
 		format('opentype');
 	font-weight:bold;
 }
@@ -306,7 +306,7 @@ body
 
   background: #232323;
   color: #cdcdcd;
-  font-family: "Avenir Next", "Avenir", sans-serif;
+  font-family: var(--font-title), sans-serif;
 }
 
 a
@@ -1192,6 +1192,7 @@ footer {
 .year {
   font-size: 18px;
   line-height: 20px;
+	font-family: var(--font-title);
 }
 
 .copyright {
@@ -1200,6 +1201,7 @@ footer {
   line-height: 14px;
   text-align: right;
   padding-top: 20px;
+	font-family: var(--font-text);
 }
 
 .ad-footer {

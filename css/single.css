@@ -222,6 +222,22 @@
   color: var(--white);
 }
 
+.footnoteContent {
+  padding: 10px !important;
+}
+
+.footnoteContent b {
+  color: #0c0c0c;
+}
+
+.inline-footnote {
+  font-weight: bold;
+  padding: 2px;
+  font-size: 14px;
+  display: unset;
+
+}
+
 .content a:link {
     color: var(--neon-red);
     text-decoration: none;

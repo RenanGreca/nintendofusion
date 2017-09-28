@@ -1,13 +1,6 @@
 <?php get_header(); ?>
 <link href="<?php echo get_bloginfo('template_url'); ?>/css/single.css" rel="stylesheet">
 
-<script src="<?php echo get_bloginfo('template_url') ?>/js/audiojs/audio.min.js"></script>
-<script>
-  audiojs.events.ready(function() {
-    var as = audiojs.createAll();
-  });
-</script>
-
 <!-- Facebook API -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -67,23 +60,7 @@ $image_full = wp_get_attachment_image_src( get_post_thumbnail_id(),
 $image_mobile = wp_get_attachment_image_src( get_post_thumbnail_id(),
 'large' )[0];
 
-// if ( function_exists( 'coauthors_posts_links' ) ) {
 $coauthors = coauthors_posts_links(', ', ' e ', null, null, false);
-// $posttags = get_the_tags();
-// } else {
-//     the_author_posts_link();
-// }
-
-?>
-
-<!-- <meta property="og:title" content="<?php echo $post->post_title; ?>"/>
-<meta property="og:type" content="article"/>
-<meta property="og:url" content="<?php echo get_the_permalink(); ?>"/>
-<meta property="og:image" content="<?php echo $image_full; ?>"/>
-<meta property="og:site_name" content="Nintendo Fusion"/>
-<meta property="og:description" content="<?php echo get_the_excerpt(); ?>"/> -->
-
-<?php
 
 $title = $post->post_title;
 $subtitle = "";

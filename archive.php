@@ -10,6 +10,10 @@ if ( is_category() ) {
 
 } elseif ( is_author() ) {
 
+  echo 'is author<br>';
+  echo get_the_author().'<br>';
+  echo post_type_archive_title('', false).'<br>';
+
   $title = 'Autor: '.get_the_author();
 
 } else {

@@ -151,7 +151,7 @@ a:hover.navbar-link {
   border: 2px var(--neon-red) solid;
   border-radius: 4px;
   width: 180px;
-  background: url('../img/icons/search-red.png') no-repeat scroll 6px 4px;
+  background: url('./img/icons/search-red.png') no-repeat scroll 6px 4px;
   background-size: 18px auto;
   font-family: var(--font-text), sans-serif;
 }
@@ -184,24 +184,24 @@ a:hover.navbar-link {
 }
 
 .social-fb {
-  background-image: url('../img/icons/facebook-red.png');
+  background-image: url('./img/icons/facebook-red.png');
 }
 .social-fb:hover{
-  background-image: url('../img/icons/facebook-blue.png');
+  background-image: url('./img/icons/facebook-blue.png');
 }
 
 .social-tw {
-  background-image: url('../img/icons/twitter-red.png');
+  background-image: url('./img/icons/twitter-red.png');
 }
 .social-tw:hover{
-  background-image: url('../img/icons/twitter-blue.png');
+  background-image: url('./img/icons/twitter-blue.png');
 }
 
 .social-yt {
-  background-image: url('../img/icons/youtube-red.png');
+  background-image: url('./img/icons/youtube-red.png');
 }
 .social-yt:hover{
-  background-image: url('../img/icons/youtube-blue.png');
+  background-image: url('./img/icons/youtube-blue.png');
 }
 
 

@@ -143,6 +143,11 @@ function nf_score_to_word($score) {
   }
 }
 
+function remove_formatting_chars( $title, $id = null ) {
+    return str_replace('~', '', $title);
+}
+add_filter( 'the_title', 'remove_formatting_chars', 10, 2 );
+
 function new_previous_posts_link_attributes(  ) {
   return 'class="post-link-prev"';
 }

@@ -665,6 +665,10 @@ hr {
     }
 }
 
+iframe {
+  max-width: 100%;
+}
+
 /* Images */
 
 img.alignleft {
@@ -686,7 +690,7 @@ img.aligncenter {
 
 img.size-medium {
   height: auto;
-  width: 300px;
+  width: 400px;
 }
 
 img.size-large {

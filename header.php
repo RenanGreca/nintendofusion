@@ -6,12 +6,36 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- <meta name="HandheldFriendly" content="true"> -->
 
     <!-- Le styles -->
+    <style>
+    :root {
     <?php
-    if ($GLOBALS['theme'] != 'dark' && $GLOBALS['theme'] != 'light') {
-      $GLOBALS['theme'] = 'dark';
+    if ($GLOBALS['theme'] == 'light') {
+      ?>
+          --dark-background: #f1e8e8;
+          --white: #000000;
+          --light-text: #0c0c0c;
+          --neon-red: #df2327;
+          --neon-blue: #40c7ff;
+      <?php
+    } else {
+      ?>
+          --dark-background: #070f20;
+          --white: #ffffff;
+          --light-text: #dbecf0;
+          --neon-red: #fe494d;
+          --neon-blue: #3ffdfe;
+      <?php
     }
     ?>
-    <link href="<?php echo get_bloginfo('template_url'); ?>/css/theme_<?php echo $GLOBALS['theme']; ?>.css" rel="stylesheet">
+        --container-width-1600: 1570px;
+        --container-width-1200: 1170px;
+        --container-width-1000: 975px;
+
+        --font-title: "Glacial Indifference";
+        --font-text: "Ubuntu";
+    }
+    </style>
+    <!-- <link href="<?php echo get_bloginfo('template_url'); ?>/css/theme_<?php echo $GLOBALS['theme']; ?>.css" rel="stylesheet"> -->
     <link href="<?php echo get_bloginfo('template_url'); ?>/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,700,700i" rel="stylesheet">
     <!-- <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon-32x32.png" sizes="32x32" /> -->

@@ -17,6 +17,8 @@ if ( is_category() ) {
   echo get_query_var( 'event-categories' );
 
   $uri = explode('/', $_SERVER['REQUEST_URI']);
+  print_r($uri);
+  echo count($uri);
   echo $uri[count($uri)-1];
   echo get_user_by('slug', 'pepo');
 

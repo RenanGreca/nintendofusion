@@ -224,6 +224,8 @@
 
 .footnoteContent {
   padding: 10px !important;
+  border-radius: 5px;
+  border-color: var(--neon-blue);
 }
 
 .footnoteContent b {

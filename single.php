@@ -559,6 +559,21 @@ $disclaimer = $meta_fields['disclaimer'][0];
 
     <!-- </a> -->
 
+    <div class="social-share-buttons">
+      <!-- Facebook share button -->
+      <div class="fb-share-button"
+        data-href="<?php echo $permalink ?>"
+        data-layout="button"
+        data-size="large">
+      </div>
+
+      <!-- Twitter tweet button -->
+      <a class="twitter-share-button"
+        href="https://twitter.com/intent/tweet?via=ninfusionbr"
+        data-size="large">
+      Tweet</a>
+    </div>
+
     <div class="comments-wrapper">
       <h3>Comentários</h3>
       <?php comments_template(); ?>

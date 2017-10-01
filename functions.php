@@ -160,4 +160,9 @@ add_filter( 'next_posts_link_attributes', 'new_next_posts_link_attributes' );
 
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+add_filter( 'ssp_episode_download_link', 'ssp_use_raw_audio_file_url', 10, 3 );
+function ssp_use_raw_audio_file_url ( $url, $episode_id, $file ) {
+  return $file;
+}
 ?>

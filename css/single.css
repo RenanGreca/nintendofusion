@@ -225,7 +225,7 @@
 .footnoteContent {
   padding: 10px !important;
   border-radius: 5px;
-  border-color: var(--neon-blue);
+  border-color: var(--neon-blue) !important;
 }
 
 .footnoteContent b {
@@ -233,11 +233,9 @@
 }
 
 .inline-footnote {
-  font-weight: bold;
   padding: 2px;
   font-size: 14px;
   display: unset;
-
 }
 
 .content a:link {

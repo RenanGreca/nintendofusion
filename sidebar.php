@@ -216,9 +216,9 @@
               </div>
             </a>
 
-            <div class="authors">
+            <!-- <div class="authors">
               POR <?php echo $coauthors; ?>
-            </div>
+            </div> -->
             <div class="sidebar-post-excerpt">
               <!-- <p><?php echo $excerpt ?></p> -->
             </div>

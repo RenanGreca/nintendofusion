@@ -691,6 +691,11 @@ img.alignright {
   margin: 10px auto;
 }
 
+.wp-caption-text {
+  font-size: 16px;
+  margin-top: 0px;
+}
+
 img.size-medium {
   height: auto;
   width: 400px;

@@ -939,7 +939,7 @@ a.author.url.fn:hover {
 .list-news {
   height: 250px;
   display: flex;
-  margin: 15px 0;
+  margin: 30px 0;
 }
 
 .list-news-image {

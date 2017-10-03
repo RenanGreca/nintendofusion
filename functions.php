@@ -51,7 +51,7 @@ function insert_fb_in_head() {
     }
     $categories = get_the_category();
     $category = $categories[0];
-    echo '<meta property="og:title" content="' $category->cat_name . ': ' . str_replace('~', '', get_the_title()) . '"/>
+    echo '<meta property="og:title" content="' . $category->cat_name . ': ' . str_replace('~', '', get_the_title()) . '"/>
     ';
     echo '<meta property="og:type" content="article"/>';
     echo '<meta property="og:url" content="' . get_permalink() . '"/>

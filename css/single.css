@@ -686,7 +686,7 @@ img.alignright {
   float: right;
 }
 
-img.aligncenter {
+.aligncenter {
   display: block;
   margin: 10px auto;
 }

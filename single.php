@@ -502,7 +502,7 @@ $disclaimer = $meta_fields['disclaimer'][0];
     </div>
   </div>
 
-<?php } else if (($category->category_nicename == 'noticia') || ($post->post_type == "podcast") || ($post->post_type == "video")) {
+<?php } else {
   ?>
 
 
@@ -587,69 +587,6 @@ $disclaimer = $meta_fields['disclaimer'][0];
   </div>
 
 </div>
-
-<?php } else {
-  //  if (($post->post_type == "podcast") || ($post->post_type == "video")) {
-  ?>
-
-  <!-- <link href="<?php echo get_bloginfo('template_url'); ?>/css/player.css" rel="stylesheet"> -->
-  <div class="list">
-    <div class="span8">
-      <?php
-        if ($post->post_type == "podcast") {
-          $header = "Podcast";
-        } else if ($post->post_type == "video") {
-          $header = "Vídeo";
-        }
-      ?>
-      <h1><?php echo $header; ?></h1>
-      <!-- Visualizado <?php echo $views; ?> vezes. -->
-
-      <?php
-      // print_r($others_array);
-
-      $categories = get_the_category($post->ID);
-      $category = $categories[0]->cat_name;
-      $permalink = get_post_permalink($post->ID);
-      $excerpt = get_the_excerpt($post->ID);
-      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ),
-      'single-post-thumbnail' )[0];
-      ?>
-
-      <!-- <a href="<?php echo $permalink; ?>"> -->
-
-      <div class="news-image" style="background-image: url('<?php echo $image; ?>')">
-
-      </div>
-      <div class="news-title">
-        <?php echo $post->post_title; ?>
-      </div>
-      <div class="news-date">
-        <?php the_time('j \d\e F \d\e Y'); ?>
-      </div>
-      <div class="news-author">
-        Por
-        <?php
-        echo $coauthors;
-        ?>
-      </div>
-      <div class="content news-content">
-        <p><?php the_content(); ?></p>
-      </div>
-
-
-      <div class="comments-wrapper">
-        <h3>Comentários</h3>
-        <?php comments_template(); ?>
-      </div>
-    </div>
-    <!-- </a> -->
-    <div class="span4">
-
-      <?php get_sidebar(); ?>
-
-    </div>
-  </div>
 
 <?php } ?>
 

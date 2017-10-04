@@ -64,6 +64,9 @@ function insert_fb_in_head() {
     ';
     echo '<meta property="og:description" content="' . get_the_excerpt() . '"/>
     ';
+    $coauthors = coauthors(', ', ' e ', null, null, false);
+    echo '<meta property="article:author" content="' . $coauthors . '"/>
+    ';
 
     if (!has_post_thumbnail( $post->ID )) {
         //the post does not have featured image, use a default image

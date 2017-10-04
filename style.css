@@ -1107,7 +1107,7 @@ a.author.url.fn:hover {
 }
 
 .sidebar-post {
-    height: 100px;
+    height: 125px;
     width: 339px;
     display: block;
     margin: 30px 0;
@@ -1115,7 +1115,7 @@ a.author.url.fn:hover {
 
     .sidebar-post-image {
         height: 100%;
-        width: 100px;
+        width: 125px;
 
         display: inline-block;
         background-size: cover;
@@ -1150,13 +1150,13 @@ a.author.url.fn:hover {
     }
 
     .sidebar-post-title-1 {
-      font-size: 18px;
-      line-height: 18px;
+      font-size: 20px;
+      line-height: 20px;
     }
 
     .sidebar-post-subtitle-1 {
-      font-size: 16px;
-      line-height: 16px;
+      font-size: 18px;
+      line-height: 18px;
     }
 
     .sidebar-post-tag {

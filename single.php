@@ -53,7 +53,13 @@ $post = get_post();
 $main_post_id = $post->ID;
 $categories = get_the_category();
 $permalink = get_the_permalink();
-$category = $categories[0];
+$category = $categories[0]->cat_name;
+$cat = $post->post_type;
+if ($cat == "podcast") {
+  $category = "Podcast";
+} else if ($cat == "video") {
+  $category = "Vídeo";
+}
 
 $image_full = wp_get_attachment_image_src( get_post_thumbnail_id(),
 'single-post-thumbnail' )[0];
@@ -87,6 +93,10 @@ $post_title = str_replace('~', '', $post->post_title);
 $meta_fields = get_post_custom();
 
 $disclaimer = $meta_fields['disclaimer'][0];
+
+?>
+<title><?php echo $category; ?>: <?php echo $post_title; ?> - Nintendo Fusion</title>
+<?php
 
   // print_r($post);
   $args = array(
@@ -144,8 +154,6 @@ $disclaimer = $meta_fields['disclaimer'][0];
     }
   }
   </style>
-
-  <title><?php echo $category->cat_name; ?>: <?php echo $post_title; ?> - Nintendo Fusion</title>
 
   <?php
   $parent = get_the_category_by_ID($category->parent);

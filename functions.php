@@ -51,7 +51,7 @@ function insert_fb_in_head() {
     }
     $categories = get_the_category();
     $category = $categories[0]->cat_name;
-    $cat = get_the_post_type();
+    $cat = get_post_type();
     if ($cat == "podcast") {
       $category = "Podcast";
     } else if ($cat == "video") {

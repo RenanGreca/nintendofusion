@@ -896,6 +896,28 @@ a.author.url.fn:hover {
   .mosaic {
     width: var(--container-width-1200);
   }
+
+	.mosaic-row-3 {
+		height: 450px;
+	}
+
+	.highlight-contents-3 {
+		height: 300px;
+	}
+
+	.mosaic-highlight-3 {
+		height: 300px;
+	}
+
+	.mosaic-column-2 {
+		height: 100%;
+	}
+
+	.mosaic-news-image-2 {
+		height: 300px;
+	}
+
+
 }
 
 @media (min-width: 1610px) {

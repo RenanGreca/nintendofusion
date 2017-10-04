@@ -388,7 +388,7 @@ $others_array = get_posts( $args );
         <div class="mosaic-news">
           <div class="mosaic-news-contents">
             <a href="<?php echo $permalink ?>">
-              <div class="mosaic-news-image" style="background-image: url('<?php echo $image; ?>')">
+              <div class="mosaic-news-image mosaic-news-image-2" style="background-image: url('<?php echo $image; ?>')">
                 <div class="news-gradient-black">
                 </div>
                 <div class="news-tag-container">

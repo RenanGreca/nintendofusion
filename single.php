@@ -156,7 +156,7 @@ $disclaimer = $meta_fields['disclaimer'][0];
   </style>
 
   <?php
-  $parent = get_the_category_by_ID($category->parent);
+  $parent = get_the_category_by_ID($categories[0]->parent);
   if ($parent == "Matéria") {
     ?>
     <div class="review-image" style="">
@@ -517,7 +517,7 @@ $disclaimer = $meta_fields['disclaimer'][0];
   <div class="post-wrapper">
     <div class="span8">
 
-      <h1><?php echo $post->post_title; ?></h1>
+      <h1><?php echo str_replace('~', '', $post->post_title); ?></h1>
       <?php
       // print_r($others_array);
 

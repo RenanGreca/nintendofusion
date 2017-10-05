@@ -897,26 +897,6 @@ a.author.url.fn:hover {
     width: var(--container-width-1200);
   }
 
-	.mosaic-row-3 {
-		height: 450px;
-	}
-
-	.highlight-contents-3 {
-		height: 300px;
-	}
-
-	.mosaic-highlight-3 {
-		height: 300px;
-	}
-
-	.mosaic-column-2 {
-		height: 100%;
-	}
-
-	.mosaic-news-image-2 {
-		height: 300px;
-	}
-
 
 }
 
@@ -938,6 +918,26 @@ a.author.url.fn:hover {
     font-size: 23px;
     line-height: 23px;
   }
+
+	.mosaic-row-3 {
+		height: 450px;
+	}
+
+	.highlight-contents-3 {
+		height: 300px;
+	}
+
+	.mosaic-highlight-3 {
+		height: 300px;
+	}
+
+	.mosaic-column-2 {
+		height: 100%;
+	}
+
+	.mosaic-news-image-2 {
+		height: 300px;
+	}
 
 }
 
@@ -1457,8 +1457,16 @@ a:hover {
 
 .all {
   height: 50px;
-  text-align: center;
-  margin: 20px 40px;
+  text-align: right;
+  margin: 25px 0;
+}
+
+@media (min-width: 1023px) {
+
+  .all {
+		margin: 25px 40px;
+  }
+
 }
 
 .all > a:link {

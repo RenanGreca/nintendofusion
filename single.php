@@ -172,7 +172,7 @@ $disclaimer = $meta_fields['disclaimer'][0];
 
 
         <div class="review-tag">
-          <?php echo $category->cat_name; ?>
+          <?php echo $category; ?>
         </div>
 
         <div class="review-title">
@@ -214,7 +214,7 @@ $disclaimer = $meta_fields['disclaimer'][0];
     ?>
 
     <?php
-    if ($category->category_nicename == 'analise') {
+    if ($category == 'Análise') {
       ?>
       <div class="review-summary">
         <?php // print_r($meta_fields);
@@ -227,7 +227,7 @@ $disclaimer = $meta_fields['disclaimer'][0];
   </div>
 
   <?php
-  if ($category->category_nicename == 'analise') {
+  if ($category == 'Análise') {
     ?>
     <div class="review-footer">
       <div class="review-footer-left">

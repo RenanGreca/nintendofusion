@@ -95,6 +95,7 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- <?php wp_enqueue_script("jquery"); ?> -->
     <?php wp_head(); ?>
 
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
   </head>
   <body>
@@ -174,7 +175,6 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
         <!-- Fusion Header Ad -->
         <div class="ad-header">
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <!-- NF ad -->
           <ins class="adsbygoogle"
                style="display:inline-block;width:728px;height:90px"

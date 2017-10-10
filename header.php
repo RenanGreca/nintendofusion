@@ -95,8 +95,6 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- <?php wp_enqueue_script("jquery"); ?> -->
     <?php wp_head(); ?>
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
   </head>
   <body>
 

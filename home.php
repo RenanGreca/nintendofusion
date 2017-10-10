@@ -125,7 +125,10 @@ $others_array = get_posts( $args );
       $title = $post->post_title;
       $subtitle = "";
       $title_class = "highlight-title-1";
-      if ($pos = strpos($post->post_title, ':')) {
+      $posc = strrpos($post->post_title, ':');
+      $posp = strrpos($post->post_title, '+');
+      if (($posc > 0) || ($posp > 0)) {
+        $pos = ($posc > $posp ? $posc : $posp);
         $title = substr($post->post_title, 0, $pos+1);
         $title_class = "highlight-subtitle-1";
         $subtitle = substr($post->post_title, $pos+2);
@@ -265,7 +268,10 @@ $others_array = get_posts( $args );
       $title = $post->post_title;
       $subtitle = "";
       $title_class = "highlight-title-2";
-      if ($pos = strpos($post->post_title, ':')) {
+      $posc = strrpos($post->post_title, ':');
+      $posp = strrpos($post->post_title, '+');
+      if (($posc > 0) || ($posp > 0)) {
+        $pos = ($posc > $posp ? $posc : $posp);
         $title = substr($post->post_title, 0, $pos+1);
         $title_class = "highlight-subtitle-2";
         $subtitle = substr($post->post_title, $pos+2);
@@ -331,7 +337,10 @@ $others_array = get_posts( $args );
       $title = $post->post_title;
       $subtitle = "";
       $title_class = "highlight-title-2";
-      if ($pos = strpos($post->post_title, ':')) {
+      $posc = strrpos($post->post_title, ':');
+      $posp = strrpos($post->post_title, '+');
+      if (($posc > 0) || ($posp > 0)) {
+        $pos = ($posc > $posp ? $posc : $posp);
         $title = substr($post->post_title, 0, $pos+1);
         $title_class = "highlight-subtitle-2";
         $subtitle = substr($post->post_title, $pos+2);

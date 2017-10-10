@@ -71,7 +71,10 @@ $coauthors = coauthors_posts_links(', ', ' e ', null, null, false);
 $title = $post->post_title;
 $subtitle = "";
 $title_class = "review-maintitle";
-if ($pos = strpos($post->post_title, ':')) {
+$posc = strrpos($post->post_title, ':');
+$posp = strrpos($post->post_title, '+');
+if (($posc > 0) || ($posp > 0)) {
+  $pos = ($posc > $posp ? $posc : $posp);
   $title = substr($post->post_title, 0, $pos+1);
   $title_class = "review-subtitle";
   $subtitle = substr($post->post_title, $pos+2);

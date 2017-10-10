@@ -210,12 +210,12 @@ a:hover.navbar-link {
 }
 
 .ad-header {
-  display: none;
+  /*display: none;*/
   margin-top: 32px;
   float: right;
   height: 90px;
-  width: 768px;
-  background-color: var(--white);
+  width: 728px;
+  /*background-color: var(--white);*/
   z-index: 0;
 }
 
@@ -224,7 +224,7 @@ a:hover.navbar-link {
   margin: 10px auto;
   height: 100px;
   width: 320px;
-  background-color: var(--white);
+  /*background-color: var(--white);*/
   z-index: 0;
 }
 
@@ -291,7 +291,7 @@ a:hover.navbar-link {
   }
 
   .ad-mobile {
-    display: none;
+    display: block;
   }
 }
 

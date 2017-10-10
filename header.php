@@ -84,13 +84,13 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     </script>
 
     <!-- Google AdSense -->
-    <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({
         google_ad_client: "ca-pub-8943805401802569",
         enable_page_level_ads: true
       });
-    </script> -->
+    </script>
 
     <!-- <?php wp_enqueue_script("jquery"); ?> -->
     <?php wp_head(); ?>
@@ -173,7 +173,7 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         </div><!--/.nav-collapse -->
 
         <!-- Fusion Header Ad -->
-        <!-- <div class="ad-header">
+        <div class="ad-header">
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <ins class="adsbygoogle"
                style="display:inline-block;width:728px;height:90px"
@@ -182,13 +182,13 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
           <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
           </script>
-        </div> -->
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Mobile header ad -->
-  <!-- <div class="ad-mobile">
+  <div class="ad-mobile">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <ins class="adsbygoogle"
     style="display:inline-block;width:320px;height:100px"
@@ -197,7 +197,7 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
-  </div> -->
+  </div>
 
 
 

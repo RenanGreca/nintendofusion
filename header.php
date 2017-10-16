@@ -188,14 +188,14 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
   <!-- Mobile header ad -->
   <div class="ad-mobile">
-    <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Mobile ad -->
     <ins class="adsbygoogle"
-    style="display:inline-block;width:320px;height:100px"
-    data-ad-client="ca-pub-8943805401802569"
-    data-ad-slot="8933282906"></ins>
+         style="display:inline-block;width:320px;height:100px"
+         data-ad-client="ca-pub-8943805401802569"
+         data-ad-slot="6638694344"></ins>
     <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
-    </script> -->
+    </script>
   </div>
 
 

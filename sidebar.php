@@ -1,6 +1,6 @@
 <div class="sidebar">
-  <!-- <div class="sidebar-line">
-  </div> -->
+  <div class="sidebar-line">
+  </div>
 
   <div class="ad-sidebar">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

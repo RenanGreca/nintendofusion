@@ -1097,7 +1097,7 @@ a.author.url.fn:hover {
 
 /*@import url('css/sidebar.css');*/
 .sidebar-line {
-  height: 1px;
+  height: 2px;
   width: 100%;
   background-color: var(--neon-blue);
 }
@@ -1174,10 +1174,9 @@ a.author.url.fn:hover {
     }
 
 .ad-sidebar {
-  display: none;
   height: 250px;
   width: 300px;
-  background-color: var(--white);
+  /*background-color: var(--white);*/
   margin: 10px auto;
 }
 

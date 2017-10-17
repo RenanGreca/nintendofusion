@@ -160,7 +160,7 @@ $disclaimer = $meta_fields['disclaimer'][0];
 
   <?php
   $parent = get_the_category_by_ID($categories[0]->parent);
-  if ($parent == "Matéria") {
+  if ($parent == "Matéria" || $categories[0]->name == "Matéria") {
     ?>
     <div class="review-image" style="">
       <!-- <div class="review-bg"> -->

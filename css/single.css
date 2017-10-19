@@ -122,6 +122,7 @@
     /*text-align: center;*/
     display: inline-block;
     /*height: 100px;*/
+    max-width: 70%;
 }
 
 .review-maintitle {

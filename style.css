@@ -502,6 +502,7 @@ a.author.url.fn:hover {
   font-weight: 800;
   text-transform: uppercase;
   font-family: var(--font-title), sans-serif;
+	margin-left: 20%;
 }
 
 .highlight-tag {

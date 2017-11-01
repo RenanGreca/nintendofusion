@@ -860,7 +860,7 @@ $others_array = get_posts( $args );
       <div class="highlight-contents highlight-contents-2">
         <div class="highlight-mobile-contents">
           <a href="<?php echo $permalink ?>">
-            <div class="highlight-title">
+            <div class="highlight-title highlight-title-right">
               <div class="<?php echo $title_class; ?>">
                 <?php echo $title; ?>
               </div>
@@ -926,7 +926,7 @@ $others_array = get_posts( $args );
       <div class="highlight-contents highlight-contents-3">
         <div class="highlight-mobile-contents">
           <a href="<?php echo $permalink ?>">
-            <div class="highlight-title">
+            <div class="highlight-title highlight-title-left">
               <div class="<?php echo $title_class; ?>">
                 <?php echo $title; ?>
               </div>

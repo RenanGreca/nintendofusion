@@ -509,11 +509,12 @@ a.author.url.fn:hover {
   padding: 0 10px;
   text-transform: uppercase;
   font-family: var(--font-title), sans-serif;
-  font-size: 40px;
+  font-size: 30px;
   line-height: 50px;
+	font-weight: bold;
   color: var(--neon-blue);
-  background-color: rgba(0, 0, 0, 0.7);
-  border: 2px var(--neon-blue) solid;
+  background-color: rgba(7, 15, 32, 0.9);
+  /*border: 2px var(--neon-blue) solid;*/
   position: absolute;
   bottom: 0;
   right: 0;
@@ -547,7 +548,7 @@ a.author.url.fn:hover {
 }
 
 .mosaic-row-1 {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
   width: 100%;
 }
 
@@ -624,23 +625,23 @@ a.author.url.fn:hover {
 }
 
 .highlight-title-1 {
-  font-size: 50px;
-  line-height: 50px;
-}
-
-.highlight-subtitle-1 {
   font-size: 40px;
   line-height: 40px;
 }
 
+.highlight-subtitle-1 {
+  font-size: 30px;
+  line-height: 30px;
+}
+
 .highlight-title-2 {
-  font-size: 45px;
-  line-height: 45px;
+  font-size: 35px;
+  line-height: 35px;
 }
 
 .highlight-subtitle-2 {
-  font-size: 30px;
-  line-height: 30px;
+  font-size: 25px;
+  line-height: 25px;
 }
 
 .mosaic-news {
@@ -725,6 +726,7 @@ a.author.url.fn:hover {
     font-weight: 800;
     text-transform: uppercase;
     font-family: var(--font-title), sans-serif;
+		margin-left: 0;
   }
 
   .highlight-tag {
@@ -802,7 +804,7 @@ a.author.url.fn:hover {
   .mosaic-highlight-2 {
     height: 40vw;
     max-height: 200px;
-    width: 40vw;
+    width: 30vw;
     max-width: 200px;
     float:left;
     position: relative;
@@ -812,7 +814,7 @@ a.author.url.fn:hover {
   .mosaic-highlight-3 {
     height: 40vw;
     max-height: 200px;
-    width: 40vw;
+    width: 30vw;
     max-width: 200px;
     float:right;
     position: relative;
@@ -830,14 +832,22 @@ a.author.url.fn:hover {
   }
 
   .highlight-title-2 {
-    font-size: 30px;
-    line-height: 30px;
-  }
-
-  .highlight-subtitle-2 {
     font-size: 25px;
     line-height: 25px;
   }
+
+  .highlight-subtitle-2 {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+	.highlight-title-left {
+		/*margin-left: 20%;*/
+	}
+
+	.highlight-title-right {
+		/*margin-right: 20%;*/
+	}
 }
 
 @media (max-width: 370px) {
@@ -860,12 +870,12 @@ a.author.url.fn:hover {
   }
 
   .highlight-title-2 {
-    font-size: 25px;
+    font-size: 20px;
     line-height: 25px;
   }
 
   .highlight-subtitle-2 {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 20px;
   }
 }
@@ -881,7 +891,7 @@ a.author.url.fn:hover {
 }
 
 @media (max-width: 800px) {
-  .hightlight-tag-1 {
+  .highlight-tag-1 {
     width: 98%;
     padding-right: 2%;
   }

@@ -53,7 +53,7 @@
     $permalink = get_post_permalink($post->ID);
     $time = get_the_time('j \d\e F \d\e Y', $post->ID);
     $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
-    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
+    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
     ?>
 
     <div class="mosaic-news-contents">
@@ -90,8 +90,7 @@
       $permalink = get_post_permalink($post->ID);
       $excerpt = get_the_excerpt($post->ID);
       $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
-      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ),
-      'single-post-thumbnail' )[0];
+      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
       ?>
       <div class="sidebar-post">
         <a href="<?php echo $permalink; ?>" class="sidebar-post-link">

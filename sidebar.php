@@ -54,6 +54,16 @@
     $time = get_the_time('j \d\e F \d\e Y', $post->ID);
     $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
+
+    $title = $post->post_title;
+    $subtitle = "";
+    $title_class = "sidebar-highlight-title";
+    if ($pos = strpos($post->post_title, ':')) {
+      $title = substr($post->post_title, 0, $pos+1);
+      $title_class = "sidebar-highlight-title";
+      $subtitle = substr($post->post_title, $pos+2);
+      $subtitle_class = "sidebar-highlight-subtitle";
+    }
     ?>
 
     <div class="mosaic-news-contents">
@@ -67,8 +77,13 @@
             </div>
           </div>
         </div>
-        <div class="mosaic-news-title">
-          <?php echo $post->post_title; ?>
+        <div class="sidebar-highlight-title">
+          <div class="<?php echo $title_class; ?>">
+            <?php echo $title; ?>
+          </div>
+          <div class="<?php echo $subtitle_class; ?>">
+            <?php echo $subtitle; ?>
+          </div>
         </div>
       </a>
       <div class="authors">
@@ -91,6 +106,15 @@
       $excerpt = get_the_excerpt($post->ID);
       $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
       $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
+      $title = $post->post_title;
+      $subtitle = "";
+      $title_class = "sidebar-highlight-title";
+      if ($pos = strpos($post->post_title, ':')) {
+        $title = substr($post->post_title, 0, $pos);
+        $title_class = "sidebar-highlight-title";
+        $subtitle = substr($post->post_title, $pos+2);
+        $subtitle_class = "sidebar-highlight-subtitle";
+      }
       ?>
       <div class="sidebar-post">
         <a href="<?php echo $permalink; ?>" class="sidebar-post-link">
@@ -103,7 +127,7 @@
                 <?php echo $category; ?>
               </div>
               <div class="sidebar-post-title">
-                <?php echo $post->post_title; ?>
+                <?php echo $title; ?>
               </div>
             </a>
 

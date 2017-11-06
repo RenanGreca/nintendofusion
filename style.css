@@ -679,7 +679,7 @@ a.author.url.fn:hover {
 
 .mosaic-news-subtitle-1 {
   font-size: 18px;
-  line-height: 12px;
+  line-height: 18px;
   font-weight: lighter;
 }
 
@@ -1122,6 +1122,24 @@ a.author.url.fn:hover {
     width: 339px;
     display: block;
     margin: 30px 0;
+}
+
+.sidebar-highlight-title {
+  font-family: var(--font-title), sans-serif;
+  margin: 5px 0 0 0;
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sidebar-highlight-subtitle {
+  font-family: var(--font-text), sans-serif;
+  margin: 0 0 5px 0;
+  font-size: 20px;
+  line-height: 20px;
+	font-weight: normal;
+  text-transform: uppercase;
 }
 
     .sidebar-post-image {

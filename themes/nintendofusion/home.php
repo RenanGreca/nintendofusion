@@ -45,7 +45,7 @@ $highlights_array = array_merge($fixed_array, $highlights_array);
 
 $args = array(
   'posts_per_page'   => 3,
-  'category_name'    => 'noticia',
+  'category_name'    => 'curtas',
   'orderby'          => 'date',
   'order'            => 'DESC',
   'post_type'        => 'post',

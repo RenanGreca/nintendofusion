@@ -5,7 +5,7 @@ Description: Theme for the Nintendo Fusion website.
 Author: Renan Greca
 Author URI: http://nintendofusion.com.br/
 GitHub Theme URI: https://github.com/RenanGreca/nintendofusion
-Version: 1.0
+Version: 1.1
 Tags: responsive, dark, mosaic
 
 License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
@@ -263,7 +263,7 @@ a:hover.navbar-link {
   }
 
   .social-icon {
-    margin: 0 10px;
+    margin: 0 5px;
   }
 
   .navbar .nav {

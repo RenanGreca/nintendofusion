@@ -125,9 +125,9 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
           <span></span>
 
           <ul id="hmenu">
-            <a href="<?php echo site_url(); ?>/category/noticia"><li>NOTÍCIAS</li></a>
+            <a href="<?php echo site_url(); ?>/category/curtas"><li>CURTAS</li></a>
             <a href="<?php echo site_url(); ?>/category/materia"><li>MATÉRIAS</li></a>
-            <a href="<?php echo site_url(); ?>/category/noticia"><li>VÍDEOS</li></a>
+            <a href="<?php echo site_url(); ?>/video"><li>VÍDEOS</li></a>
             <a href="<?php echo site_url(); ?>/podcast"><li>PODCASTS</li></a>
             <!-- <a href="<?php echo site_url(); ?>/category/ebook"><li>eBOOKS</li></a> -->
             <li>
@@ -137,6 +137,7 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
               </form>
             </li>
             <li>
+              <a href="https://discordapp.com/invite/cbsTx69" class="social-icon social-discord" target="_blank"></a>
               <a href="https://facebook.com/nintendofusion" class="social-icon social-fb" target="_blank"></a>
               <a href="https://twitter.com/NinFusionBR" class="social-icon social-tw" target="_blank"></a>
               <a href="https://www.youtube.com/channel/UCU74wc5ncqwjjoXhdw53DSA" class="social-icon social-yt" target="_blank"></a>
@@ -163,7 +164,7 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
               </a></li>
 
               <!-- <li class="active"><a href="#">Home</a></li> -->
-              <li><a class="navbar-link" href="<?php echo site_url(); ?>/category/noticia">NOTÍCIAS</a></li>
+              <li><a class="navbar-link" href="<?php echo site_url(); ?>/category/curtas">CURTAS</a></li>
               <li><a class="navbar-link" href="<?php echo site_url(); ?>/category/materia">MATÉRIAS</a></li>
               <li><a class="navbar-link" href="<?php echo site_url(); ?>/video">VÍDEOS</a></li>
               <li><a class="navbar-link" href="<?php echo site_url(); ?>/podcast">PODCAST</a></li>

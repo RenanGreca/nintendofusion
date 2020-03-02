@@ -39,7 +39,7 @@ if ($title == "Podcast") {
   // print_r($podcasts);
   ?>
   <div class="archive-list">
-    <title><?php echo $title ?> - Nintendo Fusion</title>
+    <title><?php echo $title ?> - Neo Fusion</title>
     <h1>Categoria: <?php echo $title ?></h1>
 
     <?php
@@ -177,7 +177,7 @@ if ($title == "Podcast") {
 
   <link href="<?php echo get_bloginfo('template_url'); ?>/css/single.css" rel="stylesheet">
 
-  <title><?php echo $title; ?> - Nintendo Fusion</title>
+  <title><?php echo $title; ?> - Neo Fusion</title>
   <div class="content review-content">
     <h1><?php echo $title; ?></h1>
 

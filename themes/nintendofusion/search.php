@@ -5,7 +5,7 @@
 
 // echo $wp_query;
 ?>
-<title>Busca - Nintendo Fusion</title>
+<title>Busca - Neo Fusion</title>
 <div class="archive-list">
   <?php
   if ($_GET['s'] == '') {

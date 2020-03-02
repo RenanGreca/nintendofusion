@@ -98,7 +98,7 @@ $meta_fields = get_post_custom();
 $disclaimer = $meta_fields['disclaimer'][0];
 
 ?>
-<title><?php echo $category; ?>: <?php echo $post_title; ?> - Nintendo Fusion</title>
+<title><?php echo $category; ?>: <?php echo $post_title; ?> - Neo Fusion</title>
 <?php
 
   // print_r($post);
@@ -283,7 +283,7 @@ $disclaimer = $meta_fields['disclaimer'][0];
 
       <!-- Twitter tweet button -->
       <a class="twitter-share-button"
-        href="https://twitter.com/intent/tweet?via=ninfusionbr"
+        href="https://twitter.com/intent/tweet?via=neofusionbr"
         data-size="large">
       Tweet</a>
     </div>
@@ -580,7 +580,7 @@ $disclaimer = $meta_fields['disclaimer'][0];
 
       <!-- Twitter tweet button -->
       <a class="twitter-share-button"
-        href="https://twitter.com/intent/tweet?via=ninfusionbr"
+        href="https://twitter.com/intent/tweet?via=neofusionbr"
         data-size="large">
       Tweet</a>
     </div>

@@ -54,7 +54,7 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon/favicon-128.png" sizes="128x128" />
-    <meta name="application-name" content="Nintendo Fusion"/>
+    <meta name="application-name" content="Neo Fusion"/>
     <meta name="msapplication-TileColor" content="#070f20" />
     <meta name="msapplication-TileImage" content="<?php echo get_bloginfo('template_url') ?>/img/favicon/mstile-144x144.png" />
     <meta name="msapplication-square70x70logo" content="<?php echo get_bloginfo('template_url') ?>/img/favicon/mstile-70x70.png" />
@@ -107,9 +107,9 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <div class="brand">
           <a class="brand-link" href="<?php echo site_url(); ?>">
             <img class="logo" src="<?php echo get_bloginfo('template_url') ?>/img/logo-neon-<?php echo $GLOBALS['theme']; ?>.png" />
-            <span class="logo-text">NINTENDO FUSION</span>
+            <span class="logo-text">NEO FUSION</span>
           </a>
-          <!-- <p class="logo-text">Nintendo FUSION</p> -->
+          <!-- <p class="logo-text">Neo FUSION</p> -->
           <form id="search" method="get" action="<?php echo home_url(); ?>" role="search">
             <input type="text" class="input-search input-search-desktop" placeholder="Pesquisar" name="s" value="<?php echo $_GET['s']; ?>"/>
             <button type="submit" role="button" style="display:none;"/>
@@ -138,9 +138,11 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
             </li>
             <li>
               <a href="https://discordapp.com/invite/cbsTx69" class="social-icon social-discord" target="_blank"></a>
-              <a href="https://facebook.com/nintendofusion" class="social-icon social-fb" target="_blank"></a>
-              <a href="https://twitter.com/NinFusionBR" class="social-icon social-tw" target="_blank"></a>
+              <!-- <a href="https://facebook.com/nintendofusion" class="social-icon social-fb" target="_blank"></a> -->
+              <a href="http://instagram.com/neofusionbr" class="social-icon social-ig" target="_blank"></a>
+              <a href="https://twitter.com/NeoFusionBR" class="social-icon social-tw" target="_blank"></a>
               <a href="https://www.youtube.com/channel/UCU74wc5ncqwjjoXhdw53DSA" class="social-icon social-yt" target="_blank"></a>
+              <a href="https://twitch.tv/ninfusionbr" class="social-icon social-twitch" target="_blank"></a>
             </li>
           </ul>
         </div>
@@ -153,14 +155,18 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
               <li><a href="https://discordapp.com/invite/cbsTx69" class="social-icon social-discord" target="_blank">
                 <!-- <img class="social-icon" src="<?php echo get_bloginfo('template_url') ?>/img/icons/discord-red.png"> -->
               </a></li>
-              <li><a href="https://facebook.com/nintendofusion" class="social-icon social-fb" target="_blank">
+              <!-- <li><a href="https://facebook.com/nintendofusion" class="social-icon social-fb" target="_blank"> -->
                 <!-- <img class="social-icon" src="<?php echo get_bloginfo('template_url') ?>/img/icons/facebook-red.png"> -->
+              <!-- </a></li> -->
+              <li><a href="http://instagram.com/neofusionbr" class="social-icon social-ig" target="_blank">
               </a></li>
-              <li><a href="https://twitter.com/NinFusionBR" class="social-icon social-tw" target="_blank">
+              <li><a href="https://twitter.com/NeoFusionBR" class="social-icon social-tw" target="_blank">
                 <!-- <img  src="<?php echo get_bloginfo('template_url') ?>/img/icons/twitter-red.png"> -->
               </a></li>
               <li><a href="https://www.youtube.com/channel/UCU74wc5ncqwjjoXhdw53DSA" class="social-icon social-yt" target="_blank">
                 <!-- <img class="social-icon" src="<?php echo get_bloginfo('template_url') ?>/img/icons/youtube-red.png"> -->
+              </a></li>
+              <li><a href="https://twitch.tv/ninfusionbr" class="social-icon social-twitch" target="_blank">
               </a></li>
 
               <!-- <li class="active"><a href="#">Home</a></li> -->

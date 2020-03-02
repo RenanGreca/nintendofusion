@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<title>Nintendo Fusion</title>
+<title>Neo Fusion</title>
 <?php
 $ids = array();
 

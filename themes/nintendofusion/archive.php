@@ -18,7 +18,7 @@ if ( is_category() ) {
 }
 
 ?>
-<title><?php echo $title; ?> - Nintendo Fusion</title>
+<title><?php echo $title; ?> - Neo Fusion</title>
 <div class="archive-list">
   <h1><?php echo $title; ?></h1>
 

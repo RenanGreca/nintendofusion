@@ -37,15 +37,15 @@ function insert_fb_in_head() {
     ';
     echo '<meta property="fb:app_id" content="976575375818675"/>
     ';
-    echo '<meta property="og:site_name" content="Nintendo Fusion"/>
+    echo '<meta property="og:site_name" content="Neo Fusion"/>
     ';
 
     if ( !is_singular()) { //if it is not a post or a page
       echo '<meta property="og:image" content="' . get_bloginfo('template_url')."/img/wallpaper-small.png" . '"/>
       ';
-      echo '<meta property="og:title" content="Nintendo Fusion"/>
+      echo '<meta property="og:title" content="Neo Fusion"/>
       ';
-      echo '<meta property="og:url" content="http://nintendofusion.com.br"/>
+      echo '<meta property="og:url" content="http://neofusion.com.br"/>
       ';
       return;
     }

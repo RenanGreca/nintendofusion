@@ -137,7 +137,7 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
               </form>
             </li>
             <li>
-              <a href="https://discordapp.com/invite/cbsTx69" class="social-icon social-discord" target="_blank"></a>
+              <!-- <a href="https://discordapp.com/invite/cbsTx69" class="social-icon social-discord" target="_blank"></a> -->
               <!-- <a href="https://facebook.com/nintendofusion" class="social-icon social-fb" target="_blank"></a> -->
               <a href="http://instagram.com/neofusionbr" class="social-icon social-ig" target="_blank"></a>
               <a href="https://twitter.com/NeoFusionBR" class="social-icon social-tw" target="_blank"></a>
@@ -152,9 +152,9 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
         <div class="nav-collapse collapse">
           <ul class="nav">
-              <li><a href="https://discordapp.com/invite/cbsTx69" class="social-icon social-discord" target="_blank">
+              <!-- <li><a href="https://discordapp.com/invite/cbsTx69" class="social-icon social-discord" target="_blank"> -->
                 <!-- <img class="social-icon" src="<?php echo get_bloginfo('template_url') ?>/img/icons/discord-red.png"> -->
-              </a></li>
+              <!-- </a></li> -->
               <!-- <li><a href="https://facebook.com/nintendofusion" class="social-icon social-fb" target="_blank"> -->
                 <!-- <img class="social-icon" src="<?php echo get_bloginfo('template_url') ?>/img/icons/facebook-red.png"> -->
               <!-- </a></li> -->

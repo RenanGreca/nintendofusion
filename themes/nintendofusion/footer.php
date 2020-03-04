@@ -5,10 +5,10 @@
 
         <?php
         if ($GLOBALS['theme'] == 'light') {
-          $theme_url = 'http://'.$_SERVER['HTTP_HOST'].strtok($_SERVER["REQUEST_URI"],'?').'?theme=dark';
+          $theme_url = 'https://'.$_SERVER['HTTP_HOST'].strtok($_SERVER["REQUEST_URI"],'?').'?theme=dark';
           $theme = 'escuro';
         } else {
-          $theme_url = 'http://'.$_SERVER['HTTP_HOST'].strtok($_SERVER["REQUEST_URI"],'?').'?theme=light';
+          $theme_url = 'https://'.$_SERVER['HTTP_HOST'].strtok($_SERVER["REQUEST_URI"],'?').'?theme=light';
           $theme = 'claro';
         }
         ?>

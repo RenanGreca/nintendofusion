@@ -41,11 +41,11 @@ function insert_fb_in_head() {
     ';
 
     if ( !is_singular()) { //if it is not a post or a page
-      echo '<meta property="og:image" content="' . get_bloginfo('template_url')."/img/wallpaper-small.png" . '"/>
+      echo '<meta property="og:image" content="' . get_bloginfo('template_url')."/img/wallpaper-small.png?v=2" . '"/>
       ';
       echo '<meta property="og:title" content="Neo Fusion"/>
       ';
-      echo '<meta property="og:url" content="http://neofusion.com.br"/>
+      echo '<meta property="og:url" content="https://neofusion.com.br"/>
       ';
       return;
     }
@@ -70,7 +70,7 @@ function insert_fb_in_head() {
 
     if (!has_post_thumbnail( $post->ID )) {
         //the post does not have featured image, use a default image
-        $image = get_bloginfo('template_url')."/img/wallpaper-small.png";
+        $image = get_bloginfo('template_url')."/img/wallpaper-small.png?v=2";
     } else {
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
     }

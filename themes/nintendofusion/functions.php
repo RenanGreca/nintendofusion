@@ -57,7 +57,11 @@ function insert_fb_in_head() {
     } else if ($cat == "video") {
       $category = "Vídeo";
     }
-    echo '<meta property="og:title" content="' . $category . ': ' . str_replace('~', '', get_the_title()) . '"/>
+    $title = str_replace('~', '', get_the_title());
+    if ($category) {
+        $title = $category . ': ' . $title;
+    }
+    echo '<meta property="og:title" content="' . $title . '"/>
     ';
     echo '<meta property="og:type" content="article"/>';
     echo '<meta property="og:url" content="' . get_permalink() . '"/>

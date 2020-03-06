@@ -95,11 +95,6 @@ add_action( 'wp_head', 'insert_fb_in_head', 5 );
 
 add_theme_support( 'post-thumbnails' );
 
-function new_excerpt_more( $more ) {
-    return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', 'your-text-domain') . '</a>';
-}
-add_filter( 'excerpt_more', 'new_excerpt_more' );
-
 // Used to track number of views in each post
 function wpb_set_post_views($postID) {
     $count_key = 'wpb_post_views_count';

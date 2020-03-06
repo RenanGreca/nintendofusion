@@ -236,9 +236,11 @@ $disclaimer = $meta_fields['disclaimer'][0];
       <div class="review-footer-left">
         <div class="review-boxart" style="background-image: url('<?php echo $icone; ?>')">
           <div class="review-score">
-            <?php // print_r($meta_fields);
-            echo $meta_fields['nota'][0];
-            ?>
+            <!-- <?php 
+            if ($meta_fields['nota'][0]) {
+                echo $meta_fields['nota'][0]; 
+            }
+            ?> -->
           </div>
         </div>
       </div>
@@ -246,9 +248,13 @@ $disclaimer = $meta_fields['disclaimer'][0];
         <div class="review-footer-details">
           <div class="review-footer-word"><?php echo nf_score_to_word($meta_fields['nota'][0]); ?></div>
           <div class="review-footer-title"><?php the_title(); ?></div>
-          <span class="review-footer-detail">Publicadora</span> <?php echo $meta_fields['publisher'][0]; ?><br />
+          <?php if ($meta_fields['publisher'][0]) { ?>
+            <span class="review-footer-detail">Publicadora</span> <?php echo $meta_fields['publisher'][0]; ?><br />
+          <?php } ?>
           <span class="review-footer-detail">Desenvolvedora</span> <?php echo $meta_fields['developer'][0]; ?><br />
+          <?php if ($meta_fields['equipe'][0]) { ?>
           <span class="review-footer-detail">Equipe</span> <?php echo $meta_fields['equipe'][0]; ?><br />
+          <?php } ?>
           <span class="review-footer-detail">Plataformas</span> <?php echo $meta_fields['plataformas'][0]; ?> <br />
           <span class="review-footer-detail">Lançamento</span> <?php echo $meta_fields['data'][0]; ?><br />
         </div>

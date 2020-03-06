@@ -324,7 +324,7 @@ hr {
                 color: var(--neon-red);
                 font-family: var(--font-title);
                 /*background-color: #00bede;*/
-                background-color: rgba(0, 0, 0, 0.7);
+                /* background-color: rgba(0, 0, 0, 0.7); */
                 text-align: center;
                 font-size: 100px;
                 font-weight: bold;

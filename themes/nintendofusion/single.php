@@ -571,6 +571,11 @@ $disclaimer = $meta_fields['disclaimer'][0];
       ?>
     </div>
     <div class="content news-content">
+        <div class="review-disclaimer">
+        <?php
+        echo $meta_fields['disclaimer'][0];
+        ?>
+        </div>
       <p><?php the_content(); ?></p>
     </div>
 

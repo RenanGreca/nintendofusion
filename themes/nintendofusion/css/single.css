@@ -742,7 +742,8 @@ img.size-full {
   }*/
 
   img.size-full {
-    /*max-width: 300px;*/
+    max-width: 100%;
+    height: auto;
   }
 
 }
@@ -769,7 +770,8 @@ img.size-full {
   }
 
   img.size-full {
-    /*max-width: 300px;*/
+    max-width: 100%;
+    height: auto;
   }
 
   img.size-medium {

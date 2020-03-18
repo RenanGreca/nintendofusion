@@ -169,4 +169,41 @@ add_filter( 'next_posts_link_attributes', 'new_next_posts_link_attributes' );
 
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+
+function separate_title_subtitle($title, $large_class, $small_class) {
+
+    $result['title'] = $title;
+    $result['subtitle'] = "";
+    $result['title_class'] = $large_class;
+    $result['subtitle_class'] = "";
+
+    $posc = strrpos($title, ':');
+    $posp = strrpos($title, '+');
+
+    if ($pos = strpos($title, '~')) {
+      $result['title'] = substr($title, 0, $pos);
+      $result['title_class'] = $small_class;
+      $result['subtitle'] = substr($title, $pos+2);
+      $result['subtitle_class'] = $large_class;
+
+    } else if (($posc > 0) || ($posp > 0)) {
+      $pos = ($posc > $posp ? $posc : $posp);
+      $result['title'] = substr($title, 0, $pos+1);
+      $result['title_class'] = $small_class;
+      $result['subtitle'] = substr($title, $pos+2);
+      $result['subtitle_class'] = $large_class;
+
+    } else if ($pos = strpos($title, '(')) {
+      $result['title'] = substr($title, 0, $pos-1);
+      $result['title_class'] = $large_class;
+      $result['subtitle'] = substr($title, $pos+1, strlen($title)-strlen($result['title'])-3);
+      $result['subtitle_class'] = $small_class;
+
+    }
+
+    return $result;
+
+}
+
 ?>

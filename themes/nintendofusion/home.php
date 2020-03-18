@@ -123,7 +123,6 @@ $others_array = get_posts( $args );
       $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
 
       $title_array = separate_title_subtitle($post->post_title, "highlight-title-1", "highlight-subtitle-1");
-      print_r($title_array);
 
       ?>
 

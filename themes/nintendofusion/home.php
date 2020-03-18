@@ -122,28 +122,8 @@ $others_array = get_posts( $args );
       // $coauthors = get_coauthors($post->ID);
       $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
 
-      $title = $post->post_title;
-      $subtitle = "";
-      $title_class = "highlight-title-1";
-      $posc = strrpos($post->post_title, ':');
-      $posp = strrpos($post->post_title, '+');
-      if ($pos = strpos($post->post_title, '~')) {
-        $title = substr($post->post_title, 0, $pos);
-        $title_class = "highlight-subtitle-1";
-        $subtitle = substr($post->post_title, $pos+2);
-        $subtitle_class = "highlight-title-1";
-      } else if (($posc > 0) || ($posp > 0)) {
-        $pos = ($posc > $posp ? $posc : $posp);
-        $title = substr($post->post_title, 0, $pos+1);
-        $title_class = "highlight-subtitle-1";
-        $subtitle = substr($post->post_title, $pos+2);
-        $subtitle_class = "highlight-title-1";
-      } else if ($pos = strpos($post->post_title, '(')) {
-        $title = substr($post->post_title, 0, $pos-1);
-        $title_class = "highlight-title-1";
-        $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
-        $subtitle_class = "highlight-subtitle-1";
-      }
+      $title_array = separate_title_subtitle($post->post_title, "highlight-title-1", "highlight-subtitle-1");
+      print_r($title_array);
 
       ?>
 
@@ -155,11 +135,11 @@ $others_array = get_posts( $args );
             </div>
           </div>
           <div class="highlight-title">
-            <div class="<?php echo $title_class; ?>">
-              <?php echo $title; ?>
+            <div class="<?php echo $title_array['title_class']; ?>">
+              <?php echo $title_array['title']; ?>
             </div>
-            <div class="<?php echo $subtitle_class; ?>">
-              <?php echo $subtitle; ?>
+            <div class="<?php echo $title_array['subtitle_class']; ?>">
+              <?php echo $title_array['subtitle']; ?>
             </div>
           </div>
 
@@ -272,9 +252,9 @@ $others_array = get_posts( $args );
       $posp = strrpos($post->post_title, '+');
       if ($pos = strpos($post->post_title, '~')) {
         $title = substr($post->post_title, 0, $pos);
-        $title_class = "highlight-subtitle-1";
+        $title_class = "highlight-subtitle-2";
         $subtitle = substr($post->post_title, $pos+2);
-        $subtitle_class = "highlight-title-1";
+        $subtitle_class = "highlight-title-2";
       } else if (($posc > 0) || ($posp > 0)) {
         $pos = ($posc > $posp ? $posc : $posp);
         $title = substr($post->post_title, 0, $pos+1);
@@ -645,6 +625,9 @@ $others_array = get_posts( $args );
         if ($post->post_type == 'podcast') {
           $category = "Podcast";
         }
+        if ($post->post_type == 'video') {
+          $category = "Vídeo";
+        }
         $permalink = get_post_permalink($post->ID);
         $excerpt = get_the_excerpt($post->ID);
         // $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ),
@@ -959,9 +942,23 @@ $others_array = get_posts( $args );
 
 
 
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
+    <?php 
+    
+    $args = array(
+        'posts_per_page'   => 10,
+        // 'category_name'    => 'audio_video',
+        'orderby'          => 'date',
+        'order'            => 'DESC',
+        'post_type'        => ['post', 'podcast', 'video'],
+        'post_status'      => 'publish',
+        'suppress_filters' => true
+    );
+    $others_array_mobile = get_posts( $args );
+    
+    foreach($others_array_mobile as $post) {
+    // if ( have_posts() ) : while ( have_posts() ) : the_post();
     // $post = the_post();
-
+    
     if (!in_array ($post, $highlights_array)) {
 
       $categories = get_the_category();
@@ -970,6 +967,9 @@ $others_array = get_posts( $args );
       }
       if ($post->post_type == 'podcast') {
         $category = "Podcast";
+      }
+      if ($post->post_type == 'video') {
+        $category = "Vídeo";
       }
 
       $permalink = get_post_permalink($post->ID);
@@ -1059,8 +1059,9 @@ $others_array = get_posts( $args );
 
   <?php
     }
-    endwhile;
-    endif;
+    // endwhile;
+    // endif;
+}
   ?>
   <div class="all">
     <?php posts_nav_link('<span class="spacing"> </span>','Anterior','Próxima'); ?>

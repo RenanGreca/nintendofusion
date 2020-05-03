@@ -511,13 +511,15 @@ $disclaimer = $meta_fields['disclaimer'][0];
     </div>
   </div>
 
-  <div class="comments-wrapper">
-    <h3>Comentários</h3>
-    <?php
-    $post = get_post($main_post_id);
-    comments_template(); ?>
+  <?php if (!$_GET["preview"]) {?>
+    <div class="comments-wrapper">
+      <h3>Comentários</h3>
+      <?php
+      $post = get_post($main_post_id);
+      comments_template(); ?>
     </div>
-  </div>
+  <?php } ?>
+
 
 <?php } else {
   ?>
@@ -596,10 +598,12 @@ $disclaimer = $meta_fields['disclaimer'][0];
       Tweet</a>
     </div>
 
-    <div class="comments-wrapper">
-      <h3>Comentários</h3>
-      <?php comments_template(); ?>
-    </div>
+    <?php if (!$_GET["preview"]) {?>
+      <div class="comments-wrapper">
+        <h3>Comentários</h3>
+        <?php comments_template(); ?>
+      </div>
+    <?php } ?>
   </div>
 
   <div class="span4">

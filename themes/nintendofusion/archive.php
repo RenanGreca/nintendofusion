@@ -30,6 +30,9 @@ if ( is_category() ) {
   if ($post->post_type == 'podcast') {
     $category = "Podcast";
   }
+  if ($post->post_type == 'video') {
+    $category = "Vídeo";
+  }
 
   $permalink = get_post_permalink($post->ID);
   $excerpt = get_the_excerpt($post->ID);

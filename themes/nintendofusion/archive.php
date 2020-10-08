@@ -45,25 +45,7 @@ if ( is_category() ) {
     $image_mobile = pathinfo($image, PATHINFO_DIRNAME) . '/' . pathinfo($image, PATHINFO_FILENAME).'-150x150.jpg';
   }
 
-  $title = $post->post_title;
-  $subtitle = "";
-  $title_class = "list-news-title-1";
-  if ($pos = strpos($post->post_title, ':')) {
-    $title = substr($post->post_title, 0, $pos+1);
-    $title_class = "list-news-subtitle-1";
-    $subtitle = substr($post->post_title, $pos+2);
-    $subtitle_class = "list-news-title-1";
-  } else if ($pos = strpos($post->post_title, '~')) {
-    $title = substr($post->post_title, 0, $pos);
-    $title_class = "list-news-subtitle-1";
-    $subtitle = substr($post->post_title, $pos+2);
-    $subtitle_class = "list-news-title-1";
-  } else if ($pos = strpos($post->post_title, '(')) {
-    $title = substr($post->post_title, 0, $pos-1);
-    $title_class = "list-news-title-1";
-    $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
-    $subtitle_class = "list-news-subtitle-1";
-  }
+  $title_array = separate_title_subtitle($post->post_title, "review-maintitle", "review-subtitle");
   ?>
 
 
@@ -91,11 +73,11 @@ if ( is_category() ) {
               <?php echo $category; ?>
             </h4>
             <div class="list-news-title">
-              <div class="<?php echo $title_class; ?>">
-                <?php echo $title; ?>
+              <div class="<?php echo $title_array['title_class']; ?>">
+                <?php echo $title_array['title']; ?>
               </div>
-              <div class="<?php echo $subtitle_class; ?>">
-                <?php echo $subtitle; ?>
+              <div class="<?php echo $title_array['subtitle_class']; ?>">
+                <?php echo $title_array['subtitle']; ?>
               </div>
             </div>
           </a>

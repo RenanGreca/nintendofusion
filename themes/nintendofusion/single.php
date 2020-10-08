@@ -68,30 +68,9 @@ $image_mobile = wp_get_attachment_image_src( get_post_thumbnail_id(),
 
 $coauthors = coauthors_posts_links(', ', ' e ', null, null, false);
 
-$title = $post->post_title;
-$subtitle = "";
-$title_class = "review-maintitle";
-$posc = strrpos($post->post_title, ':');
-$posp = strrpos($post->post_title, '+');
-if (($posc > 0) || ($posp > 0)) {
-  $pos = ($posc > $posp ? $posc : $posp);
-  $title = substr($post->post_title, 0, $pos+1);
-  $title_class = "review-subtitle";
-  $subtitle = substr($post->post_title, $pos+2);
-  $subtitle_class = "review-maintitle";
-} else if ($pos = strpos($post->post_title, '~')) {
-  $title = substr($post->post_title, 0, $pos);
-  $title_class = "review-subtitle";
-  $subtitle = substr($post->post_title, $pos+2);
-  $subtitle_class = "review-maintitle";
-}  else if ($pos = strpos($post->post_title, '(')) {
-  $title = substr($post->post_title, 0, $pos-1);
-  $title_class = "review-maintitle";
-  $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
-  $subtitle_class = "review-subtitle";
-}
+$title_array = separate_title_subtitle($post->post_title, "review-maintitle", "review-subtitle");
 
-$post_title = str_replace('~', '', $post->post_title);
+$post_title = remove_formatting_chars($post->post_title);
 
 $meta_fields = get_post_custom();
 
@@ -179,11 +158,11 @@ $disclaimer = $meta_fields['disclaimer'][0];
         </div>
 
         <div class="review-title">
-          <div class="<?php echo $title_class; ?>">
-            <?php echo $title; ?>
+          <div class="<?php echo $title_array['title_class']; ?>">
+            <?php echo $title_array['title']; ?>
           </div>
-          <div class="<?php echo $subtitle_class; ?>">
-            <?php echo $subtitle; ?>
+          <div class="<?php echo $title_array['subtitle_class']; ?>">
+            <?php echo $title_array['subtitle']; ?>
           </div>
         </div>
 
@@ -317,26 +296,7 @@ $disclaimer = $meta_fields['disclaimer'][0];
           $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
         }
 
-        $title = get_the_title($post->ID);
-        $post_title = get_the_title($post->ID);
-        $subtitle = "";
-        $title_class = "mosaic-news-title-1";
-        if ($pos = strpos($post_title, ':')) {
-          $title = substr($post_title, 0, $pos+1);
-          $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post_title, $pos+2);
-          $subtitle_class = "mosaic-news-title-1";
-        } else if ($pos = strpos($post_title, '~')) {
-          $title = substr($post_title, 0, $pos);
-          $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post_title, $pos+2);
-          $subtitle_class = "mosaic-news-title-1";
-        } else if ($pos = strpos($post_title, '(')) {
-          $title = substr($post_title, 0, $pos-1);
-          $title_class = "mosaic-news-title-1";
-          $subtitle = substr($post_title, $pos+1, strlen($post_title)-strlen($title)-3);
-          $subtitle_class = "mosaic-news-subtitle-1";
-        }
+        $title_array = separate_title_subtitle(get_the_title($post->ID), "mosaic-news-title-1", "mosaic-news-subtitle-1");
         ?>
 
         <div class="mosaic-news">
@@ -352,11 +312,11 @@ $disclaimer = $meta_fields['disclaimer'][0];
                 </div>
               </div>
               <div class="mosaic-news-title">
-                <div class="<?php echo $title_class; ?>">
-                  <?php echo $title; ?>
+                <div class="<?php echo $title_array['title_class']; ?>">
+                  <?php echo $title_array['title']; ?>
                 </div>
-                <div class="<?php echo $subtitle_class; ?>">
-                  <?php echo $subtitle; ?>
+                <div class="<?php echo $title_array['subtitle_class']; ?>">
+                  <?php echo $title_array['subtitle']; ?>
                 </div>
               </div>
             </a>
@@ -387,26 +347,7 @@ $disclaimer = $meta_fields['disclaimer'][0];
           $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
         }
 
-        $title = get_the_title($post->ID);
-        $post_title = get_the_title($post->ID);
-        $subtitle = "";
-        $title_class = "mosaic-news-title-1";
-        if ($pos = strpos($post_title, ':')) {
-          $title = substr($post_title, 0, $pos+1);
-          $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post_title, $pos+2);
-          $subtitle_class = "mosaic-news-title-1";
-        } else if ($pos = strpos($post_title, '~')) {
-          $title = substr($post_title, 0, $pos);
-          $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post_title, $pos+2);
-          $subtitle_class = "mosaic-news-title-1";
-        } else if ($pos = strpos($post_title, '(')) {
-          $title = substr($post_title, 0, $pos-1);
-          $title_class = "mosaic-news-title-1";
-          $subtitle = substr($post_title, $pos+1, strlen($post_title)-strlen($title)-3);
-          $subtitle_class = "mosaic-news-subtitle-1";
-        }
+        $title_array = separate_title_subtitle(get_the_title($post->ID), "mosaic-news-title-1", "mosaic-news-subtitle-1");
         ?>
 
         <div class="mosaic-news">
@@ -422,11 +363,11 @@ $disclaimer = $meta_fields['disclaimer'][0];
                 </div>
               </div>
               <div class="mosaic-news-title">
-                <div class="<?php echo $title_class; ?>">
-                  <?php echo $title; ?>
+              <div class="<?php echo $title_array['title_class']; ?>">
+                  <?php echo $title_array['title']; ?>
                 </div>
-                <div class="<?php echo $subtitle_class; ?>">
-                  <?php echo $subtitle; ?>
+                <div class="<?php echo $title_array['subtitle_class']; ?>">
+                  <?php echo $title_array['subtitle']; ?>
                 </div>
               </div>
             </a>
@@ -457,26 +398,7 @@ $disclaimer = $meta_fields['disclaimer'][0];
           $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
         }
 
-        $title = get_the_title($post->ID);
-        $post_title = get_the_title($post->ID);
-        $subtitle = "";
-        $title_class = "mosaic-news-title-1";
-        if ($pos = strpos($post_title, ':')) {
-          $title = substr($post_title, 0, $pos+1);
-          $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post_title, $pos+2);
-          $subtitle_class = "mosaic-news-title-1";
-        } else if ($pos = strpos($post_title, '~')) {
-          $title = substr($post_title, 0, $pos);
-          $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post_title, $pos+2);
-          $subtitle_class = "mosaic-news-title-1";
-        } else if ($pos = strpos($post_title, '(')) {
-          $title = substr($post_title, 0, $pos-1);
-          $title_class = "mosaic-news-title-1";
-          $subtitle = substr($post_title, $pos+1, strlen($post_title)-strlen($title)-3);
-          $subtitle_class = "mosaic-news-subtitle-1";
-        }
+        $title_array = separate_title_subtitle(get_the_title($post->ID), "mosaic-news-title-1", "mosaic-news-subtitle-1");
         ?>
 
         <div class="mosaic-news">
@@ -492,11 +414,11 @@ $disclaimer = $meta_fields['disclaimer'][0];
                 </div>
               </div>
               <div class="mosaic-news-title">
-                <div class="<?php echo $title_class; ?>">
-                  <?php echo $title; ?>
+              <div class="<?php echo $title_array['title_class']; ?>">
+                  <?php echo $title_array['title']; ?>
                 </div>
-                <div class="<?php echo $subtitle_class; ?>">
-                  <?php echo $subtitle; ?>
+                <div class="<?php echo $title_array['subtitle_class']; ?>">
+                  <?php echo $title_array['subtitle']; ?>
                 </div>
               </div>
             </a>

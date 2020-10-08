@@ -57,7 +57,7 @@ function insert_fb_in_head() {
     } else if ($cat == "video") {
       $category = "Vídeo";
     }
-    $title = str_replace('~', '', get_the_title());
+    $title = remove_formatting_chars(get_the_title());
     if ($category) {
         $title = $category . ': ' . $title;
     }
@@ -153,7 +153,9 @@ function nf_score_to_word($score) {
 }
 
 function remove_formatting_chars( $title, $id = null ) {
-    return str_replace('~', '', $title);
+  $title = str_replace('~', '', $title);
+  $title = str_replace('^', '', $title);
+  return $title;
 }
 add_filter( 'the_title', 'remove_formatting_chars', 10, 2 );
 

@@ -244,29 +244,7 @@ $others_array = get_posts( $args );
       // $coauthors = get_coauthors($post->ID);
       $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
 
-      $title = $post->post_title;
-      $subtitle = "";
-      $title_class = "highlight-title-2";
-      $posc = strrpos($post->post_title, ':');
-      $posp = strrpos($post->post_title, '+');
-      if ($pos = strpos($post->post_title, '~')) {
-        $title = substr($post->post_title, 0, $pos);
-        $title_class = "highlight-subtitle-2";
-        $subtitle = substr($post->post_title, $pos+2);
-        $subtitle_class = "highlight-title-2";
-      } else if (($posc > 0) || ($posp > 0)) {
-        $pos = ($posc > $posp ? $posc : $posp);
-        $title = substr($post->post_title, 0, $pos+1);
-        $title_class = "highlight-subtitle-2";
-        $subtitle = substr($post->post_title, $pos+2);
-        $subtitle_class = "highlight-title-2";
-      } else if ($pos = strpos($post->post_title, '(')) {
-        $title = substr($post->post_title, 0, $pos-1);
-        $title_class = "highlight-title-2";
-        // $subtitle = substr($post->post_title, $pos);
-        $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
-        $subtitle_class = "highlight-subtitle-2";
-      }
+      $title_array = separate_title_subtitle($post->post_title, "highlight-title-2", "highlight-subtitle-2");
 
       ?>
 
@@ -278,11 +256,11 @@ $others_array = get_posts( $args );
             </div>
           </div>
           <div class="highlight-title">
-            <div class="<?php echo $title_class; ?>">
-              <?php echo $title; ?>
+            <div class="<?php echo $title_array['title_class']; ?>">
+              <?php echo $title_array['title']; ?>
             </div>
-            <div class="<?php echo $subtitle_class; ?>">
-              <?php echo $subtitle; ?>
+            <div class="<?php echo $title_array['subtitle_class']; ?>">
+              <?php echo $title_array['subtitle']; ?>
             </div>
           </div>
 
@@ -313,28 +291,7 @@ $others_array = get_posts( $args );
       // $coauthors = get_coauthors($post->ID);
       $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
 
-      $title = $post->post_title;
-      $subtitle = "";
-      $title_class = "highlight-title-2";
-      $posc = strrpos($post->post_title, ':');
-      $posp = strrpos($post->post_title, '+');
-      if (($posc > 0) || ($posp > 0)) {
-        $pos = ($posc > $posp ? $posc : $posp);
-        $title = substr($post->post_title, 0, $pos+1);
-        $title_class = "highlight-subtitle-2";
-        $subtitle = substr($post->post_title, $pos+2);
-        $subtitle_class = "highlight-title-2";
-      } else if ($pos = strpos($post->post_title, '~')) {
-        $title = substr($post->post_title, 0, $pos);
-        $title_class = "highlight-subtitle-1";
-        $subtitle = substr($post->post_title, $pos+2);
-        $subtitle_class = "highlight-title-1";
-      } else if ($pos = strpos($post->post_title, '(')) {
-        $title = substr($post->post_title, 0, $pos-1);
-        $title_class = "highlight-title-2";
-        $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
-        $subtitle_class = "highlight-subtitle-2";
-      }
+      $title_array = separate_title_subtitle($post->post_title, "highlight-title-2", "highlight-subtitle-2");
 
       ?>
 
@@ -346,11 +303,11 @@ $others_array = get_posts( $args );
             </div>
           </div>
           <div class="highlight-title">
-            <div class="<?php echo $title_class; ?>">
-              <?php echo $title; ?>
+            <div class="<?php echo $title_array['title_class']; ?>">
+              <?php echo $title_array['title']; ?>
             </div>
-            <div class="<?php echo $subtitle_class; ?>">
-              <?php echo $subtitle; ?>
+            <div class="<?php echo $title_array['subtitle_class']; ?>">
+              <?php echo $title_array['subtitle']; ?>
             </div>
           </div>
         </a>
@@ -398,7 +355,7 @@ $others_array = get_posts( $args );
       </div>
     </div>
 
-    <!--
+    
     <h1>MAIS LIDAS</h1>
     <div class="mosaic-row-4">
 
@@ -419,25 +376,7 @@ $others_array = get_posts( $args );
         $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
 
-        $title = $post->post_title;
-        $subtitle = "";
-        $title_class = "mosaic-news-title-1";
-        if ($pos = strpos($post->post_title, ':')) {
-          $title = substr($post->post_title, 0, $pos);
-          $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post->post_title, $pos+2);
-          $subtitle_class = "mosaic-news-title-1";
-        } else if ($pos = strpos($post->post_title, '~')) {
-          $title = substr($post->post_title, 0, $pos);
-          $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post->post_title, $pos+2);
-          $subtitle_class = "mosaic-news-title-1";
-        } else if ($pos = strpos($post->post_title, '(')) {
-          $title = substr($post->post_title, 0, $pos-1);
-          $title_class = "mosaic-news-title-1";
-          $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
-          $subtitle_class = "mosaic-news-subtitle-1";
-        }
+        $title_array = separate_title_subtitle($post->post_title, "mosaic-news-title-1", "mosaic-news-subtitle-1");
         ?>
 
         <div class="mosaic-news">
@@ -453,11 +392,11 @@ $others_array = get_posts( $args );
                 </div>
               </div>
               <div class="mosaic-news-title">
-                <div class="<?php echo $title_class; ?>">
-                  <?php echo $title; ?>
+                <div class="<?php echo $title_array['title_class']; ?>">
+                  <?php echo $title_array['title']; ?>
                 </div>
-                <div class="<?php echo $subtitle_class; ?>">
-                  <?php echo $subtitle; ?>
+                <div class="<?php echo $title_array['subtitle_class']; ?>">
+                  <?php echo $title_array['subtitle']; ?>
                 </div>
               </div>
             </a>
@@ -485,25 +424,7 @@ $others_array = get_posts( $args );
         $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
 
-        $title = $post->post_title;
-        $subtitle = "";
-        $title_class = "mosaic-news-title-1";
-        if ($pos = strpos($post->post_title, ':')) {
-          $title = substr($post->post_title, 0, $pos);
-          $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post->post_title, $pos+2);
-          $subtitle_class = "mosaic-news-title-1";
-        } else if ($pos = strpos($post->post_title, '~')) {
-          $title = substr($post->post_title, 0, $pos);
-          $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post->post_title, $pos+2);
-          $subtitle_class = "mosaic-news-title-1";
-        } else if ($pos = strpos($post->post_title, '(')) {
-          $title = substr($post->post_title, 0, $pos-1);
-          $title_class = "mosaic-news-title-1";
-          $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
-          $subtitle_class = "mosaic-news-subtitle-1";
-        }
+        $title_array = separate_title_subtitle($post->post_title, "mosaic-news-title-1", "mosaic-news-subtitle-1");
         ?>
 
         <div class="mosaic-news">
@@ -519,11 +440,11 @@ $others_array = get_posts( $args );
                 </div>
               </div>
               <div class="mosaic-news-title">
-                <div class="<?php echo $title_class; ?>">
-                  <?php echo $title; ?>
+                <div class="<?php echo $title_array['title_class']; ?>">
+                  <?php echo $title_array['title']; ?>
                 </div>
-                <div class="<?php echo $subtitle_class; ?>">
-                  <?php echo $subtitle; ?>
+                <div class="<?php echo $title_array['subtitle_class']; ?>">
+                  <?php echo $title_array['subtitle']; ?>
                 </div>
               </div>
             </a>
@@ -551,25 +472,7 @@ $others_array = get_posts( $args );
         $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
 
-        $title = $post->post_title;
-        $subtitle = "";
-        $title_class = "mosaic-news-title-1";
-        if ($pos = strpos($post->post_title, ':')) {
-          $title = substr($post->post_title, 0, $pos);
-          $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post->post_title, $pos+2);
-          $subtitle_class = "mosaic-news-title-1";
-        } else if ($pos = strpos($post->post_title, '~')) {
-          $title = substr($post->post_title, 0, $pos);
-          $title_class = "mosaic-news-subtitle-1";
-          $subtitle = substr($post->post_title, $pos+2);
-          $subtitle_class = "mosaic-news-title-1";
-        } else if ($pos = strpos($post->post_title, '(')) {
-          $title = substr($post->post_title, 0, $pos-1);
-          $title_class = "mosaic-news-title-1";
-          $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
-          $subtitle_class = "mosaic-news-subtitle-1";
-        }
+        $title_array = separate_title_subtitle($post->post_title, "mosaic-news-title-1", "mosaic-news-subtitle-1");
         ?>
 
         <div class="mosaic-news">
@@ -585,11 +488,11 @@ $others_array = get_posts( $args );
                 </div>
               </div>
               <div class="mosaic-news-title">
-                <div class="<?php echo $title_class; ?>">
-                  <?php echo $title; ?>
+                <div class="<?php echo $title_array['title_class']; ?>">
+                  <?php echo $title_array['title']; ?>
                 </div>
-                <div class="<?php echo $subtitle_class; ?>">
-                  <?php echo $subtitle; ?>
+                <div class="<?php echo $title_array['subtitle_class']; ?>">
+                  <?php echo $title_array['subtitle']; ?>
                 </div>
               </div>
             </a>
@@ -602,7 +505,6 @@ $others_array = get_posts( $args );
       </div>
 
     </div>
-    -->
 
   </div>
 
@@ -637,28 +539,7 @@ $others_array = get_posts( $args );
           $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
         }
 
-        $title = $post->post_title;
-        $subtitle = "";
-        $title_class = "list-news-title-1";
-        $posc = strrpos($post->post_title, ':');
-        $posp = strrpos($post->post_title, '+');
-        if ($pos = strpos($post->post_title, '~')) {
-          $title = substr($post->post_title, 0, $pos);
-          $title_class = "list-news-subtitle-1";
-          $subtitle = substr($post->post_title, $pos+2);
-          $subtitle_class = "list-news-title-1";
-        } else if (($posc > 0) || ($posp > 0)) {
-          $pos = ($posc > $posp ? $posc : $posp);
-          $title = substr($post->post_title, 0, $pos+1);
-          $title_class = "list-news-subtitle-1";
-          $subtitle = substr($post->post_title, $pos+2);
-          $subtitle_class = "list-news-title-1";
-        } else if ($pos = strpos($post->post_title, '(')) {
-          $title = substr($post->post_title, 0, $pos-1);
-          $title_class = "list-news-title-1";
-          $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
-          $subtitle_class = "list-news-subtitle-1";
-        }
+        $title_array = separate_title_subtitle($post->post_title, "list-news-title-1", "list-news-subtitle-1");
         ?>
         <div class="list-news">
           <a href="<?php echo $permalink; ?>">
@@ -671,12 +552,12 @@ $others_array = get_posts( $args );
                   <h4>
                     <?php echo $category; ?>
                   </h4>
-                  <div class="list-news-title">
-                    <div class="<?php echo $title_class; ?>">
-                      <?php echo $title; ?>
+                  <div class="mosaic-news-title">
+                    <div class="<?php echo $title_array['title_class']; ?>">
+                      <?php echo $title_array['title']; ?>
                     </div>
-                    <div class="<?php echo $subtitle_class; ?>">
-                      <?php echo $subtitle; ?>
+                    <div class="<?php echo $title_array['subtitle_class']; ?>">
+                      <?php echo $title_array['subtitle']; ?>
                     </div>
                   </div>
 
@@ -738,29 +619,7 @@ $others_array = get_posts( $args );
     // $coauthors = get_coauthors($post->ID);
     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0];
 
-    $title = $post->post_title;
-    $subtitle = "";
-    $title_class = "highlight-title-1";
-    $posc = strrpos($post->post_title, ':');
-    $posp = strrpos($post->post_title, '+');
-    if ($pos = strpos($post->post_title, '~')) {
-      $title = substr($post->post_title, 0, $pos);
-      $title_class = "highlight-subtitle-1";
-      $subtitle = substr($post->post_title, $pos+2);
-      $subtitle_class = "highlight-title-1";
-    } else if (($posc > 0) || ($posp > 0)) {
-      $pos = ($posc > $posp ? $posc : $posp);
-      $title = substr($post->post_title, 0, $pos+1);
-      $title_class = "highlight-subtitle-1";
-      $subtitle = substr($post->post_title, $pos+2);
-      $subtitle_class = "highlight-title-1";
-    } else if ($pos = strpos($post->post_title, '(')) {
-      $title = substr($post->post_title, 0, $pos-1);
-      $title_class = "highlight-title-1";
-      $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
-      $subtitle_class = "highlight-subtitle-1";
-    }
-
+    $title_array = separate_title_subtitle($post->post_title, "highlight-title-1", "highlight-subtitle-1");
     ?>
 
     <div class="highlight-contents highlight-contents-1">
@@ -770,12 +629,12 @@ $others_array = get_posts( $args );
             <?php echo $category; ?>
           </div>
         </div>
-        <div class="highlight-title">
-          <div class="<?php echo $title_class; ?>">
-            <?php echo $title; ?>
+        <div class="mosaic-news-title">
+          <div class="<?php echo $title_array['title_class']; ?>">
+            <?php echo $title_array['title']; ?>
           </div>
-          <div class="<?php echo $subtitle_class; ?>">
-            <?php echo $subtitle; ?>
+          <div class="<?php echo $title_array['subtitle_class']; ?>">
+            <?php echo $title_array['subtitle']; ?>
           </div>
         </div>
 
@@ -806,28 +665,7 @@ $others_array = get_posts( $args );
       $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
     }
 
-    $title = $post->post_title;
-    $subtitle = "";
-    $title_class = "highlight-title-2";
-    $posc = strrpos($post->post_title, ':');
-    $posp = strrpos($post->post_title, '+');
-    if ($pos = strpos($post->post_title, '~')) {
-      $title = substr($post->post_title, 0, $pos);
-      $title_class = "highlight-subtitle-2";
-      $subtitle = substr($post->post_title, $pos+2);
-      $subtitle_class = "highlight-title-2";
-    } else if (($posc > 0) || ($posp > 0)) {
-      $pos = ($posc > $posp ? $posc : $posp);
-      $title = substr($post->post_title, 0, $pos+1);
-      $title_class = "highlight-subtitle-2";
-      $subtitle = substr($post->post_title, $pos+2);
-      $subtitle_class = "highlight-title-2";
-    } else if ($pos = strpos($post->post_title, '(')) {
-      $title = substr($post->post_title, 0, $pos-1);
-      $title_class = "highlight-title-2";
-      $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
-      $subtitle_class = "highlight-subtitle-2";
-    }
+    $title_array = separate_title_subtitle($post->post_title, "highlight-title-2", "highlight-subtitle-2");
 
     ?>
 
@@ -842,12 +680,12 @@ $others_array = get_posts( $args );
       <div class="highlight-contents highlight-contents-2">
         <div class="highlight-mobile-contents">
           <a href="<?php echo $permalink ?>">
-            <div class="highlight-title highlight-title-right">
-              <div class="<?php echo $title_class; ?>">
-                <?php echo $title; ?>
+            <div class="mosaic-news-title">
+              <div class="<?php echo $title_array['title_class']; ?>">
+                <?php echo $title_array['title']; ?>
               </div>
-              <div class="<?php echo $subtitle_class; ?>">
-                <?php echo $subtitle; ?>
+              <div class="<?php echo $title_array['subtitle_class']; ?>">
+                <?php echo $title_array['subtitle']; ?>
               </div>
             </div>
           </a>
@@ -879,28 +717,7 @@ $others_array = get_posts( $args );
       $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
     }
 
-    $title = $post->post_title;
-    $subtitle = "";
-    $title_class = "highlight-title-2";
-    $posc = strrpos($post->post_title, ':');
-    $posp = strrpos($post->post_title, '+');
-    if ($pos = strpos($post->post_title, '~')) {
-      $title = substr($post->post_title, 0, $pos);
-      $title_class = "highlight-subtitle-2";
-      $subtitle = substr($post->post_title, $pos+2);
-      $subtitle_class = "highlight-title-2";
-    } else if (($posc > 0) || ($posp > 0)) {
-      $pos = ($posc > $posp ? $posc : $posp);
-      $title = substr($post->post_title, 0, $pos+1);
-      $title_class = "highlight-subtitle-2";
-      $subtitle = substr($post->post_title, $pos+2);
-      $subtitle_class = "highlight-title-2";
-    } else if ($pos = strpos($post->post_title, '(')) {
-      $title = substr($post->post_title, 0, $pos-1);
-      $title_class = "highlight-title-2";
-      $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
-      $subtitle_class = "highlight-subtitle-2";
-    }
+    $title_array = separate_title_subtitle($post->post_title, "highlight-title-2", "highlight-subtitle-2");
 
     ?>
 
@@ -908,12 +725,12 @@ $others_array = get_posts( $args );
       <div class="highlight-contents highlight-contents-3">
         <div class="highlight-mobile-contents">
           <a href="<?php echo $permalink ?>">
-            <div class="highlight-title highlight-title-left">
-              <div class="<?php echo $title_class; ?>">
-                <?php echo $title; ?>
+            <div class="mosaic-news-title">
+              <div class="<?php echo $title_array['title_class']; ?>">
+                <?php echo $title_array['title']; ?>
               </div>
-              <div class="<?php echo $subtitle_class; ?>">
-                <?php echo $subtitle; ?>
+              <div class="<?php echo $title_array['subtitle_class']; ?>">
+                <?php echo $title_array['subtitle']; ?>
               </div>
             </div>
           </a>
@@ -982,26 +799,7 @@ $others_array = get_posts( $args );
         $image_mobile = pathinfo($image, PATHINFO_DIRNAME) . '/' . pathinfo($image, PATHINFO_FILENAME).'-150x150.jpg';
       }
 
-      // For the list of items in the mobile layout, just remove the ~
-      $title = str_replace("~", "", $post->post_title);
-    //   $subtitle = "";
-    //   $title_class = "list-news-title-1";
-    //   if ($pos = strpos($post->post_title, ':')) {
-    //     $title = substr($post->post_title, 0, $pos+1);
-    //     $title_class = "list-news-subtitle-1";
-    //     $subtitle = substr($post->post_title, $pos+2);
-    //     $subtitle_class = "list-news-title-1";
-    //   } else if ($pos = strpos($post->post_title, '~')) {
-    //     $title = substr($post->post_title, 0, $pos);
-    //     $title_class = "list-news-subtitle-1";
-    //     $subtitle = substr($post->post_title, $pos+2);
-    //     $subtitle_class = "list-news-title-1";
-    //   } else if ($pos = strpos($post->post_title, '(')) {
-    //     $title = substr($post->post_title, 0, $pos-1);
-    //     $title_class = "list-news-title-1";
-    //     $subtitle = substr($post->post_title, $pos+1, strlen($post->post_title)-strlen($title)-3);
-    //     $subtitle_class = "list-news-subtitle-1";
-    //   }
+      $title = remove_formatting_chars( $post->post_title);
 
       ?>
 
@@ -1029,12 +827,7 @@ $others_array = get_posts( $args );
                   <?php echo $category; ?>
                 </h4>
                 <div class="list-news-title list-news-title-1">
-                  <!-- <div class="<?php echo $title_class; ?>"> -->
-                    <?php echo $title; ?>
-                  <!-- </div> -->
-                  <!-- <div class="<?php echo $subtitle_class; ?>">
-                    <?php echo $subtitle; ?>
-                  </div> -->
+                  <?php echo $title; ?>
                 </div>
               </a>
 

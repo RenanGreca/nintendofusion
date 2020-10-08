@@ -178,32 +178,24 @@ function separate_title_subtitle($title, $large_class, $small_class) {
     $result['title_class'] = $large_class;
     $result['subtitle_class'] = "";
 
-    $posc = strrpos($title, ':');
-    $posp = strrpos($title, '+');
 
+    // Use ~ to make the subtitle bigger than the title
     if ($pos = strpos($title, '~')) {
       $result['title'] = substr($title, 0, $pos);
       $result['title_class'] = $small_class;
       $result['subtitle'] = substr($title, $pos+2);
-      $result['subtitle_class'] = $large_class;
+      $result['subtitle_class'] = $large_class;   
+    }
 
-    } else if (($posc > 0) || ($posp > 0)) {
-      $pos = ($posc > $posp ? $posc : $posp);
-      $result['title'] = substr($title, 0, $pos+1);
-      $result['title_class'] = $small_class;
-      $result['subtitle'] = substr($title, $pos+2);
-      $result['subtitle_class'] = $large_class;
-
-    } else if ($pos = strpos($title, '(')) {
-      $result['title'] = substr($title, 0, $pos-1);
+    // Use ^ to make the title bigger than the subtitle
+    if ($pos = strpos($title, '^')) {
+      $result['title'] = substr($title, 0, $pos);
       $result['title_class'] = $large_class;
-      $result['subtitle'] = substr($title, $pos+1, strlen($title)-strlen($result['title'])-3);
+      $result['subtitle'] = substr($title, $pos+2);
       $result['subtitle_class'] = $small_class;
-
     }
 
     return $result;
-
 }
 
 ?>

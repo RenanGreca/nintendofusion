@@ -21,7 +21,6 @@ if ( is_category() ) {
 <title><?php echo $title; ?> - Neo Fusion</title>
 <div class="archive-list">
   <h1><?php echo $title; ?></h1>
-
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
   $categories = get_the_category();
   if (count($categories) != 0) {

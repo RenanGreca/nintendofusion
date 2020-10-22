@@ -11,7 +11,6 @@ $title = $post->post_title;
 
 ?>
 
-
 <?php
 if ($title == "Podcast") {
 

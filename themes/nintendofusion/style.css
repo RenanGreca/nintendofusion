@@ -250,7 +250,7 @@ a:hover.navbar-link {
 }
 
 
-@media (max-width: 1023px) {
+@media (max-width: 1000px) {
   .brand {
     height: 50px;
     display: block;
@@ -371,7 +371,7 @@ a:hover
   user-select: none;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1000px) {
   #menuToggle {
     display: block;
   }
@@ -729,7 +729,7 @@ a.author.url.fn:hover {
 
 
 
-@media (max-width: 1023px) {
+@media (max-width: 1000px) {
   .mosaic {
     display: none;
   }
@@ -762,6 +762,7 @@ a.author.url.fn:hover {
     position: absolute;
     bottom: 0;
     right: 0;
+    padding-right: 2%;
   }
 
   .highlight-mobile-contents {
@@ -862,13 +863,13 @@ a.author.url.fn:hover {
     line-height: 20px;
   }
 
-	.highlight-title-left {
-		/*margin-left: 20%;*/
+	/* .highlight-title-left {
+		margin-left: 20%;
 	}
 
 	.highlight-title-right {
-		/*margin-right: 20%;*/
-	}
+		margin-right: 20%;
+	} */
 }
 
 @media (max-width: 370px) {
@@ -1051,7 +1052,7 @@ a.author.url.fn:hover {
   float: right;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1000px) {
   .compact-list {
     display: block;
   }
@@ -1299,7 +1300,7 @@ footer {
   z-index: 0;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1000px) {
   footer {
     margin: 50px 40px 50px 40px;
     color: var(--light-text);
@@ -1350,7 +1351,7 @@ footer {
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1000px) {
   .ad-footer {
     display: none;
   }
@@ -1456,6 +1457,7 @@ h4 {
     font-size: 30px;
     line-height: 32px;
     margin: 40px auto 0 auto;
+    padding-left: 20px;
   }
 }
 
@@ -1507,7 +1509,7 @@ a:hover {
 .all {
   height: 50px;
   text-align: right;
-  margin: 25px 0;
+  margin: 25px 20px;
 }
 
 @media (min-width: 1023px) {

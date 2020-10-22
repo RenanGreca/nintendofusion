@@ -76,10 +76,10 @@ for ($i=0; $i<6; $i++) {
 //   )
 // );
 // $most_seen = get_posts( $args );
-//
-// for ($i=0; $i<3; $i++) {
-//   array_push($ids, $most_seen[$i]->ID);
-// }
+
+for ($i=0; $i<3; $i++) {
+  array_push($ids, $most_seen[$i]->ID);
+}
 
 $args = array(
   'posts_per_page'   => 9,
@@ -356,7 +356,7 @@ $others_array = get_posts( $args );
     </div>
 
     
-    <h1>MAIS LIDAS</h1>
+    <!-- <h1>MAIS LIDAS</h1>
     <div class="mosaic-row-4">
 
 
@@ -506,7 +506,7 @@ $others_array = get_posts( $args );
 
     </div>
 
-  </div>
+  </div> -->
 
   <div class="space"></div>
   <div class="list">
@@ -583,7 +583,7 @@ $others_array = get_posts( $args );
 
       <div class="all">
         <a class="all-link" href="<?php echo site_url(); ?>?s=">
-          Todos os posts
+          Acervo
         </a>
       </div>
 
@@ -856,8 +856,13 @@ $others_array = get_posts( $args );
 }
   ?>
   <div class="all">
-    <?php posts_nav_link('<span class="spacing"> </span>','Anterior','Próxima'); ?>
+    <a class="all-link" href="<?php echo site_url(); ?>?s=">
+      Acervo
+    </a>
   </div>
+  <!-- <div class="all">
+    <?php posts_nav_link('<span class="spacing"> </span>','Anterior','Próxima'); ?>
+  </div> -->
   <!-- <div class="all">
     <a class="all-link" href="<?php echo site_url(); ?>/page/2">
       Próxima página

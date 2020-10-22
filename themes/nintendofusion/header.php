@@ -182,8 +182,7 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         </div><!--/.nav-collapse -->
 
         <!-- Fusion Header Ad -->
-        <div class="ad-header">
-          <!-- NF ad -->
+        <!-- <div class="ad-header">
           <ins class="adsbygoogle"
                style="display:inline-block;width:728px;height:90px"
                data-ad-client="ca-pub-8943805401802569"
@@ -191,14 +190,13 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
           <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
           </script>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
 
   <!-- Mobile header ad -->
-  <div class="ad-mobile">
-    <!-- Mobile ad -->
+  <!-- <div class="ad-mobile">
     <ins class="adsbygoogle"
          style="display:inline-block;width:320px;height:100px"
          data-ad-client="ca-pub-8943805401802569"
@@ -206,7 +204,7 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
-  </div>
+  </div> -->
 
 
 

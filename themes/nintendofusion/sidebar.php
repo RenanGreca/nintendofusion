@@ -1,10 +1,10 @@
 <div class="sidebar">
-  <div class="sidebar-line">
-  </div>
+  <!-- <div class="sidebar-line">
+  </div> -->
 
-  <div class="ad-sidebar">
+  <!-- Side bar ad -->
+  <!--<div class="ad-sidebar">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- Side bar ad -->
     <ins class="adsbygoogle"
     style="display:inline-block;width:300px;height:250px"
     data-ad-client="ca-pub-8943805401802569"
@@ -12,7 +12,7 @@
     <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
-  </div>
+  </div> -->
 
   <?php
   $args = array(

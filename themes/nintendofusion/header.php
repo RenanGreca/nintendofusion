@@ -29,7 +29,7 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     ?>
         --container-width-1600: 1570px;
         --container-width-1200: 1170px;
-        --container-width-1000: 975px;
+        --container-width-1000: 1000px;
 
         --font-title: "Glacial Indifference";
         --font-text: "Ubuntu";
@@ -37,7 +37,7 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     </style>
     <!-- <link href="<?php echo get_bloginfo('template_url'); ?>/css/theme_<?php echo $GLOBALS['theme']; ?>.css" rel="stylesheet"> -->
     <link href="<?php echo get_bloginfo('template_url'); ?>/style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,700,700i&display=swap" rel="stylesheet">
     <!-- <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon-32x32.png" sizes="32x32" /> -->
     <!-- <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url') ?>/img/favicon-16x16.png" sizes="16x16" /> -->
 
@@ -73,7 +73,7 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <![endif]-->
 
     <!-- Google Analytics -->
-    <script>
+    <!-- <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -81,16 +81,16 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
       ga('create', 'UA-48758010-3', 'auto');
       ga('send', 'pageview');
-    </script>
+    </script> -->
 
     <!-- Google AdSense -->
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({
         google_ad_client: "ca-pub-8943805401802569",
         enable_page_level_ads: true
       });
-    </script>
+    </script> -->
 
     <!-- <?php wp_enqueue_script("jquery"); ?> -->
     <?php wp_head(); ?>
@@ -142,7 +142,7 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
               <a href="https://instagram.com/neofusionbr" class="social-icon social-ig" target="_blank"></a>
               <a href="https://twitter.com/NeoFusionBR" class="social-icon social-tw" target="_blank"></a>
               <a href="https://www.youtube.com/channel/UCU74wc5ncqwjjoXhdw53DSA" class="social-icon social-yt" target="_blank"></a>
-              <a href="https://twitch.tv/ninfusionbr" class="social-icon social-twitch" target="_blank"></a>
+              <a href="https://twitch.tv/neofusionbr" class="social-icon social-twitch" target="_blank"></a>
             </li>
           </ul>
         </div>

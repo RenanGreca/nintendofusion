@@ -66,7 +66,8 @@ $image_full = wp_get_attachment_image_src( get_post_thumbnail_id(),
 $image_mobile = wp_get_attachment_image_src( get_post_thumbnail_id(),
 'large' )[0];
 
-$coauthors = coauthors_posts_links(', ', ' e ', null, null, false);
+// $coauthors = coauthors_posts_links(', ', ' e ', null, null, false);
+$coauthors = get_author_display($post);
 
 $title_array = separate_title_subtitle($post->post_title, "review-maintitle", "review-subtitle");
 
@@ -240,10 +241,9 @@ $disclaimer = $meta_fields['disclaimer'][0];
       </div>
 
     </div>
-    <div class="ad-footer">
-      <!-- footer AdSense ad -->
+    <!-- footer AdSense ad -->
+    <!-- <div class="ad-footer">
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <!-- Footer ad -->
       <ins class="adsbygoogle"
       style="display:inline-block;width:728px;height:90px"
       data-ad-client="ca-pub-8943805401802569"
@@ -251,7 +251,7 @@ $disclaimer = $meta_fields['disclaimer'][0];
       <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
-    </div>
+    </div> -->
     <?php
   }
   ?>
@@ -290,7 +290,8 @@ $disclaimer = $meta_fields['disclaimer'][0];
         }
         $permalink = get_post_permalink($post->ID);
         $time = get_the_time('j \d\e F \d\e Y', $post->ID);
-        $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+        // $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+        $coauthors = get_author_display($post);
         $image = get_post_meta($post->ID, 'icone', true);
         if ($image == '') {
           $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
@@ -341,7 +342,8 @@ $disclaimer = $meta_fields['disclaimer'][0];
         }
         $permalink = get_post_permalink($post->ID);
         $time = get_the_time('j \d\e F \d\e Y', $post->ID);
-        $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+        // $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+        $coauthors = get_author_display($post);
         $image = get_post_meta($post->ID, 'icone', true);
         if ($image == '') {
           $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
@@ -392,7 +394,8 @@ $disclaimer = $meta_fields['disclaimer'][0];
         }
         $permalink = get_post_permalink($post->ID);
         $time = get_the_time('j \d\e F \d\e Y', $post->ID);
-        $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+        // $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+        $coauthors = get_author_display($post);
         $image = get_post_meta($post->ID, 'icone', true);
         if ($image == '') {
           $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];

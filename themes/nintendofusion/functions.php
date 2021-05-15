@@ -68,8 +68,12 @@ function insert_fb_in_head() {
     ';
     echo '<meta property="og:description" content="' . get_the_excerpt() . '"/>
     ';
-    $coauthors = coauthors(', ', ' e ', null, null, false);
-    echo '<meta property="article:author" content="' . $coauthors . '"/>
+    // $coauthors = coauthors(', ', ' e ', null, null, false);
+	  $author_id = $post->post_author;
+	  $curauth = get_user_by('ID', $author_id);
+    $display_name = $curauth->display_name;
+    // $coauthors = get_author_display($post);
+    echo '<meta property="article:author" content="' . $display_name . '"/>
     ';
 
     if (!has_post_thumbnail( $post->ID )) {
@@ -198,6 +202,18 @@ function separate_title_subtitle($title, $large_class, $small_class) {
     }
 
     return $result;
+}
+
+function get_author_display($post) {
+  $author_id = $post->post_author;
+	// $author_name = get_the_author_meta('display_name', $author_id);
+  $curauth = get_user_by('ID', $author_id);
+
+  $display_name = $curauth->display_name;
+  $url_name = $curauth->user_nicename;
+  $url = $curauth->user_url;
+
+  return '<a href="'.site_url().'/author/'.$url_name.'" class="author url fn">'.$display_name.'</a>';
 }
 
 ?>

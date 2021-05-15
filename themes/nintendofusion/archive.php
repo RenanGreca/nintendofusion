@@ -35,13 +35,14 @@ if ( is_category() ) {
 
   $permalink = get_post_permalink($post->ID);
   $excerpt = get_the_excerpt($post->ID);
-  $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+  // $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+  $coauthors = get_author_display($post);
   $image = get_post_meta($post->ID, 'icone', true);
   if ($image == '') {
     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
     $image_mobile = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
   } else {
-    $image_mobile = pathinfo($image, PATHINFO_DIRNAME) . '/' . pathinfo($image, PATHINFO_FILENAME).'-150x150.jpg';
+    $image_mobile = pathinfo($image, PATHINFO_DIRNAME) . '/' . pathinfo($image, PATHINFO_FILENAME).'-150x150.' . pathinfo ($image, PATHINFO_EXTENSION);
   }
 
   $title_array = separate_title_subtitle($post->post_title, "review-maintitle", "review-subtitle");

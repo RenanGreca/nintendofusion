@@ -117,7 +117,8 @@ $others_array = get_posts( $args );
       }
       $permalink = get_post_permalink($post->ID);
 
-      $coauthors = coauthors_posts_links(', ', ' E ', '', null, false);
+      // $coauthors = coauthors_posts_links(', ', ' E ', '', null, false);
+      $coauthors = get_author_display($post);
       $excerpt = get_the_excerpt($post->ID);
       // $coauthors = get_coauthors($post->ID);
       $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
@@ -160,7 +161,9 @@ $others_array = get_posts( $args );
         $category = $categories[0]->cat_name;
         $permalink = get_post_permalink($post->ID);
         $time = get_the_time('j \d\e F \d\e Y', $post->ID);
-        $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+        // $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+        $coauthors = get_author_display($post);
+        $excerpt = get_the_excerpt($post->ID);
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
 
         $title = $post->post_title;
@@ -185,7 +188,7 @@ $others_array = get_posts( $args );
             <div class="authors">
               POR <?php echo $coauthors; ?>
             </div>
-            <?php echo $time; ?>
+            <?php echo $excerpt; ?>
           </div>
         </div>
 
@@ -197,7 +200,9 @@ $others_array = get_posts( $args );
         $category = $categories[0]->cat_name;
         $permalink = get_post_permalink($post->ID);
         $time = get_the_time('j \d\e F \d\e Y', $post->ID);
-        $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+        // $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+        $coauthors = get_author_display($post);
+        $excerpt = get_the_excerpt($post->ID);
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium')[0];
 
         $title = $post->post_title;
@@ -222,7 +227,7 @@ $others_array = get_posts( $args );
             <div class="authors">
               POR <?php echo $coauthors; ?>
             </div>
-            <?php echo $time; ?>
+            <?php echo $excerpt; ?>
           </div>
         </div>
       </div>
@@ -239,7 +244,8 @@ $others_array = get_posts( $args );
       }
       $permalink = get_post_permalink($post->ID);
 
-      $coauthors = coauthors_posts_links(', ', ' E ', '', null, false);
+      // $coauthors = coauthors_posts_links(', ', ' E ', '', null, false);
+      $coauthors = get_author_display($post);
       $excerpt = get_the_excerpt($post->ID);
       // $coauthors = get_coauthors($post->ID);
       $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
@@ -286,7 +292,8 @@ $others_array = get_posts( $args );
       }
       $permalink = get_post_permalink($post->ID);
 
-      $coauthors = coauthors_posts_links(', ', ' E ', '', null, false);
+      // $coauthors = coauthors_posts_links(', ', ' E ', '', null, false);
+      $coauthors = get_author_display($post);
       $excerpt = get_the_excerpt($post->ID);
       // $coauthors = get_coauthors($post->ID);
       $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
@@ -324,7 +331,9 @@ $others_array = get_posts( $args );
         $category = $categories[0]->cat_name;
         $permalink = get_post_permalink($post->ID);
         $time = get_the_time('j \d\e F \d\e Y', $post->ID);
-        $coauthors = coauthors_posts_links(', ', ' E ', '', null, false);
+        // $coauthors = coauthors_posts_links(', ', ' E ', '', null, false);
+        $coauthors = get_author_display($post);
+        $excerpt = get_the_excerpt($post->ID);
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
 
         $title = $post->post_title;
@@ -349,7 +358,7 @@ $others_array = get_posts( $args );
             <div class="authors">
               POR <?php echo $coauthors; ?>
             </div>
-            <?php echo $time; ?>
+            <?php echo $excerpt; ?>
           </div>
         </div>
       </div>
@@ -373,7 +382,8 @@ $others_array = get_posts( $args );
         }
         $permalink = get_post_permalink($post->ID);
         $time = get_the_time('j \d\e F \d\e Y', $post->ID);
-        $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+        // $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+        $coauthors = get_author_display($post);
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
 
         $title_array = separate_title_subtitle($post->post_title, "mosaic-news-title-1", "mosaic-news-subtitle-1");
@@ -421,7 +431,8 @@ $others_array = get_posts( $args );
         }
         $permalink = get_post_permalink($post->ID);
         $time = get_the_time('j \d\e F \d\e Y', $post->ID);
-        $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+        // $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+        $coauthors = get_author_display($post);
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
 
         $title_array = separate_title_subtitle($post->post_title, "mosaic-news-title-1", "mosaic-news-subtitle-1");
@@ -469,7 +480,8 @@ $others_array = get_posts( $args );
         }
         $permalink = get_post_permalink($post->ID);
         $time = get_the_time('j \d\e F \d\e Y', $post->ID);
-        $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+        // $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+        $coauthors = get_author_display($post);
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
 
         $title_array = separate_title_subtitle($post->post_title, "mosaic-news-title-1", "mosaic-news-subtitle-1");
@@ -533,7 +545,8 @@ $others_array = get_posts( $args );
         $excerpt = get_the_excerpt($post->ID);
         // $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ),
         // 'single-post-thumbnail' )[0];
-        $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+        // $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+        $coauthors = get_author_display($post);
         $image = get_post_meta($post->ID, 'icone', true);
         if ($image == '') {
           $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
@@ -614,7 +627,8 @@ $others_array = get_posts( $args );
     }
     $permalink = get_post_permalink($post->ID);
 
-    $coauthors = coauthors_posts_links(', ', ' E ', '', null, false);
+    // $coauthors = coauthors_posts_links(', ', ' E ', '', null, false);
+    $coauthors = get_author_display($post);
     $excerpt = get_the_excerpt($post->ID);
     // $coauthors = get_coauthors($post->ID);
     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0];
@@ -657,7 +671,8 @@ $others_array = get_posts( $args );
     }
     $permalink = get_post_permalink($post->ID);
 
-    $coauthors = coauthors_posts_links(', ', ' E ', '', null, false);
+    // $coauthors = coauthors_posts_links(', ', ' E ', '', null, false);
+    $coauthors = get_author_display($post);
     $excerpt = get_the_excerpt($post->ID);
     // $coauthors = get_coauthors($post->ID);
     $image = get_post_meta($post->ID, 'icone', true);
@@ -709,7 +724,8 @@ $others_array = get_posts( $args );
     }
     $permalink = get_post_permalink($post->ID);
 
-    $coauthors = coauthors_posts_links(', ', ' E ', '', null, false);
+    // $coauthors = coauthors_posts_links(', ', ' E ', '', null, false);
+    $coauthors = get_author_display($post);
     $excerpt = get_the_excerpt($post->ID);
     // $coauthors = get_coauthors($post->ID);
     $image = get_post_meta($post->ID, 'icone', true);
@@ -790,13 +806,14 @@ $others_array = get_posts( $args );
 
       $permalink = get_post_permalink($post->ID);
       $excerpt = get_the_excerpt($post->ID);
-      $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+      // $coauthors = coauthors_posts_links(', ', ' e ', '', null, false);
+      $coauthors = get_author_display($post);
       $image = get_post_meta($post->ID, 'icone', true);
       if ($image == '') {
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
         $image_mobile = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
       } else {
-        $image_mobile = pathinfo($image, PATHINFO_DIRNAME) . '/' . pathinfo($image, PATHINFO_FILENAME).'-150x150.jpg';
+        $image_mobile = pathinfo($image, PATHINFO_DIRNAME) . '/' . pathinfo($image, PATHINFO_FILENAME).'-150x150.' . pathinfo ($image, PATHINFO_EXTENSION);
       }
 
       $title = remove_formatting_chars( $post->post_title);

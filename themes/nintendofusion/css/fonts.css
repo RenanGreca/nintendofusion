@@ -9,17 +9,19 @@
 		local('Glacial-Indifference'),
 		url('../fonts/GlacialIndifference-Regular.otf')
 		format('opentype');
+	font-display: swap;
 }
 /*bold version*/
 @font-face {
 	font-family: 'Glacial Indifference';
 	src: url('../fonts/GlacialIndifference-Bold.otf');
-  src:
+    src:
 		local('Glacial Indifference'),
 		local('Glacial-Indifference'),
 		url('../fonts/GlacialIndifference-Bold.otf')
 		format('opentype');
 	font-weight:bold;
+	font-display: swap;
 }
 /*italic version*/
 /*@font-face {
